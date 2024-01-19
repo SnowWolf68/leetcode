@@ -1,6 +1,11 @@
 | 题目                                                         | 题解                                                         | 难度分 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | [2944. 购买水果需要的最少金币数](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/description/) | [题解链接](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/solutions/2610007/java-on-2de-dong-tai-gui-hua-by-happy-ka-wpyr/) | 1708   |
-|                                                              |                                                              |        |
-|                                                              |                                                              |        |
+| [1186. 删除一次得到子数组最大和](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/description/) | [题解链接](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/solutions/2610264/java-zi-shu-zu-wen-ti-liang-zhang-dpbiao-8d3v/) | 1799   |
+| [2008. 出租车的最大盈利](https://leetcode.cn/problems/maximum-earnings-from-taxi/description/) | [题解链接](https://leetcode.cn/problems/maximum-earnings-from-taxi/solutions/2610311/java-dp-by-happy-kalamqap-2ye3/) | 1872   |
+| [823. 带因子的二叉树](https://leetcode.cn/problems/binary-trees-with-factors/description/) | [题解链接](https://leetcode.cn/problems/binary-trees-with-factors/solutions/2610440/java-dp-shuang-zhi-zhen-huo-ha-xi-biao-b-me4x/) | 1900   |
+| [873. 最长的斐波那契子序列的长度](https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/) | [题解链接](https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/solutions/2610860/java-xu-lie-dp-jian-zhi-you-hua-by-happy-6lp2/) | 1911   |
+| [1043. 分隔数组以得到最大和](https://leetcode.cn/problems/partition-array-for-maximum-sum/description/) | [题解链接](https://leetcode.cn/problems/partition-array-for-maximum-sum/solutions/2610797/java-dpdp-xian-duan-shu-by-happy-kalamqa-7y5s/) | 1916   |
+| [1092. 最短公共超序列](https://leetcode.cn/problems/shortest-common-supersequence/description/) | [题解链接](https://leetcode.cn/problems/shortest-common-supersequence/solutions/2611171/java-xian-dp-zai-gou-zao-liang-ge-xu-lie-kir0/) | 1977   |
+| [940. 不同的子序列 II](https://leetcode.cn/problems/distinct-subsequences-ii/description/) | [题解链接](https://leetcode.cn/problems/distinct-subsequences-ii/solutions/2611410/java-xu-lie-dp-qiao-miao-you-hua-by-happ-0dq1/) | 1985   |
 
