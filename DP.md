@@ -8,4 +8,8 @@
 | [1043. 分隔数组以得到最大和](https://leetcode.cn/problems/partition-array-for-maximum-sum/description/) | [题解链接](https://leetcode.cn/problems/partition-array-for-maximum-sum/solutions/2610797/java-dpdp-xian-duan-shu-by-happy-kalamqa-7y5s/) | 1916   |
 | [1092. 最短公共超序列](https://leetcode.cn/problems/shortest-common-supersequence/description/) | [题解链接](https://leetcode.cn/problems/shortest-common-supersequence/solutions/2611171/java-xian-dp-zai-gou-zao-liang-ge-xu-lie-kir0/) | 1977   |
 | [940. 不同的子序列 II](https://leetcode.cn/problems/distinct-subsequences-ii/description/) | [题解链接](https://leetcode.cn/problems/distinct-subsequences-ii/solutions/2611410/java-xu-lie-dp-qiao-miao-you-hua-by-happ-0dq1/) | 1985   |
+| [1223. 掷骰子模拟](https://leetcode.cn/problems/dice-roll-simulation/description/) | [题解链接](https://leetcode.cn/problems/dice-roll-simulation/solutions/2612473/java-san-wei-dp-by-happy-kalamqap-qy0i/) | 2008   |
+| [1105. 填充书架](https://leetcode.cn/problems/filling-bookcase-shelves/description/) | [题解链接](https://leetcode.cn/problems/filling-bookcase-shelves/solutions/2612251/java-you-yi-si-de-dp-ni-zhen-de-zhi-dao-voeyg/) | 2014   |
+| [1235. 规划兼职工作](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/) | [题解链接](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/solutions/2612570/java-xu-lie-dp-er-fen-by-happy-kalamqap-d7u5/) | 2023   |
+| [1751. 最多可以参加的会议数目 II](https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/description/) | [题解链接](https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/solutions/2612573/java-xu-lie-dp-er-fen-by-happy-kalamqap-ccwp/) | 2040   |
 
