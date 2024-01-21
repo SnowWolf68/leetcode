@@ -1,0 +1,6 @@
+| 381  | [Q1]  [100191. 输入单词需要的最少按键次数 I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/description/) | [题解链接](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/solutions/2613488/java-jian-dan-fen-xi-ji-ke-by-happy-kala-sxb8/) |      |      |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ---- |
+|      | [Q2]  [100188. 按距离统计房屋对数目 I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/description/) | [题解链接](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/solutions/2613502/java-bfsshu-ju-fan-wei-jiao-xiao-by-happ-c09x/) |      |      |
+|      | [Q3]  [100192. 输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/description/) | [题解链接](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/solutions/2613497/java-jian-dan-tan-xin-by-happy-kalamqap-cv3m/) |      |      |
+|      | [Q4]  [100213. 按距离统计房屋对数目 II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/description/) |                                                              |      |      |
+
