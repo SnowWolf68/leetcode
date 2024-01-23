@@ -1,5 +1,7 @@
 | 题目                                                         | 题解                                                         | 难度分 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
+| [375. 猜数字大小 II](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/description/) | [题解链接](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/solutions/2615978/java-qu-jian-dp-by-happy-kalamqap-toy9/) | medium |
+| [486. 预测赢家](https://leetcode.cn/problems/predict-the-winner/description/) | [题解链接](https://leetcode.cn/problems/predict-the-winner/solutions/2616143/java-bo-yi-dpliang-chong-zhuang-tai-biao-z0yk/) | medium |
 | [2944. 购买水果需要的最少金币数](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/description/) | [题解链接](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/solutions/2610007/java-on-2de-dong-tai-gui-hua-by-happy-ka-wpyr/) | 1708   |
 | [1186. 删除一次得到子数组最大和](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/description/) | [题解链接](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/solutions/2610264/java-zi-shu-zu-wen-ti-liang-zhang-dpbiao-8d3v/) | 1799   |
 | [2008. 出租车的最大盈利](https://leetcode.cn/problems/maximum-earnings-from-taxi/description/) | [题解链接](https://leetcode.cn/problems/maximum-earnings-from-taxi/solutions/2610311/java-dp-by-happy-kalamqap-2ye3/) | 1872   |
@@ -11,6 +13,9 @@
 | [1223. 掷骰子模拟](https://leetcode.cn/problems/dice-roll-simulation/description/) | [题解链接](https://leetcode.cn/problems/dice-roll-simulation/solutions/2612473/java-san-wei-dp-by-happy-kalamqap-qy0i/) | 2008   |
 | [1105. 填充书架](https://leetcode.cn/problems/filling-bookcase-shelves/description/) | [题解链接](https://leetcode.cn/problems/filling-bookcase-shelves/solutions/2612251/java-you-yi-si-de-dp-ni-zhen-de-zhi-dao-voeyg/) | 2014   |
 | [1235. 规划兼职工作](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/) | [题解链接](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/solutions/2612570/java-xu-lie-dp-er-fen-by-happy-kalamqap-d7u5/) | 2023   |
+| [1406. 石子游戏 III](https://leetcode.cn/problems/stone-game-iii/description/) | [题解链接](https://leetcode.cn/problems/stone-game-iii/solutions/2616110/java-bo-yi-dp-by-happy-kalamqap-smvn/) | 2026   |
 | [1335. 工作计划的最低难度](https://leetcode.cn/problems/minimum-difficulty-of-a-job-schedule/description/) | [题解链接](https://leetcode.cn/problems/minimum-difficulty-of-a-job-schedule/solutions/2614485/java-dp-xian-duan-shu-dan-diao-zhan-by-h-hylm/) | 2034   |
+| [1140. 石子游戏 II](https://leetcode.cn/problems/stone-game-ii/description/) | [题解链接](https://leetcode.cn/problems/stone-game-ii/solutions/2616179/java-bo-yi-dp-by-happy-kalamqap-7ouq/) | 2034   |
 | [1751. 最多可以参加的会议数目 II](https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/description/) | [题解链接](https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/solutions/2612573/java-xu-lie-dp-er-fen-by-happy-kalamqap-ccwp/) | 2040   |
+| [1039. 多边形三角剖分的最低得分](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/description/) | [题解链接](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/solutions/2615927/java-qu-jian-dp-by-happy-kalamqap-xywr/) | 2130   |
 
