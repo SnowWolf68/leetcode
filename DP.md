@@ -1,7 +1,9 @@
 | 题目                                                         | 题解                                                         | 难度分 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
+| [357. 统计各位数字都不同的数字个数](https://leetcode.cn/problems/count-numbers-with-unique-digits/description/) | [题解链接](https://leetcode.cn/problems/count-numbers-with-unique-digits/solutions/2619131/java-shu-wei-dp-by-happy-kalamqap-nuum/) | medium |
 | [375. 猜数字大小 II](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/description/) | [题解链接](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/solutions/2615978/java-qu-jian-dp-by-happy-kalamqap-toy9/) | medium |
 | [486. 预测赢家](https://leetcode.cn/problems/predict-the-winner/description/) | [题解链接](https://leetcode.cn/problems/predict-the-winner/solutions/2616143/java-bo-yi-dpliang-chong-zhuang-tai-biao-z0yk/) | medium |
+| [233. 数字 1 的个数](https://leetcode.cn/problems/number-of-digit-one/description/) | [题解链接](https://leetcode.cn/problems/number-of-digit-one/solutions/2619090/java-shu-wei-dp-by-happy-kalamqap-rlo1/) | hard   |
 | [877. 石子游戏](https://leetcode.cn/problems/stone-game/description/) | [题解链接](https://leetcode.cn/problems/stone-game/solutions/2616223/java-bo-yi-dpwo-shi-xiao-chou-by-happy-k-pml5/) | 1590   |
 | [2944. 购买水果需要的最少金币数](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/description/) | [题解链接](https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/solutions/2610007/java-on-2de-dong-tai-gui-hua-by-happy-ka-wpyr/) | 1708   |
 | [1186. 删除一次得到子数组最大和](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/description/) | [题解链接](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/solutions/2610264/java-zi-shu-zu-wen-ti-liang-zhang-dpbiao-8d3v/) | 1799   |
@@ -25,5 +27,6 @@
 | [1012. 至少有 1 位重复的数字](https://leetcode.cn/problems/numbers-with-repeated-digits/description/) | [题解链接](https://leetcode.cn/problems/numbers-with-repeated-digits/solutions/2616715/java-shu-wei-dp-by-happy-kalamqap-vfjt/) | 2230   |
 | [2827. 范围中美丽整数的数目](https://leetcode.cn/problems/number-of-beautiful-integers-in-the-range/description/) | [题解链接](https://leetcode.cn/problems/number-of-beautiful-integers-in-the-range/solutions/2619050/java-shu-wei-dp-by-happy-kalamqap-5msk/) | 2324   |
 | [2999. 统计强大整数的数目](https://leetcode.cn/problems/count-the-number-of-powerful-integers/description/) | [题解连接](https://leetcode.cn/problems/count-the-number-of-powerful-integers/solutions/2619042/java-shu-wei-dp-by-happy-kalamqap-mgy6/) | 2351   |
+| [2719. 统计整数数目](https://leetcode.cn/problems/count-of-integers/description/) | [题解链接](https://leetcode.cn/problems/count-of-integers/solutions/2619127/java-shu-wei-dp-by-happy-kalamqap-h2fi/) | 2354   |
 | [2801. 统计范围内的步进数字数目](https://leetcode.cn/problems/count-stepping-numbers-in-range/description/) | [题解链接](https://leetcode.cn/problems/count-stepping-numbers-in-range/solutions/2619034/java-shu-wei-dpji-yi-hua-sou-suo-by-happ-glby/) | 2367   |
 
