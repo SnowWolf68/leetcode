@@ -23,4 +23,7 @@
 | [2376. 统计特殊整数](https://leetcode.cn/problems/count-special-integers/description/) | [题解连接](https://leetcode.cn/problems/count-special-integers/solutions/2616700/java-shu-wei-dp-by-happy-kalamqap-j595/) | 2120   |
 | [1039. 多边形三角剖分的最低得分](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/description/) | [题解链接](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/solutions/2615927/java-qu-jian-dp-by-happy-kalamqap-xywr/) | 2130   |
 | [1012. 至少有 1 位重复的数字](https://leetcode.cn/problems/numbers-with-repeated-digits/description/) | [题解链接](https://leetcode.cn/problems/numbers-with-repeated-digits/solutions/2616715/java-shu-wei-dp-by-happy-kalamqap-vfjt/) | 2230   |
+| [2827. 范围中美丽整数的数目](https://leetcode.cn/problems/number-of-beautiful-integers-in-the-range/description/) | [题解链接](https://leetcode.cn/problems/number-of-beautiful-integers-in-the-range/solutions/2619050/java-shu-wei-dp-by-happy-kalamqap-5msk/) | 2324   |
+| [2999. 统计强大整数的数目](https://leetcode.cn/problems/count-the-number-of-powerful-integers/description/) | [题解连接](https://leetcode.cn/problems/count-the-number-of-powerful-integers/solutions/2619042/java-shu-wei-dp-by-happy-kalamqap-mgy6/) | 2351   |
+| [2801. 统计范围内的步进数字数目](https://leetcode.cn/problems/count-stepping-numbers-in-range/description/) | [题解链接](https://leetcode.cn/problems/count-stepping-numbers-in-range/solutions/2619034/java-shu-wei-dpji-yi-hua-sou-suo-by-happ-glby/) | 2367   |
 
