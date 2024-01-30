@@ -38,5 +38,6 @@
 | [2999. 统计强大整数的数目](https://leetcode.cn/problems/count-the-number-of-powerful-integers/description/) | [题解连接](https://leetcode.cn/problems/count-the-number-of-powerful-integers/solutions/2619042/java-shu-wei-dp-by-happy-kalamqap-mgy6/) | 2351   |
 | [2719. 统计整数数目](https://leetcode.cn/problems/count-of-integers/description/) | [题解链接](https://leetcode.cn/problems/count-of-integers/solutions/2619127/java-shu-wei-dp-by-happy-kalamqap-h2fi/) | 2354   |
 | [2801. 统计范围内的步进数字数目](https://leetcode.cn/problems/count-stepping-numbers-in-range/description/) | [题解链接](https://leetcode.cn/problems/count-stepping-numbers-in-range/solutions/2619034/java-shu-wei-dpji-yi-hua-sou-suo-by-happ-glby/) | 2367   |
+| [1681. 最小不兼容性](https://leetcode.cn/problems/minimum-incompatibility/description/) | [题解链接](https://leetcode.cn/problems/minimum-incompatibility/solutions/2624838/java-zhuang-ya-dp-duo-chong-xie-fa-liang-crwg/) | 2389   |
 | [2172. 数组的最大与和](https://leetcode.cn/problems/maximum-and-sum-of-array/description/) | [题解链接](https://leetcode.cn/problems/maximum-and-sum-of-array/solutions/2623589/java-zhuang-ya-dp-yi-ti-duo-jie-duo-chon-8ae5/) | 2392   |
 
