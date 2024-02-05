@@ -1,5 +1,6 @@
 | 题目                                                         | 题解                                                         | 难度分 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
+| [310. 最小高度树](https://leetcode.cn/problems/minimum-height-trees/description/) | [题解链接](https://leetcode.cn/problems/minimum-height-trees/solutions/2632822/java-xiang-jie-huan-gen-dp-by-happy-kala-072z/) | Medium |
 | [357. 统计各位数字都不同的数字个数](https://leetcode.cn/problems/count-numbers-with-unique-digits/description/) | [题解链接](https://leetcode.cn/problems/count-numbers-with-unique-digits/solutions/2619131/java-shu-wei-dp-by-happy-kalamqap-nuum/) | Medium |
 | [375. 猜数字大小 II](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/description/) | [题解链接](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/solutions/2615978/java-qu-jian-dp-by-happy-kalamqap-toy9/) | Medium |
 | [486. 预测赢家](https://leetcode.cn/problems/predict-the-winner/description/) | [题解链接](https://leetcode.cn/problems/predict-the-winner/solutions/2616143/java-bo-yi-dpliang-chong-zhuang-tai-biao-z0yk/) | Medium |
