@@ -48,6 +48,7 @@
 | [1494. 并行课程 II](https://leetcode.cn/problems/parallel-courses-ii/description/) | [题解链接](https://leetcode.cn/problems/parallel-courses-ii/solutions/2624038/java-zhuang-ya-dp-cong-tledao-ac-liang-c-o640/) | 2081   |
 | [2560. 打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/description/) | [题解链接](https://leetcode.cn/problems/house-robber-iv/solutions/2627467/java-zui-xiao-hua-zui-da-zhi-er-fen-dp-b-1rti/) | 2081   |
 | [2376. 统计特殊整数](https://leetcode.cn/problems/count-special-integers/description/) | [题解连接](https://leetcode.cn/problems/count-special-integers/solutions/2616700/java-shu-wei-dp-by-happy-kalamqap-j595/) | 2120   |
+| [2246. 相邻字符不同的最长路径](https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/description/) | [题解链接](https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/solutions/2635127/java-shu-xing-dp-shu-de-zhi-jing-yi-ban-uff3k/) | 2126   |
 | [1039. 多边形三角剖分的最低得分](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/description/) | [题解链接](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/solutions/2615927/java-qu-jian-dp-by-happy-kalamqap-xywr/) | 2130   |
 | [1879. 两个数组最小的异或值之和](https://leetcode.cn/problems/minimum-xor-sum-of-two-arrays/description/) | [题解链接](https://leetcode.cn/problems/minimum-xor-sum-of-two-arrays/solutions/2623597/java-zhuang-ya-dp-by-happy-kalamqap-vser/) | 2145   |
 | [2218. 从栈中取出 K 个硬币的最大面值和](https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/description/) | [题解链接](https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/solutions/2634437/java-qian-zhui-he-zhuan-hua-fen-zu-bei-b-hnms/) | 2158   |
@@ -66,5 +67,6 @@
 | [2801. 统计范围内的步进数字数目](https://leetcode.cn/problems/count-stepping-numbers-in-range/description/) | [题解链接](https://leetcode.cn/problems/count-stepping-numbers-in-range/solutions/2619034/java-shu-wei-dpji-yi-hua-sou-suo-by-happ-glby/) | 2367   |
 | [1681. 最小不兼容性](https://leetcode.cn/problems/minimum-incompatibility/description/) | [题解链接](https://leetcode.cn/problems/minimum-incompatibility/solutions/2624838/java-zhuang-ya-dp-duo-chong-xie-fa-liang-crwg/) | 2389   |
 | [2172. 数组的最大与和](https://leetcode.cn/problems/maximum-and-sum-of-array/description/) | [题解链接](https://leetcode.cn/problems/maximum-and-sum-of-array/solutions/2623589/java-zhuang-ya-dp-yi-ti-duo-jie-duo-chon-8ae5/) | 2392   |
+| [2538. 最大价值和与最小价值和的差值](https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/description/) | [题解链接](https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/solutions/2635274/java-shu-xing-dp-zhi-de-hao-hao-pin-wei-flurh/) | 2398   |
 | [2902. 和带限制的子多重集合的数目](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/) | [题解链接](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/solutions/2633346/java-fen-zu-bei-bao-qian-zhui-he-you-hua-0drq/) | 2759   |
 
