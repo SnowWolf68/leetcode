@@ -8,4 +8,6 @@
 |              | [891. 子序列宽度之和](https://leetcode.cn/problems/sum-of-subsequence-widths/description/) | [题解链接](https://leetcode.cn/problems/sum-of-subsequence-widths/solutions/2617612/java-gong-xian-fa-zheng-gong-xian-fu-gon-8z57/) | 2182 |
 | 最小化最大值 | [2560. 打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/description/) | [题解链接](https://leetcode.cn/problems/house-robber-iv/solutions/2627467/java-zui-xiao-hua-zui-da-zhi-er-fen-dp-b-1rti/) | 2081 |
 |              | [2439. 最小化数组中的最大值](https://leetcode.cn/problems/minimize-maximum-of-array/description/) | [题解链接](https://leetcode.cn/problems/minimize-maximum-of-array/solutions/2627519/java-er-fen-by-happy-kalamqap-egi6/) | 1965 |
+| KMP & Z-func | [3031. 将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/description/) | [题解链接](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/solutions/2638216/java-z-func-by-happy-kalamqap-ngwk/) | 2278 |
+|              | [3036. 匹配模式数组的子数组数目 II](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/description/) | [题解链接](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/solutions/2639364/java-kmp-z-func-by-happy-kalamqap-ad09/) |      |
 
