@@ -6,6 +6,8 @@
 | [375. 猜数字大小 II](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/description/) | [题解链接](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/solutions/2615978/java-qu-jian-dp-by-happy-kalamqap-toy9/) | Medium |
 | [486. 预测赢家](https://leetcode.cn/problems/predict-the-winner/description/) | [题解链接](https://leetcode.cn/problems/predict-the-winner/solutions/2616143/java-bo-yi-dpliang-chong-zhuang-tai-biao-z0yk/) | Medium |
 | [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/description/) | [题解链接](https://leetcode.cn/problems/beautiful-arrangement/solutions/2623596/java-zhuang-ya-dp-by-happy-kalamqap-jiry/) | Medium |
+| [LCP 34. 二叉树染色](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/description/) | [题解链接](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/solutions/2639812/java-shu-xing-dp-by-happy-kalamqap-o3mc/) | Medium |
+| [LCP 64. 二叉树灯饰](https://leetcode.cn/problems/U7WvvU/description/) | [题解链接](https://leetcode.cn/problems/U7WvvU/solutions/2639733/java-shu-xing-dp-by-happy-kalamqap-b2cj/) | Medium |
 | [LCP 09. 最小跳跃次数](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/description/) | [题解链接](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/solutions/2626725/java-yi-ti-shuang-jie-bfspreidxyou-hua-d-9b2n/) | Hard   |
 | [233. 数字 1 的个数](https://leetcode.cn/problems/number-of-digit-one/description/) | [题解链接](https://leetcode.cn/problems/number-of-digit-one/solutions/2619090/java-shu-wei-dp-by-happy-kalamqap-rlo1/) | Hard   |
 | [2606. 找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/description/) | [题解链接](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/solutions/2632326/java-zi-shu-zu-dp-by-happy-kalamqap-9xrg/) | 1422   |
