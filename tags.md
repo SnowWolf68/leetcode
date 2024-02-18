@@ -11,4 +11,5 @@
 | KMP & Z-func | [3031. 将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/description/) | [题解链接](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/solutions/2638216/java-z-func-by-happy-kalamqap-ngwk/) | 2278 |
 |              | [3036. 匹配模式数组的子数组数目 II](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/description/) | [题解链接](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/solutions/2639364/java-kmp-z-func-by-happy-kalamqap-ad09/) |      |
 | 思维题       | [3035. 回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/description/) | [题解链接](https://leetcode.cn/problems/maximum-palindromes-after-operations/solutions/2640777/java-tan-xin-si-wei-ti-by-happy-kalamqap-jjg4/) |      |
+|              | [3039. 进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/description/) | [题解链接](https://leetcode.cn/problems/apply-operations-to-make-string-empty/solutions/2644736/java-si-wei-ti-by-happy-kalamqap-o15i/) |      |
 
