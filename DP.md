@@ -9,6 +9,7 @@
 | [LCP 34. 二叉树染色](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/description/) | [题解链接](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/solutions/2639812/java-shu-xing-dp-by-happy-kalamqap-o3mc/) | Medium |
 | [LCP 64. 二叉树灯饰](https://leetcode.cn/problems/U7WvvU/description/) | [题解链接](https://leetcode.cn/problems/U7WvvU/solutions/2639733/java-shu-xing-dp-by-happy-kalamqap-b2cj/) | Medium |
 | [LCP 09. 最小跳跃次数](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/description/) | [题解链接](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/solutions/2626725/java-yi-ti-shuang-jie-bfspreidxyou-hua-d-9b2n/) | Hard   |
+| [LCP 53. 守护太空城](https://leetcode.cn/problems/EJvmW4/description/) | [题解链接](https://leetcode.cn/problems/EJvmW4/solutions/2645843/java-zhuang-ya-dp-by-happy-kalamqap-lspi/) | Hard   |
 | [233. 数字 1 的个数](https://leetcode.cn/problems/number-of-digit-one/description/) | [题解链接](https://leetcode.cn/problems/number-of-digit-one/solutions/2619090/java-shu-wei-dp-by-happy-kalamqap-rlo1/) | Hard   |
 | [2606. 找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/description/) | [题解链接](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/solutions/2632326/java-zi-shu-zu-dp-by-happy-kalamqap-9xrg/) | 1422   |
 | [2957. 消除相邻近似相等字符](https://leetcode.cn/problems/remove-adjacent-almost-equal-characters/description/) | [题解链接](https://leetcode.cn/problems/remove-adjacent-almost-equal-characters/solutions/2627362/java-yi-ti-shuang-jie-liang-chong-tan-xi-g5ug/) | 1430   |
