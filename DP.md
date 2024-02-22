@@ -8,6 +8,7 @@
 | [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/description/) | [题解链接](https://leetcode.cn/problems/beautiful-arrangement/solutions/2623596/java-zhuang-ya-dp-by-happy-kalamqap-jiry/) | Medium |
 | [LCP 34. 二叉树染色](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/description/) | [题解链接](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/solutions/2639812/java-shu-xing-dp-by-happy-kalamqap-o3mc/) | Medium |
 | [LCP 64. 二叉树灯饰](https://leetcode.cn/problems/U7WvvU/description/) | [题解链接](https://leetcode.cn/problems/U7WvvU/solutions/2639733/java-shu-xing-dp-by-happy-kalamqap-b2cj/) | Medium |
+| [LCP 04. 覆盖](https://leetcode.cn/problems/broken-board-dominoes/description/) | [题解链接](https://leetcode.cn/problems/broken-board-dominoes/solutions/2648545/java-zhuang-ya-dp-by-happy-kalamqap-dh9m/) | Hard   |
 | [LCP 09. 最小跳跃次数](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/description/) | [题解链接](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/solutions/2626725/java-yi-ti-shuang-jie-bfspreidxyou-hua-d-9b2n/) | Hard   |
 | [LCP 53. 守护太空城](https://leetcode.cn/problems/EJvmW4/description/) | [题解链接](https://leetcode.cn/problems/EJvmW4/solutions/2645843/java-zhuang-ya-dp-by-happy-kalamqap-lspi/) | Hard   |
 | [LCP 69. Hello LeetCode!](https://leetcode.cn/problems/rMeRt2/description/) | [题解链接](https://leetcode.cn/problems/rMeRt2/solutions/2647835/java-zhuang-ya-dp-dui-yu-duo-zhong-ji-he-mspy/) | Hard   |
@@ -44,6 +45,7 @@
 | [1981. 最小化目标值与所选元素的差](https://leetcode.cn/problems/minimize-the-difference-between-target-and-chosen-elements/description/) | [题解链接](https://leetcode.cn/problems/minimize-the-difference-between-target-and-chosen-elements/solutions/2634132/java-fen-zu-bei-bao-by-happy-kalamqap-zjl1/) | 2010   |
 | [1105. 填充书架](https://leetcode.cn/problems/filling-bookcase-shelves/description/) | [题解链接](https://leetcode.cn/problems/filling-bookcase-shelves/solutions/2612251/java-you-yi-si-de-dp-ni-zhen-de-zhi-dao-voeyg/) | 2014   |
 | [2741. 特别的排列](https://leetcode.cn/problems/special-permutations/description/) | [题解链接](https://leetcode.cn/problems/special-permutations/solutions/2623592/java-zhuang-ya-dp-by-happy-kalamqap-8xaf/) | 2020   |
+| [2547. 拆分数组的最小代价](https://leetcode.cn/problems/minimum-cost-to-split-an-array/description/) | [题解链接](https://leetcode.cn/problems/minimum-cost-to-split-an-array/solutions/2649827/java-hua-fen-xing-dp-mei-ju-ji-suan-you-cnez2/) | 2020   |
 | [1235. 规划兼职工作](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/) | [题解链接](https://leetcode.cn/problems/maximum-profit-in-job-scheduling/solutions/2612570/java-xu-lie-dp-er-fen-by-happy-kalamqap-d7u5/) | 2023   |
 | [2597. 美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/description/) | [题解链接](https://leetcode.cn/problems/the-number-of-beautiful-subsets/solutions/2633888/java-qu-mo-fen-zu-yu-chu-li-zu-nei-dpcha-lw6r/) | 2023   |
 | [1406. 石子游戏 III](https://leetcode.cn/problems/stone-game-iii/description/) | [题解链接](https://leetcode.cn/problems/stone-game-iii/solutions/2616110/java-bo-yi-dp-by-happy-kalamqap-smvn/) | 2026   |
@@ -89,6 +91,7 @@
 | [2518. 好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/description/) | [题解链接](https://leetcode.cn/problems/number-of-great-partitions/solutions/2640746/java-zheng-nan-ze-fan-01bei-bao-by-happy-ei0z/) | 2415   |
 | [2572. 无平方子集计数](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/description/) | [题解链接](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/solutions/2644909/java-01bei-bao-zhuang-ya-dp-by-happy-kal-aiic/) | 2420   |
 | [1994. 好子集的数目](https://leetcode.cn/problems/the-number-of-good-subsets/description/) | [题解链接](https://leetcode.cn/problems/the-number-of-good-subsets/solutions/2645009/java-zhuang-ya-dp-by-happy-kalamqap-vfx2/) | 2465   |
+| [1595. 连通两组点的最小成本](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/description/) | [题解链接](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/solutions/2648321/java-zhuang-ya-dp-by-happy-kalamqap-8s5i/) | 2538   |
 | [2902. 和带限制的子多重集合的数目](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/) | [题解链接](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/solutions/2633346/java-fen-zu-bei-bao-qian-zhui-he-you-hua-0drq/) | 2759   |
 | [100205. 修改数组后最大化数组中的连续元素数目](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/description/) | [题解链接](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/solutions/2644731/java-xu-lie-dp-ji-yu-zhi-yu-dp-by-happy-gr8u6/) |        |
 
