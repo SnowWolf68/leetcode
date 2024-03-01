@@ -109,5 +109,6 @@
 | [1994. 好子集的数目](https://leetcode.cn/problems/the-number-of-good-subsets/description/) | [题解链接](https://leetcode.cn/problems/the-number-of-good-subsets/solutions/2645009/java-zhuang-ya-dp-by-happy-kalamqap-vfx2/) | 2465   |
 | [1595. 连通两组点的最小成本](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/description/) | [题解链接](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/solutions/2648321/java-zhuang-ya-dp-by-happy-kalamqap-8s5i/) | 2538   |
 | [2902. 和带限制的子多重集合的数目](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/) | [题解链接](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/solutions/2633346/java-fen-zu-bei-bao-qian-zhui-he-you-hua-0drq/) | 2759   |
+| [1977. 划分数字的方案数](https://leetcode.cn/problems/number-of-ways-to-separate-numbers/description/) | [题解链接](https://leetcode.cn/problems/number-of-ways-to-separate-numbers/solutions/2660976/java-qian-zhui-he-you-hua-dp-by-happy-ka-v24b/) | 2817   |
 | [100205. 修改数组后最大化数组中的连续元素数目](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/description/) | [题解链接](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/solutions/2644731/java-xu-lie-dp-ji-yu-zhi-yu-dp-by-happy-gr8u6/) |        |
 
