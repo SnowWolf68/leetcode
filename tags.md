@@ -13,4 +13,5 @@
 | 思维题       | [3039. 进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/description/) | [题解链接](https://leetcode.cn/problems/apply-operations-to-make-string-empty/solutions/2644736/java-si-wei-ti-by-happy-kalamqap-o15i/) | 1423 |
 |              | [3035. 回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/description/) | [题解链接](https://leetcode.cn/problems/maximum-palindromes-after-operations/solutions/2640777/java-tan-xin-si-wei-ti-by-happy-kalamqap-jjg4/) | 1856 |
 | 回文串       | [1930. 长度为 3 的不同回文子序列](https://leetcode.cn/problems/unique-length-3-palindromic-subsequences/description/) | [题解链接](https://leetcode.cn/problems/unique-length-3-palindromic-subsequences/solutions/2671736/java-mei-ju-zhong-jian-zi-fu-hui-wen-chu-h9ec/) | 1533 |
+|              | [2484. 统计回文子序列数目](https://leetcode.cn/problems/count-palindromic-subsequences/description/) | [题解链接](https://leetcode.cn/problems/count-palindromic-subsequences/solutions/2672166/java-mei-ju-zhong-xin-zi-fu-qian-hou-zhu-0yj0/) | 2223 |
 
