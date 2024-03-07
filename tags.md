@@ -14,4 +14,5 @@
 |              | [3035. 回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/description/) | [题解链接](https://leetcode.cn/problems/maximum-palindromes-after-operations/solutions/2640777/java-tan-xin-si-wei-ti-by-happy-kalamqap-jjg4/) | 1856 |
 | 回文串       | [1930. 长度为 3 的不同回文子序列](https://leetcode.cn/problems/unique-length-3-palindromic-subsequences/description/) | [题解链接](https://leetcode.cn/problems/unique-length-3-palindromic-subsequences/solutions/2671736/java-mei-ju-zhong-jian-zi-fu-hui-wen-chu-h9ec/) | 1533 |
 |              | [2484. 统计回文子序列数目](https://leetcode.cn/problems/count-palindromic-subsequences/description/) | [题解链接](https://leetcode.cn/problems/count-palindromic-subsequences/solutions/2672166/java-mei-ju-zhong-xin-zi-fu-qian-hou-zhu-0yj0/) | 2223 |
+| 树上贪心     | [2973. 树中每个节点放置的金币数目](https://leetcode.cn/problems/find-number-of-coins-to-place-in-tree-nodes/description/) | [题解链接](https://leetcode.cn/problems/find-number-of-coins-to-place-in-tree-nodes/solutions/2672517/java-shu-shang-tan-xin-by-happy-kalamqap-25t5/) | 2277 |
 
