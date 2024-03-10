@@ -17,4 +17,6 @@
 | 树上贪心     | [2973. 树中每个节点放置的金币数目](https://leetcode.cn/problems/find-number-of-coins-to-place-in-tree-nodes/description/) | [题解链接](https://leetcode.cn/problems/find-number-of-coins-to-place-in-tree-nodes/solutions/2672517/java-shu-shang-tan-xin-by-happy-kalamqap-25t5/) | 2277 |
 | 技巧性枚举   | [2242. 节点序列的最大得分](https://leetcode.cn/problems/maximum-score-of-a-node-sequence/description/) | [题解链接](https://leetcode.cn/problems/maximum-score-of-a-node-sequence/solutions/2675595/java-ji-qiao-xing-mei-ju-by-happy-kalamq-5qrf/) | 2304 |
 |              | [2552. 统计上升四元组](https://leetcode.cn/problems/count-increasing-quadruplets/description/) | [题解链接](https://leetcode.cn/problems/count-increasing-quadruplets/solutions/2675028/java-ji-qiao-xing-mei-ju-by-happy-kalamq-m9ll/) | 2433 |
+| 模拟         | [2147. 分隔长廊的方案数](https://leetcode.cn/problems/number-of-ways-to-divide-a-long-corridor/description/) | [题解链接](https://leetcode.cn/problems/number-of-ways-to-divide-a-long-corridor/solutions/2676829/java-jian-dan-mo-ni-by-happy-kalamqap-hop9/) | 1915 |
+| 前后缀分解   | [2163. 删除元素后和的最小差值](https://leetcode.cn/problems/minimum-difference-in-sums-after-removal-of-elements/description/) | [题解链接](https://leetcode.cn/problems/minimum-difference-in-sums-after-removal-of-elements/solutions/2677906/java-qian-hou-zhui-fen-jie-dui-by-happy-prjgy/) | 2225 |
 
