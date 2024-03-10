@@ -8,6 +8,7 @@
 | [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/description/) | [题解链接](https://leetcode.cn/problems/beautiful-arrangement/solutions/2623596/java-zhuang-ya-dp-by-happy-kalamqap-jiry/) | Medium |
 | [LCP 34. 二叉树染色](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/description/) | [题解链接](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/solutions/2639812/java-shu-xing-dp-by-happy-kalamqap-o3mc/) | Medium |
 | [LCP 64. 二叉树灯饰](https://leetcode.cn/problems/U7WvvU/description/) | [题解链接](https://leetcode.cn/problems/U7WvvU/solutions/2639733/java-shu-xing-dp-by-happy-kalamqap-b2cj/) | Medium |
+| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/description/) | [题解链接](https://leetcode.cn/problems/split-array-largest-sum/solutions/2678702/java-hua-fen-xing-dp-by-happy-kalamqap-jero/) | Hard   |
 | [LCP 04. 覆盖](https://leetcode.cn/problems/broken-board-dominoes/description/) | [题解链接](https://leetcode.cn/problems/broken-board-dominoes/solutions/2648545/java-zhuang-ya-dp-by-happy-kalamqap-dh9m/) | Hard   |
 | [LCP 09. 最小跳跃次数](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/description/) | [题解链接](https://leetcode.cn/problems/zui-xiao-tiao-yue-ci-shu/solutions/2626725/java-yi-ti-shuang-jie-bfspreidxyou-hua-d-9b2n/) | Hard   |
 | [LCP 53. 守护太空城](https://leetcode.cn/problems/EJvmW4/description/) | [题解链接](https://leetcode.cn/problems/EJvmW4/solutions/2645843/java-zhuang-ya-dp-by-happy-kalamqap-lspi/) | Hard   |
@@ -44,6 +45,7 @@
 | [2585. 获得分数的方法数](https://leetcode.cn/problems/number-of-ways-to-earn-points/description/) | [题解链接](https://leetcode.cn/problems/number-of-ways-to-earn-points/solutions/2633242/java-fen-zu-dpban-zi-by-happy-kalamqap-0pnl/) | 1910   |
 | [873. 最长的斐波那契子序列的长度](https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/) | [题解链接](https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/solutions/2610860/java-xu-lie-dp-jian-zhi-you-hua-by-happy-6lp2/) | 1911   |
 | [1043. 分隔数组以得到最大和](https://leetcode.cn/problems/partition-array-for-maximum-sum/description/) | [题解链接](https://leetcode.cn/problems/partition-array-for-maximum-sum/solutions/2610797/java-dpdp-xian-duan-shu-by-happy-kalamqa-7y5s/) | 1916   |
+| [813. 最大平均值和的分组](https://leetcode.cn/problems/largest-sum-of-averages/description/) | [题解链接](https://leetcode.cn/problems/largest-sum-of-averages/solutions/2678736/java-hua-fen-xing-dp-by-happy-kalamqap-2su5/) | 1937   |
 | [2925. 在树上执行操作以后得到的最大分数](https://leetcode.cn/problems/maximum-score-after-applying-operations-on-a-tree/description/) | [题解链接](https://leetcode.cn/problems/maximum-score-after-applying-operations-on-a-tree/solutions/2639957/java-shu-xing-dp-by-happy-kalamqap-w6sn/) | 1940   |
 | [2435. 矩阵中和能被 K 整除的路径](https://leetcode.cn/problems/paths-in-matrix-whose-sum-is-divisible-by-k/description/) | [题解链接](https://leetcode.cn/problems/paths-in-matrix-whose-sum-is-divisible-by-k/solutions/2655745/java-wang-ge-tu-dpcha-biao-fa-shua-biao-wm46y/) | 1952   |
 | [1092. 最短公共超序列](https://leetcode.cn/problems/shortest-common-supersequence/description/) | [题解链接](https://leetcode.cn/problems/shortest-common-supersequence/solutions/2611171/java-xian-dp-zai-gou-zao-liang-ge-xu-lie-kir0/) | 1977   |
@@ -126,4 +128,5 @@
 | [2902. 和带限制的子多重集合的数目](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/) | [题解链接](https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/solutions/2633346/java-fen-zu-bei-bao-qian-zhui-he-you-hua-0drq/) | 2759   |
 | [1977. 划分数字的方案数](https://leetcode.cn/problems/number-of-ways-to-separate-numbers/description/) | [题解链接](https://leetcode.cn/problems/number-of-ways-to-separate-numbers/solutions/2660976/java-qian-zhui-he-you-hua-dp-by-happy-ka-v24b/) | 2817   |
 | [100210. 最大节点价值之和 ](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/description/) | [题解链接](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/solutions/2665738/java-shu-xing-dpliang-chong-zhuang-tai-b-3bmh/) |        |
+| [100216. K 个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/description/) | [题解链接](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/solutions/2678586/java-hua-fen-xing-dp-zhuang-tai-zhuan-yi-nk1i/) |        |
 
