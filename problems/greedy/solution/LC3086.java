@@ -68,11 +68,10 @@ public class LC3086 {
         }
         // 别忘了最后还需要再更新一次cnt
         cnt = Math.max(cnt, cur);
+        // 这里的处理很细节, 好好想想
         if(cnt >= 3) cnt = 3;
-        if(cnt + maxChanges >= k) {
-            if(k == 1 && cnt > 0) return 0;
-            return cnt >= k ? k - 1 : (cnt == 0 ? 2 * k : cnt - 1 + 2 * (k - cnt));
-        }
+        cnt = Math.min(cnt, k);
+        if(cnt + maxChanges >= k) return Math.max(cnt - 1, 0) + 2 * (k - cnt);
         // 需要用到操作2
         // 首先计算idx的前缀和
         long[] s = new long[idx.size() + 1];

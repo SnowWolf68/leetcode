@@ -12,6 +12,7 @@ package problems.dp;
 //        LC1092 https://leetcode.cn/problems/shortest-common-supersequence/description/  输出具体方案
 // 略难一点: LC1639 https://leetcode.cn/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/ 
 // 当其中一个序列不包含重复元素时, LCS可以转化为LIS: LC1713 https://leetcode.cn/problems/minimum-operations-to-make-a-subsequence/description/ 
+// 其中一个变成子串: CF163A https://codeforces.com/problemset/problem/163/A  状态表示需要注意, 状态转移方程不是很容易推导, 需要考虑当前情况可以由哪些情况转移而来
 // 
 
 
