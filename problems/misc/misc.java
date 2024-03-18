@@ -6,3 +6,5 @@ package problems.misc;
 //  note: 最后的 "查找最近的数" 部分, 也可以使用 二分 来进行查找, 详见灵神题解: https://leetcode.cn/problems/partition-array-into-two-arrays-to-minimize-sum-difference/solutions/1039419/zhe-ban-mei-ju-pai-xu-er-fen-by-endlessc-04fn/
 // 变形/进阶: LC805 https://leetcode.cn/problems/split-array-with-same-average/description/ 1983
 
+// 求max - min: 转化为 枚举所有可能的max与min
+// Weekly389T3 https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/description/ 
