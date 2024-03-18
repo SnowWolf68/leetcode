@@ -15,7 +15,7 @@ import java.util.*;
         第一行: 表示此时没有元素, 那么此时显然子序列和只能是0, 即dp[0][0] = 1, 其余位置都是非法, 初始化为0
     return dp[n - 1][k];
  */
-public class BiWeekly126T4_2 {
+public class LC3082_2 {
     public int sumOfPower(int[] nums, int k) {
         int n = nums.length, MOD = (int)1e9 + 7;
         int[][] dp = new int[n + 1][k + 1];

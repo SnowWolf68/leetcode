@@ -21,7 +21,7 @@ import java.util.*;
 
     注: 这题的溢出也比较难处理, 具体如何结局看代码实现
  */
-public class BiWeekly126T4_1 {
+public class LC3082_1 {
     public int sumOfPower(int[] nums, int k) {
         int n = nums.length, MOD = (int)1e9 + 7;
         long[][][] dp = new long[n + 1][k + 1][n + 1];
