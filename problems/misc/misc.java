@@ -7,4 +7,4 @@ package problems.misc;
 // 变形/进阶: LC805 https://leetcode.cn/problems/split-array-with-same-average/description/ 1983
 
 // 求max - min: 转化为 枚举所有可能的max与min
-// Weekly389T3 https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/description/ 
+// LC3085 https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/description/ 

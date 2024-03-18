@@ -49,7 +49,7 @@ import java.util.*;
     首先由于我们需要计算每个1到index的距离, 因此我们肯定需要使用一个集合来记录所有1出现的下标
     然后枚举所有可能的k - maxChanges个1时, 我们可以枚举这些1的右端点right, 那么这些1的范围就是[0, right], 然后让这个大小为k - maxChanges的窗口不断向右滑动, 就可以枚举到所有可能的连续的k - maxChanges个1
  */
-public class Weekly389T4 {
+public class LC3086 {
     public long minimumMoves(int[] nums, int k, int maxChanges) {
         int n = nums.length;
         // 首先判断是不是可以只使用操作1来得到k个1

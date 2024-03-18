@@ -6,7 +6,7 @@ import java.util.*;
     也可以事先对cnt进行排序
     但是我觉得排不排序好像没啥区别??
  */
-public class Weekly389T3_2 {
+public class LC3085_2 {
     public int minimumDeletions(String word, int k) {
         int n = word.length();
         int[] cnt = new int[26];

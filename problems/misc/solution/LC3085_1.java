@@ -15,7 +15,7 @@ import java.util.*;
     
     时间复杂度: O(C ^ 2)  C == 26
  */
-public class Weekly389T3_1 {
+public class LC3085_1 {
     public int minimumDeletions(String word, int k) {
         int n = word.length();
         int[] cnt = new int[26];
