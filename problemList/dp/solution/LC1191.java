@@ -1,42 +1,40 @@
 package problemList.dp.solution;
 
 /**
-串联后的最大子数组和有三种可能
+串联后的最大子数组和有四种可能
     1. sum(arr) * k
     2. arr中的最大子数组和
-    3. suffix(arr) + (k - 2) * arr + preffix(arr)
-针对第3中情况, 应使得suffix(arr) + preffix(arr)最大, 我们可以首先求arr中的最小子数组和minSum, 此时max(suffix(arr) + preffix(arr)) = sum(arr) - minSum
+    3. preffix(arr) + (k - 2) * sum(arr) + suffix(arr)
+    4. preffix(arr) + suffix(arr)
+    注: 第3/4种情况的前提是k >= 2
+针对第3/4种情况, 应使得preffix(arr) + suffix(arr)最大
+    求pre(arr) + suf(arr)最大:
+        错误做法: 要求pre(arr) + suf(arr)最大, 那么就求一个子数组的最小值minSum, 然后2 * sum(arr) - minSum即可
+        错误原因: 这里要求pre和suf都必须是一个arr中的, 而上面的方法求出来的pre和suf可能会跨两个arr, 这显然是不对的
+
+        正确做法: 单独求pre和suf, 并且单独求pre和suf的最大值即可
  */
 public class LC1191 {
     public int kConcatenationMaxSum(int[] arr, int k) {
-        int n = arr.length;
-        int sum = 0;
+        int n = arr.length, MOD = (int)1e9 + 7;
+        long sum = 0;
         for(int x : arr) sum += x;
-        int f = arr[0], ret1 = f;
+        long f = arr[0], ret = f;
         for(int i = 1;i < n;i++){
             f = Math.max(f + arr[i], arr[i]);
-            ret1 = Math.max(ret1, f);
+            ret = Math.max(ret, f);
         }
-        ret1 = Math.max(ret1, 0);
-        int[] nums = new int[2 * n];
-        for(int i = 0;i < 2 * n;i++) nums[i] = arr[i % n];
-        int g = nums[0], ret2 = g;
-        for(int i = 1;i < 2 * n;i++){
-            g = Math.min(g + nums[i], nums[i]);
-            ret2 = Math.min(ret2, g);
+        ret = Math.max(ret, 0);
+        long preSum = arr[0], preSumMax = arr[0];
+        for(int i = 1;i < n;i++){
+            preSum += arr[i];
+            preSumMax = Math.max(preSumMax, preSum);
         }
-        ret2 = Math.min(ret2, 0);
-        System.out.println(sum * 4 + (7+6+2+4+1));
-        // TODO 
-        return Math.max(sum * k, Math.max(ret1, k < 2 ? 0 : Math.max(2 * sum - ret2 + (k - 2) * sum, 2 * sum - ret2)));
-    }
-    public static void main(String[] args) {
-        // 20
-        // int[] nums = new int[]{-5,-2,0,0,3,9,-2,-5,4};
-        // int k = 5;
-        // 88
-        int[] nums = new int[]{-1,5,-7,2,-1,0,7,6,2,4};
-        int k = 5;
-        System.out.println(new LC1191().kConcatenationMaxSum(nums, k));
+        long sufSum = arr[n - 1], sufSumMax = arr[n - 1];
+        for(int i = n - 2;i >= 0;i--){
+            sufSum += arr[i];
+            sufSumMax = Math.max(sufSumMax, sufSum);
+        }
+        return (int)(Math.max(sum * k, Math.max(ret, Math.max(k < 2 ? 0 : sufSumMax + preSumMax + (k - 2) * sum, k < 2 ? 0 : preSumMax + sufSumMax))) % MOD);
     }
 }

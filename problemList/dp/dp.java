@@ -18,4 +18,6 @@
 //      LC53 https://leetcode.cn/problems/maximum-subarray/description/
 //      LC2606 https://leetcode.cn/problems/find-the-substring-with-maximum-cost/description/
 //      LC1749 https://leetcode.cn/problems/maximum-absolute-sum-of-any-subarray/description/
+//      LC1191 https://leetcode.cn/problems/k-concatenation-maximum-sum/description/  好好分析所有可能, 以及如何正确计算
+//      LC918 https://leetcode.cn/problems/maximum-sum-circular-subarray/description/  环形数组
 //      
