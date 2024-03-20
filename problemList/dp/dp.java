@@ -12,4 +12,10 @@
 //      LC2320 https://leetcode.cn/problems/count-number-of-ways-to-place-houses/description/  统计方案数的打家劫舍, 注意状态转移方程
 //      LC213 https://leetcode.cn/problems/house-robber-ii/description/  环形
 //  挑战关: 
+//      TODO
 //      LC1388 
+//  1.3 最大子数组和
+//      LC53 https://leetcode.cn/problems/maximum-subarray/description/
+//      LC2606 https://leetcode.cn/problems/find-the-substring-with-maximum-cost/description/
+//      LC1749 https://leetcode.cn/problems/maximum-absolute-sum-of-any-subarray/description/
+//      
