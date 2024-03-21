@@ -14,10 +14,18 @@
 //  挑战关: 
 //      TODO
 //      LC1388 
+//      LC2597 https://leetcode.cn/problems/the-number-of-beautiful-subsets/description/  
 //  1.3 最大子数组和
 //      LC53 https://leetcode.cn/problems/maximum-subarray/description/
 //      LC2606 https://leetcode.cn/problems/find-the-substring-with-maximum-cost/description/
 //      LC1749 https://leetcode.cn/problems/maximum-absolute-sum-of-any-subarray/description/
 //      LC1191 https://leetcode.cn/problems/k-concatenation-maximum-sum/description/  好好分析所有可能, 以及如何正确计算
 //      LC918 https://leetcode.cn/problems/maximum-sum-circular-subarray/description/  环形数组
-//      
+//      LC2321 https://leetcode.cn/problems/maximum-score-of-spliced-array/description/  
+//      TODO: LC363
+//      LC152 https://leetcode.cn/problems/maximum-product-subarray/description/  乘积最大子数组
+// 挑战关: 
+//      LC2272 https://leetcode.cn/problems/substring-with-largest-variance/description/  
+// 2. 网格图dp
+//  2.1 基础
+//      LCR166 
