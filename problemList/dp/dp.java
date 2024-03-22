@@ -32,4 +32,9 @@
 //      LC62 https://leetcode.cn/problems/unique-paths/description/ 
 //      LC63 https://leetcode.cn/problems/unique-paths-ii/description/ 
 //      LC64 https://leetcode.cn/problems/minimum-path-sum/description/ 
-//      LC120 
+//      LC120 https://leetcode.cn/problems/triangle/description/  三角形中的最小路径和
+//      LC931 https://leetcode.cn/problems/minimum-falling-path-sum/description/ 
+//      LC2684 https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/description/
+//      LC2304 https://leetcode.cn/problems/minimum-path-cost-in-a-grid/description/
+//      LC1289 https://leetcode.cn/problems/minimum-falling-path-sum-ii/description/
+//      
