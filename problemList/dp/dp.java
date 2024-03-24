@@ -37,4 +37,6 @@
 //      LC2684 https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/description/
 //      LC2304 https://leetcode.cn/problems/minimum-path-cost-in-a-grid/description/
 //      LC1289 https://leetcode.cn/problems/minimum-falling-path-sum-ii/description/
+//      LC1594 https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/description/  相当于是二维的LC152
+//      LC1301 https://leetcode.cn/problems/number-of-paths-with-max-score/description/  纯coding题, 很复杂但是没啥思维难度
 //      
