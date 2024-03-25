@@ -43,4 +43,8 @@
 //      LC2435 https://leetcode.cn/problems/paths-in-matrix-whose-sum-is-divisible-by-k/description/ 
 //      LC174 https://leetcode.cn/problems/dungeon-game/description/  倒序DP + 细节问题
 //      LC741 https://leetcode.cn/problems/cherry-pickup/description/  难题, 好题, 之前没见过
-// 
+//      LC1463 https://leetcode.cn/problems/cherry-pickup-ii/description/  上一题的变形
+//      LC329 https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/description/  不是按照正常行列顺序的dp
+//      LC2328 https://leetcode.cn/problems/number-of-increasing-paths-in-a-grid/description/  跟上一题一样, 但是这里对val排序的处理方式和上一题不同, 可以参考一下
+//      LC2267 https://leetcode.cn/problems/check-if-there-is-a-valid-parentheses-string-path/description/  关键是如何判断一条路径是合法的括号路径
+//      
