@@ -47,4 +47,8 @@
 //      LC329 https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/description/  不是按照正常行列顺序的dp
 //      LC2328 https://leetcode.cn/problems/number-of-increasing-paths-in-a-grid/description/  跟上一题一样, 但是这里对val排序的处理方式和上一题不同, 可以参考一下
 //      LC2267 https://leetcode.cn/problems/check-if-there-is-a-valid-parentheses-string-path/description/  关键是如何判断一条路径是合法的括号路径
+//      LC1937 https://leetcode.cn/problems/maximum-number-of-points-with-cost/description/  不大好想的优化: 拆项 + 预处理前后缀最大值, 好好考虑怎么得到的这个优化
+// 3. 背包
+//  3.1 0-1背包
+//      LC2915 https://leetcode.cn/problems/length-of-the-longest-subsequence-that-sums-to-target/description/  
 //      
