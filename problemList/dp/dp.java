@@ -51,4 +51,7 @@
 // 3. 背包
 //  3.1 0-1背包
 //      LC2915 https://leetcode.cn/problems/length-of-the-longest-subsequence-that-sums-to-target/description/  
+//      LCSF02 https://leetcode.cn/contest/sf-tech/problems/cINqyA/ 
+//      LC416 https://leetcode.cn/problems/partition-equal-subset-sum/description/  
+//      LC494 https://leetcode.cn/problems/target-sum/description/
 //      
