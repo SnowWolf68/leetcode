@@ -54,4 +54,7 @@
 //      LCSF02 https://leetcode.cn/contest/sf-tech/problems/cINqyA/ 
 //      LC416 https://leetcode.cn/problems/partition-equal-subset-sum/description/  
 //      LC494 https://leetcode.cn/problems/target-sum/description/
+//      LC2787 https://leetcode.cn/problems/ways-to-express-an-integer-as-sum-of-powers/description/  初始化需要注意, 不仅需要保证不越界, 还需要保证后续填表的正确性
+//      LC474 https://leetcode.cn/problems/ones-and-zeroes/description/  二维0-1背包  这题我写了两种做法, 分别是 "恰好装满" 类型背包的做法, 以及 "不超过" 类型背包的做法
+//      LC1049 https://leetcode.cn/problems/last-stone-weight-ii/description/  题目转化很重要, 转换完之后就是一个 "不超过" 类型的背包
 //      
