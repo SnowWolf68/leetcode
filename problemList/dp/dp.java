@@ -58,3 +58,5 @@
 //      LC474 https://leetcode.cn/problems/ones-and-zeroes/description/  二维0-1背包  这题我写了两种做法, 分别是 "恰好装满" 类型背包的做法, 以及 "不超过" 类型背包的做法
 //      LC1049 https://leetcode.cn/problems/last-stone-weight-ii/description/  题目转化很重要, 转换完之后就是一个 "不超过" 类型的背包
 //      LC1774 https://leetcode.cn/problems/closest-dessert-cost/description/  这题真的只有1700吗??
+//      LC879 https://leetcode.cn/problems/profitable-schemes/description/  "恰好装满" & "不超过/至少" 两种方法, 注意: 如果是 "至少" 类型的背包, 那么除了需要修改初始化以及返回值, 还需要对状态转移方程做一定的修改
+//      
