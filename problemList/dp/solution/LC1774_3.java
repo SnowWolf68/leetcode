@@ -30,6 +30,7 @@ public class LC1774_3 {
             }
         }
         // ret一定要初始化成min!!!
+        // 因为有可能min > upper, 因此在下面的循环中就不会循环到i == min的情况
         int ret = min;
         for(int i = 0;i < upper;i++){
             if(dp[2 * n][i] && Math.abs(ret - target) > Math.abs(i - target)){
