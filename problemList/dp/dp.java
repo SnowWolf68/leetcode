@@ -61,4 +61,5 @@
 //      LC879 https://leetcode.cn/problems/profitable-schemes/description/  "恰好装满" & "不超过/至少" 两种方法, 注意: 如果是 "至少" 类型的背包, 那么除了需要修改初始化以及返回值, 还需要对状态转移方程做一定的修改
 //      LC3082 https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/description/  难, 子序列的子序列, 普通O(n ^ 2 * k)的0-1背包方法就不好理解, 优化的O(nk)的方法更不好理解
 //      LC956 https://leetcode.cn/problems/tallest-billboard/description/  使用 "左右两边的高度差" 来定义状态 很重要
+//      LC2518 https://leetcode.cn/problems/number-of-great-partitions/description/  如何想到 "正难则反" 很关键, 我提供了 "恰好装满" 以及 "不超过" 两种0-1背包的写法
 //      
