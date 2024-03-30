@@ -59,4 +59,6 @@
 //      LC1049 https://leetcode.cn/problems/last-stone-weight-ii/description/  题目转化很重要, 转换完之后就是一个 "不超过" 类型的背包
 //      LC1774 https://leetcode.cn/problems/closest-dessert-cost/description/  这题真的只有1700吗??
 //      LC879 https://leetcode.cn/problems/profitable-schemes/description/  "恰好装满" & "不超过/至少" 两种方法, 注意: 如果是 "至少" 类型的背包, 那么除了需要修改初始化以及返回值, 还需要对状态转移方程做一定的修改
+//      LC3082 https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/description/  难, 子序列的子序列, 普通O(n ^ 2 * k)的0-1背包方法就不好理解, 优化的O(nk)的方法更不好理解
+//      LC956 https://leetcode.cn/problems/tallest-billboard/description/  使用 "左右两边的高度差" 来定义状态 很重要
 //      

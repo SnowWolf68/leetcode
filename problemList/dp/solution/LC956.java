@@ -1,4 +1,4 @@
-package problems.dp.solution;
+package problemList.dp.solution;
 
 import java.util.*;
 
