@@ -64,4 +64,7 @@
 //      LC2518 https://leetcode.cn/problems/number-of-great-partitions/description/  如何想到 "正难则反" 很关键, 我提供了 "恰好装满" 以及 "不超过" 两种0-1背包的写法
 //      LC2742 https://leetcode.cn/problems/painting-the-walls/description/  dp做法 & 两种0-1背包做法, 0-1背包有 "至少装满" & "不超过" 两种做法, 其中, 这里 "不超过" 类型做法和之前的 "不超过" 类型做法有一点差别
 //      LCP47 https://leetcode.cn/problems/oPs9Bm/description/  看起来很复杂, 但是其实就是一个很简单的求方案数的 "恰好装满" 类型的0-1背包
+// 3.2 完全背包
+//      LC322 https://leetcode.cn/problems/coin-change/description/ 
+//      LC518 https://leetcode.cn/problems/coin-change-ii/description/ 
 //      
