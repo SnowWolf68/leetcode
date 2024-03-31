@@ -62,4 +62,5 @@
 //      LC3082 https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/description/  难, 子序列的子序列, 普通O(n ^ 2 * k)的0-1背包方法就不好理解, 优化的O(nk)的方法更不好理解
 //      LC956 https://leetcode.cn/problems/tallest-billboard/description/  使用 "左右两边的高度差" 来定义状态 很重要
 //      LC2518 https://leetcode.cn/problems/number-of-great-partitions/description/  如何想到 "正难则反" 很关键, 我提供了 "恰好装满" 以及 "不超过" 两种0-1背包的写法
+//      LC2742 https://leetcode.cn/problems/painting-the-walls/description/  dp做法 & 两种0-1背包做法, 0-1背包有 "至少装满" & "不超过" 两种做法, 其中, 这里 "不超过" 类型做法和之前的 "不超过" 类型做法有一点差别
 //      
