@@ -67,4 +67,7 @@
 // 3.2 完全背包
 //      LC322 https://leetcode.cn/problems/coin-change/description/ 
 //      LC518 https://leetcode.cn/problems/coin-change-ii/description/ 
+//      LC279 https://leetcode.cn/problems/perfect-squares/description/ 
+//      LC1449 https://leetcode.cn/problems/form-largest-integer-with-digits-that-add-up-to-target/description/  有点难, 需要想明白 "长度" 与 "数字大小" 的优先级关系, 然后转化成 先dp, 再构造 类型的题目
+//  3.3 多重背包
 //      
