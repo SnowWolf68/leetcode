@@ -13,32 +13,32 @@ import java.util.*;
         1. k <= j: dp[i][j] = s[j - 1 + 1] - s[j - k - 1 + 1];  // 这里s[]数组的下标 + 1 是因为前缀和数组本身的下标就是原数组的下标 + 1
         2. k > j: dp[i][j] = s[j - 1 + 1];
     
-    通过上面的分析, dp表的初始化就不能只是初始化i, 还需要初始化j
-    添加一行一列的辅助节点, 第一行dp[0][0] = 1, 其余位置都是0
-        第一列意味着此时和为0, 那么此时只有 全都不选 一种可能, 因此第一列全都初始化为1
+    注意: 这里我们需要保证(j - 1)不会越界, 因此还需要对j进行初始化, 这里对j的初始化我们直接初始化j == 0这一列即可, 即初始化第一列
+        对于第一列, 此时意味着当前数字总和为0, 需要注意的是: 对于一个骰子来说, 其点数是从1开始, 意味着只要用到了骰子, 那么点数和至少是1, 因此点数和为0只有一种情况, 就是没有用任何骰子
+        因此第一列我们初始化dp[0][0] = 1, 其余位置都是0
+
+    注意: 由于j是从1开始遍历, 那么s[0], s[1]两个位置就无法在dp的过程中更新, 因此我们需要手动保证这两个位置的值的正确性
+        对于s[0], 其一直都是0
+        对于s[1], 其等于dp[i][0], 那么只有i == 0时, s[1] == dp[0][0] == 1, 其余情况s[1] == dp[i][0] == 0
+
+时间复杂度: O(n * target)
  */
 public class LC1155_2 {
-    // TODO 有问题
     public int numRollsToTarget(int n, int k, int target) {
         int MOD = (int)1e9 + 7;
         int[][] dp = new int[n + 1][target + 1];
-        for(int i = 0;i <= n;i++) dp[i][0] = 1;
+        dp[0][0] = 1;
         int[] s = new int[target + 2];
         Arrays.fill(s, 1);
         s[0] = 0;
         for(int i = 1;i <= n;i++){
             int[] preS = s.clone();
+            s[1] = 0;
             for(int j = 1;j <= target;j++){
                 if(j >= k) dp[i][j] = (preS[j - 1 + 1] - preS[j - k - 1 + 1] + MOD) % MOD;
                 else dp[i][j] = preS[j - 1 + 1];
                 s[j + 1] = (s[j] + dp[i][j]) % MOD;
             }
-        }
-        for(int i = 0;i <= n;i++){
-            for(int j = 0;j <= target;j++){
-                System.out.print(dp[i][j] + " ");
-            }
-            System.out.println();
         }
         return dp[n][target];
     }
