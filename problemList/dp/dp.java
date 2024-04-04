@@ -71,4 +71,5 @@
 //      LC1449 https://leetcode.cn/problems/form-largest-integer-with-digits-that-add-up-to-target/description/  有点难, 需要想明白 "长度" 与 "数字大小" 的优先级关系, 然后转化成 先dp, 再构造 类型的题目
 //  3.3 多重背包
 //      LC1155 https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/description/  两种方法: 1) 常规多重背包 O(n * target * k)  2) 前缀和优化 O(n * target) 
+//      LC2585 https://leetcode.cn/problems/number-of-ways-to-earn-points/description/  多重背包 & 同余前缀和优化
 //      
