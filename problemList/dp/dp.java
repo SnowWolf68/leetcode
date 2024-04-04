@@ -72,4 +72,6 @@
 //  3.3 多重背包
 //      LC1155 https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/description/  两种方法: 1) 常规多重背包 O(n * target * k)  2) 前缀和优化 O(n * target) 
 //      LC2585 https://leetcode.cn/problems/number-of-ways-to-earn-points/description/  多重背包 & 同余前缀和优化
+//      LC2902 https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/  和上一题差不多, 只是有一点小区别  这题使用不优化的多重背包会TLE, 需要使用同余前缀和优化
+//  3.4 分组背包
 //      
