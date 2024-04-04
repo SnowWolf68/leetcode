@@ -64,7 +64,7 @@
 //      LC2518 https://leetcode.cn/problems/number-of-great-partitions/description/  如何想到 "正难则反" 很关键, 我提供了 "恰好装满" 以及 "不超过" 两种0-1背包的写法
 //      LC2742 https://leetcode.cn/problems/painting-the-walls/description/  dp做法 & 两种0-1背包做法, 0-1背包有 "至少装满" & "不超过" 两种做法, 其中, 这里 "不超过" 类型做法和之前的 "不超过" 类型做法有一点差别
 //      LCP47 https://leetcode.cn/problems/oPs9Bm/description/  看起来很复杂, 但是其实就是一个很简单的求方案数的 "恰好装满" 类型的0-1背包
-// 3.2 完全背包
+//  3.2 完全背包
 //      LC322 https://leetcode.cn/problems/coin-change/description/ 
 //      LC518 https://leetcode.cn/problems/coin-change-ii/description/ 
 //      LC279 https://leetcode.cn/problems/perfect-squares/description/ 
@@ -74,4 +74,18 @@
 //      LC2585 https://leetcode.cn/problems/number-of-ways-to-earn-points/description/  多重背包 & 同余前缀和优化
 //      LC2902 https://leetcode.cn/problems/count-of-sub-multisets-with-bounded-sum/description/  和上一题差不多, 只是有一点小区别  这题使用不优化的多重背包会TLE, 需要使用同余前缀和优化
 //  3.4 分组背包
-//      
+//      LC1981 https://leetcode.cn/problems/minimize-the-difference-between-target-and-chosen-elements/description/  每组只能选一个
+//      LC2218 https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/description/  前缀和转化 + 每组至多选一个的分组背包
+// 4. 经典线性DP
+//  4.1 最长公共子序列(LCS)
+//      板子题: LC1143 https://leetcode.cn/problems/longest-common-subsequence/description/
+//             LC72 https://leetcode.cn/problems/edit-distance/description/
+//      简单题: LC97 https://leetcode.cn/problems/interleaving-string/description/ 一开始看起来是三维DP, 实际上还是二维DP
+//             LC115 https://leetcode.cn/problems/distinct-subsequences/description/ 
+//             LC583 https://leetcode.cn/problems/delete-operation-for-two-strings/description/ 
+//             LC712 https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/description/
+//             LC1035 https://leetcode.cn/problems/uncrossed-lines/description/ 
+//             LC1458 https://leetcode.cn/problems/max-dot-product-of-two-subsequences/description/  特殊情况如何处理
+//             LC1092 https://leetcode.cn/problems/shortest-common-supersequence/description/  输出具体方案
+//      略难一点: LC1639 https://leetcode.cn/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/ 
+//      比较难: 
