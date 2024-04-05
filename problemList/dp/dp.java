@@ -88,4 +88,8 @@
 //             LC1458 https://leetcode.cn/problems/max-dot-product-of-two-subsequences/description/  特殊情况如何处理
 //             LC1092 https://leetcode.cn/problems/shortest-common-supersequence/description/  输出具体方案
 //      略难一点: LC1639 https://leetcode.cn/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/ 
-//      比较难: 
+//      比较难: LC44 https://leetcode.cn/problems/wildcard-matching/description/
+//             LC10 https://leetcode.cn/problems/regular-expression-matching/description/  
+//  4.2 最长递增子序列(LIS)
+//      板子题: LC300 https://leetcode.cn/problems/longest-increasing-subsequence/description/  O(n ^ 2)的普通dp, O(n * logn)的 贪心 + 二分 & 基于值域的dp + 树状数组优化
+//      
