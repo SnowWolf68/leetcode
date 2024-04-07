@@ -19,7 +19,7 @@ public class LC300_4 {
         for(int i = x;i <= N;i += lowbit(i)) dp[i] = Math.max(dp[i], u);
     }
     private int query(int x){
-        int ret = Integer.MIN_VALUE;
+        int ret = 0;
         for(int i = x;i > 0;i -= lowbit(i)) ret = Math.max(ret, dp[i]);
         return ret;
     }
@@ -37,7 +37,7 @@ public class LC300_4 {
         dp = new int[N + 1];
         for(int num : nums){
             int x = map.get(num);
-            update(x, Math.max(1, query(x - 1) + 1));
+            update(x, query(x - 1) + 1);
         }
         return query(N);
     }
