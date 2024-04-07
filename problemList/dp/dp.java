@@ -92,4 +92,5 @@
 //             LC10 https://leetcode.cn/problems/regular-expression-matching/description/  
 //  4.2 最长递增子序列(LIS)
 //      板子题: LC300 https://leetcode.cn/problems/longest-increasing-subsequence/description/  O(n ^ 2)的普通dp, O(n * logn)的 贪心 + 二分 & 基于值域的dp + 树状数组优化
+//      LC673 https://leetcode.cn/problems/number-of-longest-increasing-subsequence/description/  dp求最大长度的同时, 求对应数量  两种方法: 常规dp: O(n ^ 2)  值域dp + 树状数组: O(n * logn)
 //      
