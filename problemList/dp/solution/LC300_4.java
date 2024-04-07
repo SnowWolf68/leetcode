@@ -1,6 +1,6 @@
 package problemList.dp.solution;
 
-import java.util.*;;
+import java.util.*;
 
 /**
 O(n * logn) 的基于值域dp + 树状数组优化
