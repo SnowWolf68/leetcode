@@ -96,4 +96,6 @@
 //             LC2826 https://leetcode.cn/problems/sorting-three-groups/description/  也是板子题, 常规dp/贪心 + 二分/值域dp + 树状数组
 //             LC1671 https://leetcode.cn/problems/minimum-number-of-removals-to-make-mountain-array/description/  常规dp: O(n ^ 2) & 贪心 + 二分: O(n * logn)
 //             LC1964 https://leetcode.cn/problems/find-the-longest-valid-obstacle-course-at-each-position/description/  贪心 + 二分/值域dp + 树状数组
-//              
+//      进阶: LC1626 https://leetcode.cn/problems/best-team-with-no-conflicts/description/  二维LIS: 双关键字排序 + 一维LIS
+//           LC354 https://leetcode.cn/problems/russian-doll-envelopes/description/  这才是最 "模版" 的二维LIS, 注意这题要求两个维度都是 "严格大于" , 并且这题的数据范围还限制了只能使用O(n * logn)的做法
+//           
