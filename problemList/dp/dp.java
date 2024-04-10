@@ -98,4 +98,7 @@
 //             LC1964 https://leetcode.cn/problems/find-the-longest-valid-obstacle-course-at-each-position/description/  贪心 + 二分/值域dp + 树状数组
 //      进阶: LC1626 https://leetcode.cn/problems/best-team-with-no-conflicts/description/  二维LIS: 双关键字排序 + 一维LIS
 //           LC354 https://leetcode.cn/problems/russian-doll-envelopes/description/  这才是最 "模版" 的二维LIS, 注意这题要求两个维度都是 "严格大于" , 并且这题的数据范围还限制了只能使用O(n * logn)的做法
+//           TODO: O(n * logn)的做法  LC1691 https://leetcode.cn/problems/maximum-height-by-stacking-cuboids/description/  "可旋转" 该如何分析? 三维LIS 这里我只会O(n ^ 2)的写法, 按理说还有值域dp + 二维树状数组的O(n * logn)的写法, 但是我不会, 加一个TODO
+//           LC960 https://leetcode.cn/problems/delete-columns-to-make-sorted-iii/description/  看起来很难, 其实还是一维LIS, 只不过判断j是否合法要稍微复杂一点
+//           LC2407 https://leetcode.cn/problems/longest-increasing-subsequence-ii/description/  加了一个限制的一维LIS, 数据范围1e5, 只能用O(n * logn)的方法, 并且这里涉及 "区间查询最大值" 因此需要用值域dp + 线段树
 //           
