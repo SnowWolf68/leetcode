@@ -102,3 +102,5 @@
 //           LC960 https://leetcode.cn/problems/delete-columns-to-make-sorted-iii/description/  看起来很难, 其实还是一维LIS, 只不过判断j是否合法要稍微复杂一点
 //           LC2407 https://leetcode.cn/problems/longest-increasing-subsequence-ii/description/  加了一个限制的一维LIS, 数据范围1e5, 只能用O(n * logn)的方法, 并且这里涉及 "区间查询最大值" 因此需要用值域dp + 线段树
 //      难题: TODO: 时间复杂度我分析的好像有问题 LC1187 https://leetcode.cn/problems/make-array-strictly-increasing/description/  两种方法: 1) dp角度出发  2) LIS角度出发
+//           LC1713 https://leetcode.cn/problems/minimum-operations-to-make-a-subsequence/description/  LCS -> LIS 前提是LCS的两个数组中有一个数组中不包含重复元素
+//      思维扩展: 
