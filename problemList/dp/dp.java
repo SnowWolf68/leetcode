@@ -106,7 +106,9 @@
 //      思维扩展: LC368 https://leetcode.cn/problems/largest-divisible-subset/description/  最大整除子集的寻找也能使用类似LIS的方法来解决, 注意这里还要求你输出具体方案
 // 6. 划分型DP
 //  6.1 判定能否划分
-//      简单题:  LC2369 https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/description/
-//              LC139 https://leetcode.cn/problems/word-break/description/  
+//          简单题:  LC2369 https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/description/
+//                  LC139 https://leetcode.cn/problems/word-break/description/  
 //  6.2 计算划分个数
-//      
+//          简单题:  LC132 https://leetcode.cn/problems/palindrome-partitioning-ii/description/  
+//                  LC2707 https://leetcode.cn/problems/extra-characters-in-a-string/description/  给我晃到了, 其实这题没有必要将 "最少" 转化成 "最多", 直接按照题意dp就可以, 转化之后倒也可以做, 但是相当于多绕了个圈子, 没必要
+//                  
