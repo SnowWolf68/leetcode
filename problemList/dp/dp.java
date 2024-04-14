@@ -113,5 +113,7 @@
 //                  LC2707 https://leetcode.cn/problems/extra-characters-in-a-string/description/  给我晃到了, 其实这题没有必要将 "最少" 转化成 "最多", 直接按照题意dp就可以, 转化之后倒也可以做, 但是相当于多绕了个圈子, 没必要
 //                  LC2767 https://leetcode.cn/problems/partition-string-into-minimum-beautiful-substrings/description/  
 //                  LC91 https://leetcode.cn/problems/decode-ways/description/  
-//          进阶:   LC639 https://leetcode.cn/problems/decode-ways-ii/description/  看起来不难, 但是状态转移方程一定要想清楚
+//                  LC639 https://leetcode.cn/problems/decode-ways-ii/description/  看起来不难, 但是状态转移方程一定要想清楚
+//                  LCR165 https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/description/  和LC91一样
+//                  LC1416 https://leetcode.cn/problems/restore-the-array/description/  
 //                  
