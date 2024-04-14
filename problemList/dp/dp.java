@@ -111,4 +111,5 @@
 //  6.2 计算划分个数
 //          简单题:  LC132 https://leetcode.cn/problems/palindrome-partitioning-ii/description/  
 //                  LC2707 https://leetcode.cn/problems/extra-characters-in-a-string/description/  给我晃到了, 其实这题没有必要将 "最少" 转化成 "最多", 直接按照题意dp就可以, 转化之后倒也可以做, 但是相当于多绕了个圈子, 没必要
+//                  LC2767 https://leetcode.cn/problems/partition-string-into-minimum-beautiful-substrings/description/  
 //                  
