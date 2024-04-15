@@ -116,4 +116,5 @@
 //                  LC639 https://leetcode.cn/problems/decode-ways-ii/description/  看起来不难, 但是状态转移方程一定要想清楚
 //                  LCR165 https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/description/  和LC91一样
 //                  LC1416 https://leetcode.cn/problems/restore-the-array/description/  
+//          进阶:    LC2472 https://leetcode.cn/problems/maximum-number-of-non-overlapping-palindrome-substrings/description/  
 //                  
