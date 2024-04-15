@@ -117,4 +117,5 @@
 //                  LCR165 https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/description/  和LC91一样
 //                  LC1416 https://leetcode.cn/problems/restore-the-array/description/  
 //          进阶:    LC2472 https://leetcode.cn/problems/maximum-number-of-non-overlapping-palindrome-substrings/description/  
+//                  LC1105 https://leetcode.cn/problems/filling-bookcase-shelves/description/  这题其实是 "划分型dp" , 从划分型dp的角度出发分析, 其实很简单
 //                  
