@@ -118,4 +118,6 @@
 //                  LC1416 https://leetcode.cn/problems/restore-the-array/description/  
 //          进阶:    LC2472 https://leetcode.cn/problems/maximum-number-of-non-overlapping-palindrome-substrings/description/  
 //                  LC1105 https://leetcode.cn/problems/filling-bookcase-shelves/description/  这题其实是 "划分型dp" , 从划分型dp的角度出发分析, 其实很简单
+//          难题:   LC2547 https://leetcode.cn/problems/minimum-cost-to-split-an-array/description/  常规O(n ^ 2)的方法可过, 但是还有O(n * logn)的状态转移优化 + 线段树优化 的方法
+//                  TODO: 上题如果不使用状态转移优化, 能不能直接使用线段树优化???  -- 暂时认为不行
 //                  
