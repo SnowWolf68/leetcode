@@ -121,4 +121,6 @@
 //          难题:   LC2547 https://leetcode.cn/problems/minimum-cost-to-split-an-array/description/  常规O(n ^ 2)的方法可过, 但是还有O(n * logn)的状态转移优化 + 线段树优化 的方法
 //                  TODO: 上题如果不使用状态转移优化, 能不能直接使用线段树优化???  -- 暂时认为不行     还要多想想优化状态转移方程之后的线段树优化的做法, 好好理解一下
 //                  LC2430 https://leetcode.cn/problems/maximum-deletions-on-a-string/description/  其实不难, a不出来面壁思过
+//                  LC1478 https://leetcode.cn/problems/allocate-mailboxes/description/  其实不复杂, 但是细节比较多, 需要好好考虑
+//                  LC2463 https://leetcode.cn/problems/minimum-total-distance-traveled/description/  和上面那题结合起来看, 有相似之处, 也有不同的地方
 //                  
