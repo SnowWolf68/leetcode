@@ -123,4 +123,6 @@
 //                  LC2430 https://leetcode.cn/problems/maximum-deletions-on-a-string/description/  其实不难, a不出来面壁思过
 //                  LC1478 https://leetcode.cn/problems/allocate-mailboxes/description/  其实不复杂, 但是细节比较多, 需要好好考虑
 //                  LC2463 https://leetcode.cn/problems/minimum-total-distance-traveled/description/  和上面那题结合起来看, 有相似之处, 也有不同的地方
-//                  
+//          超难:   LC2977 https://leetcode.cn/problems/minimum-cost-to-convert-string-ii/description/  字典树 + floyd + 划分型dp   好玩, 字典树用的太妙了, 以后多来看看
+//  6.3 约束划分个数
+//          简单题: 
