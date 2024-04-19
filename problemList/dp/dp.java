@@ -125,4 +125,11 @@
 //                  LC2463 https://leetcode.cn/problems/minimum-total-distance-traveled/description/  和上面那题结合起来看, 有相似之处, 也有不同的地方
 //          超难:   LC2977 https://leetcode.cn/problems/minimum-cost-to-convert-string-ii/description/  字典树 + floyd + 划分型dp   好玩, 字典树用的太妙了, 以后多来看看
 //  6.3 约束划分个数
-//          简单题: 
+//          注意: 这里常用的状态定义为: dp[i][j] 表示将数组[0, j]区间的元素划分成i个连续子数组, 此时...
+//              之所以使用这种状态定义, 是因为有些题使用这种定义更利于优化
+//          简单题:  LC410 https://leetcode.cn/problems/split-array-largest-sum/description/  
+//                  LC1043 https://leetcode.cn/problems/partition-array-for-maximum-sum/description/  这题的限制是子数组长度, 还不是 "约束划分个数" , 直接秒了
+//                  LC1745 https://leetcode.cn/problems/palindrome-partitioning-iv/description/   TODO: O(n ^ 2)的方法很简单, 但是有没有O(n)的做法呢???
+//                  LC813  https://leetcode.cn/problems/largest-sum-of-averages/description/  O(k * n ^ 2)的方法同样很简单, 秒了
+//                  LC1278 https://leetcode.cn/problems/palindrome-partitioning-iii/description/  还是简单题, 秒了
+//                  
