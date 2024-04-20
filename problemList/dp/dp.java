@@ -132,4 +132,5 @@
 //                  LC1745 https://leetcode.cn/problems/palindrome-partitioning-iv/description/   TODO: O(n ^ 2)的方法很简单, 但是有没有O(n)的做法呢???
 //                  LC813  https://leetcode.cn/problems/largest-sum-of-averages/description/  O(k * n ^ 2)的方法同样很简单, 秒了
 //                  LC1278 https://leetcode.cn/problems/palindrome-partitioning-iii/description/  还是简单题, 秒了
-//                  
+//                  LC1335 https://leetcode.cn/problems/minimum-difficulty-of-a-job-schedule/description/  简单题, 秒
+//          进阶:   
