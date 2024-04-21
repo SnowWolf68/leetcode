@@ -133,4 +133,6 @@
 //                  LC813  https://leetcode.cn/problems/largest-sum-of-averages/description/  O(k * n ^ 2)的方法同样很简单, 秒了
 //                  LC1278 https://leetcode.cn/problems/palindrome-partitioning-iii/description/  还是简单题, 秒了
 //                  LC1335 https://leetcode.cn/problems/minimum-difficulty-of-a-job-schedule/description/  简单题, 秒
-//          进阶:   
+//          进阶:    LC1473 https://leetcode.cn/problems/paint-house-iii/description/  两种写法: 划分型dp & 状态转移优化, 这里的状态转移优化很巧妙, 优化后无需遍历最后一个划分区间的起始位置, 并且让求min的过程可以使用预处理优化, 进一步降低复杂度
+//                  LC1478 https://leetcode.cn/problems/allocate-mailboxes/description/  在上一个部分中写过了
+//                  
