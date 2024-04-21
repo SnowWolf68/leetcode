@@ -135,4 +135,5 @@
 //                  LC1335 https://leetcode.cn/problems/minimum-difficulty-of-a-job-schedule/description/  简单题, 秒
 //          进阶:    LC1473 https://leetcode.cn/problems/paint-house-iii/description/  两种写法: 划分型dp & 状态转移优化, 这里的状态转移优化很巧妙, 优化后无需遍历最后一个划分区间的起始位置, 并且让求min的过程可以使用预处理优化, 进一步降低复杂度
 //                  LC1478 https://leetcode.cn/problems/allocate-mailboxes/description/  在上一个部分中写过了
+//                  LC1959 https://leetcode.cn/problems/minimum-total-space-wasted-with-k-resizing-operations/description/  如果能够想到从划分型dp的角度出发考虑, 其实并不难
 //                  
