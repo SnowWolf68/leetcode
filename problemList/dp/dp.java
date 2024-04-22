@@ -137,4 +137,5 @@
 //                  LC1959 https://leetcode.cn/problems/minimum-total-space-wasted-with-k-resizing-operations/description/  如果能够想到从划分型dp的角度出发考虑, 其实并不难
 //          难题:    LC1473 https://leetcode.cn/problems/paint-house-iii/description/  两种写法: 划分型dp & 状态转移优化, 这里的状态转移优化很巧妙, 优化后无需遍历最后一个划分区间的起始位置, 并且让求min的过程可以使用预处理优化, 进一步降低复杂度
 //                  LC2478 https://leetcode.cn/problems/number-of-beautiful-partitions/description/  前缀和优化, 两种前缀和的写法, 不是很好想明白 TODO: 以后多来看看
+//                  LC3077 https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/description/  推式子优化, 优化很巧妙, 多看看 TODO: 多看看这种优化
 //                  
