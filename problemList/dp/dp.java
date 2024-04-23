@@ -138,4 +138,6 @@
 //          难题:    LC1473 https://leetcode.cn/problems/paint-house-iii/description/  两种写法: 划分型dp & 状态转移优化, 这里的状态转移优化很巧妙, 优化后无需遍历最后一个划分区间的起始位置, 并且让求min的过程可以使用预处理优化, 进一步降低复杂度
 //                  LC2478 https://leetcode.cn/problems/number-of-beautiful-partitions/description/  前缀和优化, 两种前缀和的写法, 不是很好想明白 TODO: 以后多来看看
 //                  LC3077 https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/description/  推式子优化, 优化很巧妙, 多看看 TODO: 多看看这种优化
-//                  
+//                  LC2911 https://leetcode.cn/problems/minimum-changes-to-make-k-semi-palindromes/description/  难点在预处理上, 要预处理半回文串就要预处理真因子, 预处理真因子使用贡献法能够有更低的复杂度
+//  6.4 不相交区间: 这类题主要的特征是 给你一些确定的区间
+//                  LC2830 https://leetcode.cn/problems/maximize-the-profit-as-the-salesman/description/  两种做法, 从下标的角度出发考虑 & 从区间的角度出发考虑
