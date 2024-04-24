@@ -141,3 +141,6 @@
 //                  LC2911 https://leetcode.cn/problems/minimum-changes-to-make-k-semi-palindromes/description/  难点在预处理上, 要预处理半回文串就要预处理真因子, 预处理真因子使用贡献法能够有更低的复杂度
 //  6.4 不相交区间: 这类题主要的特征是 给你一些确定的区间
 //                  LC2830 https://leetcode.cn/problems/maximize-the-profit-as-the-salesman/description/  两种做法, 从下标的角度出发考虑 & 从区间的角度出发考虑
+//                  LC2008 https://leetcode.cn/problems/maximum-earnings-from-taxi/description/  和上一题一模一样
+//                  LC1235 https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/  和前几题还是一眼, 只不过使用第一种方法会MLE, 因为entTime范围能到1e9, 所以只能使用第二种方法
+//                  
