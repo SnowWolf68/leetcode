@@ -143,4 +143,7 @@
 //                  LC2830 https://leetcode.cn/problems/maximize-the-profit-as-the-salesman/description/  两种做法, 从下标的角度出发考虑 & 从区间的角度出发考虑
 //                  LC2008 https://leetcode.cn/problems/maximum-earnings-from-taxi/description/  和上一题一模一样
 //                  LC1235 https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/  和前几题还是一眼, 只不过使用第一种方法会MLE, 因为entTime范围能到1e9, 所以只能使用第二种方法
+//                  LC1751 https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/description/  和上面几题类似, 但是有一些小细节需要注意, 其实并不难
+// 7. 其他线性dp
+//  7.1 一维
 //                  
