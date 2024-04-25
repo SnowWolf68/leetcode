@@ -146,4 +146,5 @@
 //                  LC1751 https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/description/  和上面几题类似, 但是有一些小细节需要注意, 其实并不难
 // 7. 其他线性dp
 //  7.1 一维
+//                  LC2944 https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/description/  从前往后的dp/从后往前的dp + 单调队列优化
 //                  
