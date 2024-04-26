@@ -14,7 +14,7 @@ return max(dp[i]);
 时间复杂度: O(n ^ 2)
 这题的数据范围给到了1e5, n ^ 2的复杂度显然超时, 需要进行优化
  */
-public class LC2140_TLE {
+public class LC2140_TLE_1 {
     public long mostPoints(int[][] questions) {
         int n = questions.length;
         int[] dp = new int[n];

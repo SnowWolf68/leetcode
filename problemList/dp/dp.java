@@ -147,4 +147,6 @@
 // 7. 其他线性dp
 //  7.1 一维
 //                  LC2944 https://leetcode.cn/problems/minimum-number-of-coins-for-fruits/description/  从前往后的dp/从后往前的dp + 单调队列优化
+//                  LC2140 https://leetcode.cn/problems/solving-questions-with-brainpower/description/  填表法 & 刷表法
+//                  LC983 https://leetcode.cn/problems/minimum-cost-for-tickets/description/  TODO: 我写的复杂度是O(n * logn), 是否有更快的写法? 比如O(n)?
 //                  
