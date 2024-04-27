@@ -150,4 +150,5 @@
 //                  LC2140 https://leetcode.cn/problems/solving-questions-with-brainpower/description/  填表法 & 刷表法
 //                  LC983 https://leetcode.cn/problems/minimum-cost-for-tickets/description/  TODO: 我写的复杂度是O(n * logn), 是否有更快的写法? 比如O(n)?
 //                  LC2901 https://leetcode.cn/problems/longest-unequal-adjacent-groups-subsequence-ii/description/  构造输出具体方案
+//                  LC2896 https://leetcode.cn/problems/apply-operations-to-make-two-strings-equal/description/  "均摊法"很妙, 能够将第一种操作的代价分散到某一个下标, 从而不需要确定j的位置, 妙
 //                  
