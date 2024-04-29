@@ -152,4 +152,8 @@
 //                  LC2901 https://leetcode.cn/problems/longest-unequal-adjacent-groups-subsequence-ii/description/  构造输出具体方案
 //          难题:    LC2896 https://leetcode.cn/problems/apply-operations-to-make-two-strings-equal/description/  "均摊法"很妙, 能够将第一种操作的代价分散到某一个下标, 从而不需要确定j的位置, 妙
 //                  LC2167 https://leetcode.cn/problems/minimum-time-to-remove-all-cars-containing-illegal-goods/description/  前后缀分解典型题目
+//                  LC2188 https://leetcode.cn/problems/minimum-time-to-finish-the-race/description/  难点1: 如何计算maxLaps上限, 难点2: 如何解决cur, sum的溢出问题, 难点3: 如何正确初始化, 使得初始化能够保证后续的填表是正确的
+//  7.2 特殊子序列
+//                  LC2501 https://leetcode.cn/problems/longest-square-streak-in-an-array/description/  
+//                  LC1218 https://leetcode.cn/problems/longest-arithmetic-subsequence-of-given-difference/description/  两种写法: 基于下标O(n ^ 2) & 基于值域O(n), 体会两种写法的差别
 //                  
