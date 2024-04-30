@@ -157,4 +157,5 @@
 //                  LC2501 https://leetcode.cn/problems/longest-square-streak-in-an-array/description/  
 //                  LC1218 https://leetcode.cn/problems/longest-arithmetic-subsequence-of-given-difference/description/  两种写法: 基于下标O(n ^ 2) & 基于值域O(n), 体会两种写法的差别
 //                  LC1027 https://leetcode.cn/problems/longest-arithmetic-subsequence/description/  多种写法
+//                  LC873 https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/  和上面几题类似
 //                  
