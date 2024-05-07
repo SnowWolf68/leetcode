@@ -159,4 +159,5 @@
 //                  LC1027 https://leetcode.cn/problems/longest-arithmetic-subsequence/description/  多种写法
 //                  LC873 https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/  和上面几题类似
 //                  LC446 https://leetcode.cn/problems/arithmetic-slices-ii-subsequence/description/  
-//                  
+//                  LC1048 https://leetcode.cn/problems/longest-string-chain/description/  两种状态转移的写法, 感觉第二种写法更优雅, 但是第一种写法更易懂
+//          难题:   
