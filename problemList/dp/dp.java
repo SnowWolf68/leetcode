@@ -160,4 +160,10 @@
 //                  LC873 https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/  和上面几题类似
 //                  LC446 https://leetcode.cn/problems/arithmetic-slices-ii-subsequence/description/  
 //                  LC1048 https://leetcode.cn/problems/longest-string-chain/description/  两种状态转移的写法, 感觉第二种写法更优雅, 但是第一种写法更易懂
-//          难题:   
+//          难题:   TODO: LC3098
+//  7.3 矩阵快速幂优化: TODO
+//  7.4 多维: 
+//          简单题:  LC2400 https://leetcode.cn/problems/number-of-ways-to-reach-a-position-after-exactly-k-steps/description/
+//                  LC2370 https://leetcode.cn/problems/longest-ideal-subsequence/description/  用到了字符串dp的另一种巧妙的状态表示, 这种状态表示有一些细节需要好好考虑, 详情可以看代码中的注释
+//                  LC1269 https://leetcode.cn/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/description/  可能会MLE, TLE, 如何巧妙优化?? 这里的优化其实很简单, 但是有点巧妙
+//                  
