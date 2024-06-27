@@ -30,21 +30,36 @@ public class LC3122_2 {
         int pre = -1, preCnt1 = 0, preCnt2 = 0;
         for(int j = 0;j < 10;j++){
             if(cnt[0][j] > preCnt1){
+                preCnt2 = preCnt1;
                 preCnt1 = cnt[0][j];
                 pre = j;
+            }else if(cnt[0][j] > preCnt2){
+                preCnt2 = cnt[0][j];
             }
         }
         for(int i = 1;i < n;i++){
-            int curCnt1 = preCnt1, curCnt2 = preCnt2;
+            int cur = -1, curCnt1 = 0, curCnt2 = 0;
             for(int j = 0;j < 10;j++){
                 if(j != pre){
                     if(preCnt1 + cnt[i][j] > curCnt1){
-                        
+                        cur = j;
+                        curCnt2 = curCnt1;
+                        curCnt1 = preCnt1 + cnt[i][j];
+                    }else if(preCnt1 + cnt[i][j] > curCnt2){
+                        curCnt2 = preCnt1 + cnt[i][j];
                     }
                 }else{
-                    
+                    if(preCnt2 + cnt[i][j] > curCnt1){
+                        cur = j;
+                        curCnt2 = curCnt1;
+                        curCnt1 = preCnt2 + cnt[i][j];
+                    }else if(preCnt2 + cnt[i][j] > curCnt2){
+                        curCnt2 = preCnt2 + cnt[i][j];
+                    }
                 }
             }
+            preCnt1 = curCnt1; preCnt2 = curCnt2; pre = cur;
         }
+        return m * n - preCnt1;
     }
 }
