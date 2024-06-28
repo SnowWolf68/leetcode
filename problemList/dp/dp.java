@@ -166,4 +166,10 @@
 //          简单题:  LC2400 https://leetcode.cn/problems/number-of-ways-to-reach-a-position-after-exactly-k-steps/description/
 //                  LC2370 https://leetcode.cn/problems/longest-ideal-subsequence/description/  用到了字符串dp的另一种巧妙的状态表示, 这种状态表示有一些细节需要好好考虑, 详情可以看代码中的注释
 //                  LC1269 https://leetcode.cn/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/description/  可能会MLE, TLE, 如何巧妙优化?? 这里的优化其实很简单, 但是有点巧妙
-//                  
+//                  LC3122 https://leetcode.cn/problems/minimum-number-of-operations-to-satisfy-conditions/description/
+//                  LC576 
+
+
+
+// unsorted
+//  LC3149
