@@ -26,11 +26,24 @@ dp[state][j]: 枚举上一个选择的元素k
         因此最后都计算完之后, 还缺少 abs(perm[n - 1] - nums[perm[0]]) 这一项没有计算
         所以需要在计算完i == n - 1这一项之后(对应代码中的 state == mask), 让dp[state][j] 加上 abs(perm[n - 1] - nums[perm[0]]) 这一项
 初始化: 由于perm[0] = 0, 因此这里的state肯定是要从1开始往后转移, 因此可以首先初始化dp表的所有值为INF, 然后单独初始化dp[1][0] = 0
+return: max(dp[mask][j])
 
 接下来分析一下如何构造结果
-由于这里我们的状压dp的顺序是 从前往后 转移, 因此对于
+由于这里我们的状压dp的顺序是 从前往后 转移, 因此对于某一个dp[state][j]来说, 此时我们只能知道dp[state][j]取min时, 其前一个数是什么
+因此我们不能依据dp表从前往后构造最后结果, 只能通过dp表从后往前构造结果, 然而, 这题要求构造的结果的字典序是最小的, 如果我们依据dp表从后往前构造的话, 又无法保证构造出来的结果的字典序最小
+
+因此需要换一个思路, 不再是等dp表全部填完之后, 再根据dp表中的值构造最优解, 而是在进行dp的同时, 就记录dp[state][j]取到最优值时的perm序列
+    并且如果当前dp[state][j]的最优值不止一个, 那么此时就可以根据字典序大小, 找到最小的一个perm序列
+具体来说, 可以使用一个info[][][]数组, 其中info[state][j]的这个数组中存的就是dp[state][j]取到最优值时对应的perm序列
+    并且由于info[state][j]这是一个定长数组, 为了表明其中有效元素的个数, 这里可以将无效位置都设置为-1
+info数组的初始化: 由于perm的第一位一定是0, 因此可以将info[state][j]数组的第一位都初始化为0
+
+需要注意的是, 由于最后的返回值是dp[mask][j]中的最大值, 因此需要将dp表最后一行中最大值对应的perm序列都拿出来, 按照字典序排序, 然后再返回字典序最小的那个
+
+缺点: 因为在dp的同时需要构造dp[state][j]对应的perm序列, 并且这个序列要求是字典序最小, 因此在计算dp[state][j]的同时, 
+    还需要比较两个perm的字典序大小, 这会耗费O(n)的时间, 因此对于dp[state][j]的计算复杂度到了O(n ^ 2)
  */
-public class LC3149 {
+public class LC3149_1 {
     // O(n ^ 3 * 2 ^ n)
     public int[] findPermutation(int[] nums) {
         int n = nums.length, INF = 0x3f3f3f3f;
@@ -53,7 +66,7 @@ public class LC3149 {
                 if(((state >> j) & 1) != 1) continue;
                 int prev = (state & (~(1 << j)));
                 for(int k = 0;k < n;k++){
-                    if(k == j || ((prev >> k) & 1) != 1) continue;
+                    if(((prev >> k) & 1) != 1) continue;
                     int cur = dp[prev][k] + Math.abs(k - nums[j]);
                     int[] p = info[prev][k].clone();
                     int preCount = Integer.bitCount(prev);
@@ -87,8 +100,7 @@ public class LC3149 {
     }
 
     /**
-     * 比较 p 和 q 的字典序, 若p > q, 则返回 true, 反之返回 false
-     * 若相等也返回true
+     * 比较 p 和 q 的字典序, 若p >= q, 则返回 true, 反之返回 false
      *  note: p, q中标记为-1的位置表示该位置未被使用
      * @param p
      * @param q

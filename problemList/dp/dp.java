@@ -172,4 +172,5 @@
 
 
 // unsorted
-//  LC3149
+// 状压DP
+//  难题:   LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
