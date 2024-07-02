@@ -171,6 +171,16 @@
 
 
 
+// 9. 状压DP
+//  9.1 排列型①相邻无关
+//          简单题: LC526 https://leetcode.cn/problems/beautiful-arrangement/description/
+//                 LC1879 https://leetcode.cn/problems/minimum-xor-sum-of-two-arrays/description/
+//                 LC2850 https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description/ 关键在于转化, 转化完之后就和上面那题一样   TODO: 研究一下这题的 最小费用最大流 做法
+//                 LC1947 https://leetcode.cn/problems/maximum-compatibility-score-sum/description/  和前几题差不多 简单题
+//                 LC1799 https://leetcode.cn/problems/maximize-score-after-n-operations/description/  稍微抽象一点的状压DP, 但是好好想想其实也还是 排列 问题
+//          难题:   LC2172 https://leetcode.cn/problems/maximum-and-sum-of-array/description/   题意转化很关键, 考虑清楚如何抽象出来 "排列" , 好好考虑两种优化思路
+//                  
+
 // unsorted
 // 状压DP
 //  难题:   LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
