@@ -179,8 +179,10 @@
 //                 LC1947 https://leetcode.cn/problems/maximum-compatibility-score-sum/description/  和前几题差不多 简单题
 //                 LC1799 https://leetcode.cn/problems/maximize-score-after-n-operations/description/  稍微抽象一点的状压DP, 但是好好想想其实也还是 排列 问题
 //          难题:   LC2172 https://leetcode.cn/problems/maximum-and-sum-of-array/description/   题意转化很关键, 考虑清楚如何抽象出来 "排列" , 好好考虑两种优化思路
-//                  
-
-// unsorted
-// 状压DP
-//  难题:   LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
+//  9.2 排列型②相邻相关
+//          简单题: LC996 https://leetcode.cn/problems/number-of-squareful-arrays/description/      关键在于如何去重
+//                 LC2741 https://leetcode.cn/problems/special-permutations/description/    也算是板子题, 这题使用dfs好像会快很多, 因为dp会计算到一些不可能的情况, 而dfs对于这些不可能的情况可以通过剪枝剪掉
+//       稍微难一点: LC1681 https://leetcode.cn/problems/minimum-incompatibility/description/   枚举子集
+//           难题: LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
+//  9.3 旅行商问题(TSP) 本质上就是 排列型②
+//                 
