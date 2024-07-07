@@ -185,4 +185,10 @@
 //       稍微难一点: LC1681 https://leetcode.cn/problems/minimum-incompatibility/description/   枚举子集
 //           难题: LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
 //  9.3 旅行商问题(TSP) 本质上就是 排列型②
+//          有点难: LC943 https://leetcode.cn/problems/find-the-shortest-superstring/description/    1) 如何计算commLen?   2) 如何构造最后的具体方案? 
+//          简单题: LC847 https://leetcode.cn/problems/shortest-path-visiting-all-nodes/description/     这题其实并不难, 就是一个floyd + 最基本的 相邻相关 排列型 状压DP
+//           难题:  LCP13 https://leetcode.cn/problems/xun-bao/description/     说难也难, 说简单也简单, 关键是要把题目分析清楚, 细节比较多, 实现比较复杂, 但是思路并不难
+//  9.4 枚举子集的子集
+//          简单题: LC2305 https://leetcode.cn/problems/fair-distribution-of-cookies/description/    最基本的 枚举子集的子集 的状压DP
+//                 LC1986 https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/     也是简单题, 但是注意理解 这题的状态定义, 和 上一题的空间优化版本的状态定义的区别    为什么上一题必须要枚举i? 好好想想
 //                 

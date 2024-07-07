@@ -16,6 +16,8 @@ return min(dp[mask - 1][i])
 
 然后根据dp表构造某一个具体方案
 假设dp[mask - 1]这一行中取到min时的列下标为i, 那么意味着最后一个字符串下标为i, 因此只需要从后往前进行构造即可
+
+关键在于comLen数组如何预处理得到, 这里的做法很巧妙, 具体可以看下面的代码, 这里就不再进一步解释
  */
 public class LC943 {
     public String shortestSuperstring(String[] words) {
@@ -23,8 +25,8 @@ public class LC943 {
         int[][] comLen = new int[n][n];
         for(int i = 0;i < n;i++){
             for(int j = 0;j < n;j++){
-                int len = 0;
-                while(len < words[i].length() && len < words[j].length() && words[i].charAt(words[i].length() - len - 1) == words[j].charAt(len)) len++;
+                int len = Math.min(words[i].length(), words[j].length());
+                while(len > 0 && !words[i].substring(words[i].length() - len).equals(words[j].substring(0, len))) len--;
                 comLen[i][j] = len;
             }
         }
@@ -44,6 +46,7 @@ public class LC943 {
                 }
             }
         }
+
         List<Integer> idxList = new ArrayList<>();
         int idx = -1, minLen = INF, state = mask - 1;
         for(int i = 0;i < n;i++){
