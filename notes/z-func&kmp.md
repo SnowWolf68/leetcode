@@ -168,11 +168,165 @@ int[] zFunc(String str){
 
 ### 主要思想
 
-kmp解决的是 "原串 和 模式串 的匹配问题"
+kmp解决的是 "文本串 和 模式串 的匹配问题" , 具体来说, 假设文本串为`text`, 模式串为`pattern`, 那么kmp就是用来求 模式串`pattern` 在 文本串`text` 中出现了多少次?
+
+在介绍kmp之前, 我们首先来看一下暴力的匹配是如何实现的
+
+考虑下面这个例子: `text = abbaabbaaba, pattern = abbaaba`
+
+暴力匹配的过程: 
+
+1. 尝试`text`从下标0开始的, 长度为`pattern.length()`的子串是否可以和`pattern`匹配: 首先比较`text[0]`和`pattern[0]`, 发现`text[0] == pattern[0]`, 然后继续比较1下标, ... 一直比较到`text[6] != pattern[6]`, 说明`text`以0下标开始的, 长度为`pattern.length()`的子串无法和`pattern`匹配
+2. 尝试`text`从下标1开始的, 长度为`pattern.length()`的子串是否可以和`pattern`匹配: 首先比较`text[1]`和`pattern[0]`, 发现`text[1] != pattern[0]`, 因此无法匹配
+3. 尝试`text`从下标2开始的, 长度为`pattern.length()`的子串是否可以和`pattern`匹配, ...
+4. ...
+
+通过上面的暴力匹配过程可以看到, 假设当前匹配的是`text`以下标`i`开始的子串和`pattern`是否匹配, 并且当前比较到了`text[j]`和`pattern[k]`这个位置(`j > i, k > 0`), 如果当前这两个字符不匹配, 即`text[j] != pattern[k]`, 那么接下来需要让`j`**回退到**`i + 1`, `k`**回退到**`0`, 重新开始匹配
+
+通过上面的分析可以看到, 暴力匹配的效率低的原因在于: **每次发生不匹配时, `text`文本串的下标`j`都需要回退到`i + 1`这个位置开始重新匹配**
+
+我们可以这样想: 既然当前都匹配到了`j`这个下标, 那么说明文本串`text`的`[i, j - 1]`区间的子串和模式串`pattern`的`[0, j - i - 1]`区间的子串是相等的, 换句话说, **`text`串中`[i, j - 1]`区间的字符信息是已知的**, 既然是已知的, 那么就不需要从`i + 1`下标开始继续和`pattern`串匹配, 而是可以**直接得到`text`的`[i + 1, j - 1]`区间和`pattern`串匹配的长度**(具体怎么得到后续会说), 需要注意的是, 这里的匹配指的是`text`串的`[i + 1, j - 1]`区间的**后缀**和`pattern`串的**前缀**的最大匹配
+
+因此`text`串的**下标`j`就无需回退**, 假设`text[i + 1, j - 1]`区间的**后缀**和`pattern`串的**前缀**最大匹配长度为`len`, 那么我们可以直接尝试`text`中以下标`j - len`开始的子串和`pattern`串是否匹配, 即比较字符`text[j]`和`pattern[len]`是否相等即可, 此时也可以看到, `pattern`串的下标`k`也**不需要回退到`0`**, 而是只需要回退到`len`这个下标即可
+
+上面这段中体现出来的思想就是kmp的主要思想
+
+在上面的分析中, 还有一个问题没有解决, 就是如何事先计算 `text`的`[i + 1, j - 1]`区间的**后缀**和`pattern`串的**前缀**最大匹配的长度
+
+这里我们可以把表达方式转化一下, 将 `text`的`[i + 1, j - 1]`区间的**后缀** 转化成 `text`的`[i, j - 1]`区间的**真后缀**, 所谓 **真后缀**, 即**不包括`0`这个下标的这些后缀**
+
+在上面的分析中我们知道, 这里的前提是`text`串的`[i, j - 1]`区间和`pattern`串的`[0, j - i - 1]`区间的子串是匹配的, 因此求 `text`的`[i, j - 1]`区间的的**真后缀**和`pattern`串的**前缀**的最大匹配的长度, 实际上就是求 `pattern`的`[0, j - i - 1]`区间的**真后缀**和`pattern`串的**前缀**的最大匹配长度, 显然这个长度只和`pattern`串有关, 因此我们可以事先通过计算`pattern`得到
+
+如何计算 `pattern`的`[0, j - i - 1]`区间的**真后缀**和`pattern`串的**前缀**的最大匹配长度 ?
+
+这里下标可以简化一下, 实际上就是求`pattern`串的`[0, i]`区间的**真后缀**和`pattern`串的**前缀**的最大匹配长度
+
+> 这里由于`pattern`的`[0, i]`区间取的是**真后缀**, 即后缀长度肯定小于`pattern.length()`, 因此这里的前缀也可以理解为**真前缀**, 即**不包括当前子串的最后一个字符**的前缀
+
+求`pattern`串`[0, i]`区间的**真后缀**和`pattern`串的**真前缀**的最大匹配长度
+
+假设`pi[i]`表示`pattern`串`[0, i]`区间的**真后缀**和`pattern`串的**真前缀**的最大匹配长度, 这里我们就是需要通过`pattern`串, 计算出`pi`数组
+
+> 这里的`pi`数组, 也叫做**π数组**
+
+我们可以通过下面一个例子来理解`pi`数组的计算方式: 
+
+`pattern = abababzabababa`
+
+|pattern| a | b | a | b | a | b | z | a | b | a | b | a | b | a | 
+| ----- | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| p[i]  | 0 | 0 | 1 | 2 | 3 | 4 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | ? |
+
+这里假设`pattern`串的`[0, 13]`区间对应的`pi`数组已经被计算出来(你可以认为这些`pi`都是基于暴力匹配计算出来的), 接下来我将会通过`pi[14]`的计算, 来介绍`pi`数组的计算方式
+
+首先有`pi[13] == 6`, 也就是意味着`pattern`的`[0, 13]`区间的**真后缀**和`pattern`的**真前缀**的最大匹配长度为6, 当计算`pi[14]`时, 因为在这之前`pi[13]`已经被计算出来了, 因此首先我们会**尝试看看`pattern`的`[0, 14]`区间能够匹配的最大真后缀能不能由`[0, 13]`区间匹配的最大真后缀 拼接上`pattern[14]`这个字符得到**(是不是有点dp的味道?), 因此比较`pattern[14]`和`pattern[6]`是否相等, 因为如果相等, 那么意味着`pi[14] = pi[13] + 1`, 即`pi[14] = 7`, 但是发现`pattern[14] != pattern[6]`, 也就意味着`pi[14]`此时真后缀的最长匹配长度不能由`pi[13]`的真后缀的最长匹配长度 +1 得来
+
+重点来了
+
+首先我们需要关注`[0, 13]`区间的真后缀最长匹配是什么, 不难发现这个真后缀应该是`ababab`, 然后我们再关注`[0, 13]`区间真后缀次长匹配是什么, 这个真后缀应该是`abab`
+
+可以发现, 次大匹配`abab`一定在最大匹配`ababab`中, 换句话说, **最大匹配`ababab`中真后缀和真前缀的最大匹配, 就是这里的`abab`, 即`[0, 13]`区间的次大匹配**
+
+因此回到上面的分析, 当我们发现`pattern[14] != pattern[6]`时, 即`pi[14]`不能由`pi[13] + 1`拓展而来, 即不能由`[0, 13]`中的最大匹配拓展而来, 那么此时我们就需要考虑`pi[14]`能不能由`[0, 13]`区间的次大匹配拓展而来
+
+`[0, 13]`区间的次大匹配如何表示? 通过之前的分析, 次大匹配可以看为 最大匹配串中的的最大匹配, 因此`[0, 13]`区间的次大匹配长度就为`pi[pi[13] - 1] = 4`, 对应的串就是`abab`, 因此这里尝试使用`[0, 13]`区间的次大匹配拓展时, 需要比较`pattern[14]`和`pattern[pi[pi[13] - 1]]`是否相等(这里`pi[pi[13] - 1]`是次大匹配串的结束下标的后一个字符的下标), 其中通过前面的表可以知道, `pi[pi[13] - 1] == 4`, 因此就是比较`pattern[4]`和`pattern[14]`是否相等, 通过比较发现`pattern[4] == pattern[14]`, 因此`pi[14]`可以由`[0, 13]`区间真后缀和`pattern`前缀的次大匹配串(`abab`)通过拼接上`pattern[14]`这个字母拓展而来, 即`pi[14] = pi[pi[13] - 1]] + 1`
+
+拓展一下, 在这个例子中, `[0, 14]`区间真后缀和`pattern`的真前缀的最长匹配长度可以由`[0, 13]`区间的次大匹配拓展而来, 进一步, 如果`[0, 14]`区间的真后缀和`pattern`的真前缀不能由`[0, 13]`区间的次大匹配拓展而来, 那么又应该如何处理? 
+
+类似的, 如果`pi]14`不能由`[0, 13]`区间的次大匹配`abab`通过 +1 拓展而来, 那么我们可以继续找`abab`中的最大匹配匹配, 即`[0, 13]`区间的第三大匹配串, 在这个例子中, 就是`ab`这个子串, 然后尝试`pi[14]`能不能由`[0, 13]`区间中真后缀和`pattern`串的真前缀的第三大匹配长度, 即`2`通过 +1 拓展而来, 通过代码表示就是, 判断`text[14]`和`pattern[pi[pi[pi[13] - 1] - 1]]`是否相等, 如果相等, 那么`pi[14] = pi[pi[pi[13] - 1] - 1]] + 1`
+
+> 这里嵌套层数比较多, 我再解释一下: 
+> 
+> 对于`pattern[pi[pi[pi[13] - 1] - 1]]`这个式子, 我们一层一层来看, 首先`pi[13]`指的是`[0, 13]`区间的真后缀和`pattern`真前缀的最大匹配长度, 而`pi[13] - 1`就是这个最大匹配串的结束下标, `pi[pi[13] - 1]` 就是找最大匹配的最大匹配, 即找次大匹配, 即`[0, 13]`区间的次大匹配的长度, 进一步的, `pi[pi[13] - 1] - 1`就是次大匹配串的结束下标, 然后`pi[pi[pi[13] - 1] - 1]`就是找次大匹配中的最大匹配, 即`[0, 13]`区间的第三大匹配, 然后`pi[pi[pi[13] - 1] - 1] - 1`就是找第三大匹配串的结束下标
+>
+> 让`pi[pi[pi[13] - 1] - 1] - 1 + 1`, 即`pi[pi[pi[13] - 1] - 1]`, 得到的就是第三大匹配串的结束下标的下一个字符
+> 
+> 而我们需要比较的正是 第三大匹配串结束下标的**后一个字符** 和 `pattern[14]` 是否相等, 即比较`pattern[pi[pi[pi[13] - 1] - 1]]`和`pattern[14]`, 如果相等, 说明`pi[14]`可以由第三大匹配串的长度 +1 得来, 即`pi[14] = pi[pi[pi[13] - 1] - 1] + 1`
+
+这里确实会很绕, 如果看不明白可以画一个图结合之前给出的`pattern`示例多看几遍
+
+**总结**
+
+总结一下`pi[]`数组的计算方式: 当计算`pi[i]`的时候, 我们需要依次找`[0, i - 1]`区间的最大匹配, 比较能不能通过最大匹配拓展, 比较规则为: 假设最大匹配长度为`maxLen`, 那么比较`pattern[maxLen]`是否和`pattern[i]`相等(即判断最大匹配串的结束下标的下一个字符是否与`pattern[i]`相等), 如果不能就找次大匹配, 还不能就找第三大匹配, ... , 假设这里我们找到的`[0, i - 1]`中第一个能够匹配的长度为`len`, 并且有`pattern[len] = pattern[i]`, 即某一大匹配串的结束下标的后一个字符和`pattern[i]`相等, 那么此时`pi[i] = len + 1`, 特别的, 如果一直往前找始终没有找到符合要求的某一大匹配, 那么此时匹配长度就是`0`, 那么此时就意味着需要比较`pattern[0]`和`pattern[i]`是否相等, 即此时真后缀和真前缀的最大匹配长度 至多为1 , 如果`pattern[0] == pattern[i]`, 那匹配长度为`1`, 否则匹配长度为`0`
+
+通过上面的分析, 我们不难写出计算`pattern`串的`pi[]`数组的代码
+
+```
+int[] getPi(String pattern){
+    int n = pattern.length();
+    int[] pi = new int[n];
+    pi[0] = 0;  // 0位置无意义
+    // matchLen表示上一个位置的最大匹配长度, 即matchLen = pi[i - 1]
+    int matchLen = 0;
+    for(int i = 1;i < n;i++){
+        while(matchLen > 0 && pattern.charAt(matchLen) != pattern.charAt(i)){
+            // 找[0, matchLen - 1]区间的最大匹配
+            matchLen = pi[matchLen - 1];
+        }
+        if(pattern.charAt(matchLen) == pattern.charAt(i)){
+            matchLen++;
+        }
+        pi[i] = matchLen;
+    }
+    return pi;
+}
+```
+
+然后是kmp部分, 现在我们结合`pi[]`数组的定义, 重新总结一下kmp的思想: 
+
+假设当前进行kmp的两个串分别为`text`和`pattern`: 
+
+首先尝试`text`串`0`下标开始的子串能不能和`pattern`串匹配
+
+进行暴力匹配, 当匹配到第一个不相等的字符, 即`text[i] != pattern[j]`时, 说明`text`串以`0`下标开始的子串不能和`pattern`串匹配, 那么此时`i`不需要回退到`1`重新开始匹配, 而是找`text`中`[0, i - 1]`区间的真后缀和`pattern`中`[0, j - 1]`区间的真前缀的最大匹配长度, 即`pattern[0, j - 1]`区间的真后缀和`pattern`的真前缀的最大匹配长度, 并且尝试将`text[0, i - 1]`区间的符合上述要求的真后缀和`pattern`进行匹配
+
+而`pattern[0, j - 1]`区间真后缀和真前缀的最大匹配长度保存在`pi[]`数组当中, 即`pi[j - 1]`, 因此我们只需要比较`text[i]`是否和`pattern[pi[j - 1]]`相等即可, 即`i`不回退, 同时`j`回退到`pi[j - 1]`
+
+如果`text[i] == pattern[pi[j - 1]]`, 那么说明找到了一个`text[0, i]`区间的真后缀和`pattern`的真前缀匹配, 因此可以继续让`i++, j++`, 继续匹配即可
+
+如果`text[i] != pattern[pi[j - 1]]`, 那么说明还没有找到一个匹配的真前缀和真后缀, 因此还需要继续向前找, 因此继续找`text`中`[i - pi[j - 1], i - 1]`区间中的真后缀和`pattern`真前缀的最大匹配长度, 即`pattern`中`[0, pi[j - 1] - 1]`区间的真后缀和`pattern`真前缀的最大匹配长度, 即`pi[pi[j - 1] - 1]`, 然后比较`text[i]`是否和`pi[pi[j - 1] - 1]`相等, 如果相等, 那么`i++, j++`继续匹配, 否则还需要继续重复上述过程
+
+有一点需要单独强调一下, 如果找到了`text`串中以`i`开头的子串, 和`pattern`能够匹配, 换句话说, 如果`j == pattern.length()`, 那么此时说明找到了一个`pattern`能够和`text`中的某一个子串匹配, 那么此时应该如何继续匹配? 
+
+和之前 不匹配 的过程类似, `i`还是不回退, 同时`j`回退到`pi[j - 1]`继续匹配
+
+> 注: 这里的`j`即是`pattern`串中匹配的下标, 也可以理解为 当前匹配的长度 
+
+因此kmp的代码如下
+
+```
+/**
+* kmp
+* @param text
+* @param pattern
+* @return : text中所有和pattern匹配的子串的起始下标
+*/
+List<Integer> kmp(String text, String pattern){
+    List<Integer> ret = new ArrayList<>();
+    int[] pi = Pi.getPi(pattern);
+    // matchLen指的是当前匹配的长度
+    int matchLen = 0;
+    for(int i = 0;i < text.length();i++){
+        // 如果不匹配, i不回退, 同时matchLen循环回退
+        while(matchLen > 0 && text.charAt(i) != pattern.charAt(matchLen){
+            matchLen = pi[matchLen - 1];
+        }
+        if(text.charAt(i) == pattern.charAt(matchLen)){
+            matchLen++;
+        }
+        if(matchLen == pattern.length()){
+            ret.add(i);
+            matchLen = pi[matchLen - 1];
+        }
+    }
+    return ret;
+}
+```
 
 
 
-# 相关题目
+
+# Problems
 
 #### [LC3031](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/description/)
 
@@ -210,3 +364,59 @@ int[] zFunc(String str){
 ```
 
 #### [LC3036](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/description/)
+
+kmp
+
+```
+public int countMatchingSubarrays(int[] nums, int[] pattern) {
+    // kmp
+    int n = nums.length, m = pattern.length;
+    int[] info = new int[n - 1];
+    for(int i = 0;i < n - 1;i++){
+        if(nums[i] < nums[i + 1]) info[i] = 1;
+        else if(nums[i] > nums[i + 1]) info[i] = -1;
+        else info[i] = 0;
+    }
+    System.out.println(Arrays.toString(info));
+    List<Integer> ret = kmp(info, pattern);
+    return ret.size();
+}
+int[] getPi(int[] pattern){
+    int n = pattern.length;
+    int[] pi = new int[n];
+    pi[0] = 0;  // 0位置无意义
+    // matchLen表示上一个位置的最大匹配长度, 即matchLen = pi[i - 1]
+    int matchLen = 0;
+    for(int i = 1;i < n;i++){
+        while(matchLen > 0 && pattern[matchLen] != pattern[i]){
+            // 找[0, matchLen - 1]区间的最大匹配
+            matchLen = pi[matchLen - 1];
+        }
+        if(pattern[matchLen] == pattern[i]){
+            matchLen++;
+        }
+        pi[i] = matchLen;
+    }
+    return pi;
+}
+List<Integer> kmp(int[] text, int[] pattern){
+    List<Integer> ret = new ArrayList<>();
+    int[] pi = getPi(pattern);
+    // matchLen指的是当前匹配的长度
+    int matchLen = 0;
+    for(int i = 0;i < text.length;i++){
+        // 如果不匹配, i不回退, 同时matchLen循环回退
+        while(matchLen > 0 && text[i] != pattern[matchLen]){
+            matchLen = pi[matchLen - 1];
+        }
+        if(text[i] == pattern[matchLen]){
+            matchLen++;
+        }
+        if(matchLen == pattern.length){
+            ret.add(i);
+            matchLen = pi[matchLen - 1];
+        }
+    }
+    return ret;
+}
+```
