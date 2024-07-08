@@ -10,6 +10,7 @@ public class LC100350_StringHash {
     public int minimumCost(String target, String[] words, int[] costs) {
         int p1 = 13, p2 = 17, n = target.length(), INF = 0x3f3f3f3f;
         long MOD = (long)1e9 + 7;
+        // int MOD = (int)1e9 + 7;
         StringHash stringHash1 = new StringHash(target, p1, MOD);
         StringHash stringHash2 = new StringHash(target, p2, MOD);
 
@@ -28,6 +29,11 @@ public class LC100350_StringHash {
             long hash1 = StringHash.evaluate(words[i], p1, MOD);
             long hash2 = StringHash.evaluate(words[i], p2, MOD);
             long hash = (hash1 << 32) | hash2;
+            /*
+            int hash1 = (int)StringHash.evaluate(words[i], p1, MOD);
+            int hash2 = (int)StringHash.evaluate(words[i], p2, MOD);
+            long hash = ((long)hash1 << 32) | (long)hash2;
+             */
             // words中可能有相同字符, 因此cost需要取最小的那个
             costMap.put(hash, Math.min(costMap.getOrDefault(hash, INF), costs[i]));
         }
@@ -43,6 +49,11 @@ public class LC100350_StringHash {
                     long hash1 = stringHash1.getHashValue(i - len, i - 1);
                     long hash2 = stringHash2.getHashValue(i - len, i - 1);
                     long hash = (hash1 << 32) | hash2;
+                    /**
+                    int hash1 = (int)stringHash1.getHashValue(i - len, i - 1);
+                    int hash2 = (int)stringHash2.getHashValue(i - len, i - 1);
+                    long hash = ((long)hash1 << 32) | (long)hash2;
+                     */
                     if(costMap.get(hash) != null) dp[i] = Math.min(dp[i], dp[i - len] + costMap.get(hash));
                 }
             }

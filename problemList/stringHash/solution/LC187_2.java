@@ -6,23 +6,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 单哈希
+ * 双哈希
  */
-public class LC187_1 {
+public class LC187_2 {
     public List<String> findRepeatedDnaSequences(String s) {
-        // MOD取 1e9 + 7, Integer.MAX_VALUE时, 都会出现哈希冲突, 取Integer.MAX_VALUE + 1时就没有
-        int p = 131313, MOD = Integer.MAX_VALUE + 1, n = s.length();
-        StringHashBasic stringHash = new StringHashBasic(s, p, MOD);
-        Map<Integer, String> hashToString = new HashMap<>();
-        Map<Integer, Integer> cnt = new HashMap<>();
+        int p1 = 13, p2 = 17, MOD = (int)1e9 + 7, n = s.length();
+        StringHashBasic stringHash = new StringHashBasic(s, p1, MOD);
+        StringHashBasic stringHash2 = new StringHashBasic(s, p2, MOD);
+        Map<Long, String> hashToString = new HashMap<>();
+        Map<Long, Integer> cnt = new HashMap<>();
         for(int i = 0;i + 9 < n;i++){
             String subString = s.substring(i, i + 10);
-            int hash = (int)stringHash.getHashValue(i, i + 9);
+            int hash1 = (int)stringHash.getHashValue(i, i + 9);
+            int hash2 = (int)stringHash2.getHashValue(i, i + 9);
+            long hash = ((long)hash1 << 32) | (long)hash2;
             hashToString.put(hash, subString);
             cnt.put(hash, cnt.getOrDefault(hash, 0) + 1);
         }
         List<String> ret = new ArrayList<>();
-        for(int key : cnt.keySet()){
+        for(long key : cnt.keySet()){
             if(cnt.get(key) > 1){
                 System.out.println(cnt.get(key));
                 ret.add(hashToString.get(key));
