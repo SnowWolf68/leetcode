@@ -102,7 +102,50 @@
 
 #### 何时MOD? 
 
-由于这里我们有取模的需要, 因此只需要在上面每一步的计算中
+由于这里我们有取模的需要, 因此只需要在上面每一步的计算中都进行取模即可, 具体来说: 
+
+`p[i] = (p[i - 1] * p) % MOD`
+
+`h[i] = ((h[i - 1] * p) % MOD + str[i - 1]) % MOD`
+
+`str[i, j] = ((h[j + 1] - (h[i] * p[j - i + 1]) % MOD) + MOD) % MOD`
+
+### Template
+
+```
+public class StringHashBasic {
+    private int p;
+    private int MOD;
+
+    private int n;          // 字符串长度
+    private int[] pre;      // 哈希值前缀
+    private int[] pow;      // pow[i] = p^i
+
+    StringHashBasic (String str, int p, int mod) {
+        this.p = p;
+        this.MOD = mod;
+        this.n = str.length();
+
+        pre = new int[n + 1];
+        pow = new int[n];
+
+        pre[0] = 0;
+        pow[0] = 1;
+
+        for(int i = 1;i < n;i++){
+            pow[i] = (pow[i - 1] * p) % MOD;
+        }
+
+        for(int i = 1;i <= n;i++){
+            pre[i] = ((pre[i - 1] * p) % MOD + str.charAt(i - 1)) % MOD;
+        }
+    }
+
+    int getHashValue(int l, int r){
+        return ((pre[r + 1] - (pre[l] * pow[r - l + 1]) % MOD) + MOD) % MOD;
+    }
+}
+```
 
 
 
