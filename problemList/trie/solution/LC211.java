@@ -1,5 +1,8 @@
 package problemList.trie.solution;
 
+/**
+涉及到 '.' 的匹配规则, 因此需要对原来的Trie稍作修改
+ */
 public class LC211 {
 
     class WordDictionary{
@@ -45,12 +48,21 @@ public class LC211 {
                 TrieNode p = cur;
                 for(int i = 0;i < word.length();i++){
                     if(word.charAt(i) == '.'){
+                        if(i == word.length()) return true;
                         // 匹配任意一个子树均可
                         boolean searchResult = false;
                         for(int j = 0;j < 26;j++){
                             if(p.tns[j] != null){
-                                
+                                if(search(p.tns[j], word.substring(i + 1))) {
+                                    searchResult = true;
+                                    break;
+                                }
                             }
+                        }
+                        if(searchResult){
+                            return true;
+                        }else{
+                            return false;
                         }
                     }
                     int u = word.charAt(i) - 'a';
