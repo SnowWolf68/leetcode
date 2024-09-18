@@ -80,6 +80,7 @@
 //  4.1 最长公共子序列(LCS)
 //      板子题: LC1143 https://leetcode.cn/problems/longest-common-subsequence/description/
 //             LC72 https://leetcode.cn/problems/edit-distance/description/
+//             LC3290 https://leetcode.cn/problems/maximum-multiplication-score/    看起来可能比较复杂, 其实也是板子题
 //      简单题: LC97 https://leetcode.cn/problems/interleaving-string/description/ 一开始看起来是三维DP, 实际上还是二维DP
 //             LC115 https://leetcode.cn/problems/distinct-subsequences/description/ 
 //             LC583 https://leetcode.cn/problems/delete-operation-for-two-strings/description/ 
