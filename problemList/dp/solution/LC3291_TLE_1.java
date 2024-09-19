@@ -13,11 +13,11 @@ dp[i]: 类似划分型DP
 初始化: 添加辅助节点, dp[target.length] = 0;
 return dp[0];
 
-时间复杂度: 预处理的时间复杂度O(words.length * word[i].length())
-          dp的时间复杂度: O(n ^ 2)
-总的时间复杂度很高, 会T
+时间复杂度: 预处理的时间复杂度O(words.length * word[i].length()), 本题数据范围sum(words[i].length) <= 10^5, 即这部分的时间复杂度最多为O(10 ^ 5)
+          dp的时间复杂度: O(n ^ 3)  注意这里dp的时间复杂度是O(n ^ 3)而不是O(n ^ 2), 其原因在于target.substring()这个方法的时间复杂度是O(n), 而不是O(1)
+          本题中数据范围n <= 5 * 10 ^ 3, 三次方的算法显然会T
  */
-public class LC3291_TLE {
+public class LC3291_TLE_1 {
     public int minValidStrings(String[] words, String target) {
         int n = target.length(), m = words.length, INF = 0x3f3f3f3f;
         int[] dp = new int[n + 1];
@@ -33,7 +33,7 @@ public class LC3291_TLE {
         for(int i = n - 1;i >= 0;i--){
             dp[i] = INF;
             for(int j = 0;j <= n - i;j++){
-                if(hashSet.contains(target.subSequence(i, i + j))) dp[i] = Math.min(dp[i], dp[i + j] + 1);
+                if(hashSet.contains(target.substring(i, i + j))) dp[i] = Math.min(dp[i], dp[i + j] + 1);
             }
         }
         return dp[0] == INF ? -1 : dp[0];
