@@ -17,7 +17,21 @@ import java.util.Set;
 回顾上面的dp优化过程, 主要还是利用了将 填表法 转换为 刷表法, 因为刷表法能够和 字典树 结合起来, 事先找到能够 "向后跳" 的最长长度, 之后的j的遍历, 
 就可以只在这个区间内进行, 并且由于在这个最长长度之内的所有位置, 都是可以转移到的, 因此无需每次转移之前都花费O(n)的时间来判断是否能够转移
 
-由于是刷表法, 因此i的遍历就需要从0开始, 到n - 1结束, 因此dp[n]不会再继续向后转移了
+dp[i] 表示target[0, i]区间的子串至少由多少个有效字符串构成
+dp[i]: 刷表法, 使用dp[i]来更新后续的dp值
+        假设target在[i:]区间的子串能够使用有效字符串匹配的最大长度为maxLen, 那么dp[i]可以更新的范围是[i + 1, i + maxLen]
+        假设这里匹配的长度为j, 因此j的范围是[1, maxLen], 因此转移方程为: dp[i + j] = Math.min(dp[i + j], dp[i] + 1);
+初始化: 还是使用辅助节点, 添加dp[0]作为辅助节点, 辅助节点的值初始化为0
+return dp[n];
+
+需要特别注意的是: 由于添加了辅助节点, 因此dp表的下标范围是[0, n]
+但是这里我们用的是刷表法, 也就是使用当前位置的dp值来更新后续的位置, 因此虽然添加了dp[0]作为辅助节点, 使得dp表的下标范围到了[0, n], 但是这里i的遍历范围还是[0, n - 1]
+    可以这样理解: 首先我们需要使用dp[i]来更新dp[i + j], 因此一开始的dp[i]一定是要知道的, 在当前这种dp方式中, 在没开始dp之前, dp[0] = 0是确定的, 因此i遍历的起始位置是i = 0
+    i不需要遍历到n 这一点可以这样理解: 在刷表法中, 当遍历到i时, 我们需要使用dp[i]来更新后续的dp值, 但是当i == n时, 此时已经是最后一个dp值了, dp表后面没有元素了, 因此不需要继续向后更新
+    因此i循环到n - 1即可
+这一点至关重要, 要好好理解一下
+
+时间复杂度: O(10 ^ 5 + n ^ 2)   其中10 ^ 5是预处理的最大时间复杂度, n ^ 2是dp的时间复杂度
  */
 public class LC3291_1 {
     public int minValidStrings(String[] words, String target) {
@@ -26,9 +40,13 @@ public class LC3291_1 {
         Arrays.fill(dp, INF);
         dp[0] = 0;
 
+        Trie trie = new Trie();
+        for(String word : words){
+            trie.insert(word);
+        }
         
         for(int i = 0;i < n;i++){
-            int maxLen = ;
+            int maxLen = trie.getMaxMatchLen(target, i);
             for(int j = 1;j <= maxLen;j++){
                 dp[i + j] = Math.min(dp[i + j], dp[i] + 1);
             }
@@ -63,8 +81,12 @@ public class LC3291_1 {
             TrieNode p = root;
             int len = 0;
             for(int i = pos;i < target.length();i++){
-                
+                int u = target.charAt(i) - 'a';
+                if(p.tns[u] == null) return len;
+                len++;
+                p = p.tns[u];
             }
+            return len;
         }
 
         
