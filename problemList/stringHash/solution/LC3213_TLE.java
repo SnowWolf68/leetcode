@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.stringHash.solution;
 // https://leetcode.cn/problems/construct-string-with-minimum-cost/description/
 
 /**
@@ -17,7 +17,7 @@ return dp[n - 1];
     因此总的时间复杂度为: O(n * words.length * words[i].length)
     TLE
  */
-public class LC100350_TLE {
+public class LC3213_TLE {
     public int minimumCost(String target, String[] words, int[] costs) {
         int n = target.length(), INF = 0x3f3f3f3f;
         // 这里采用添加辅助节点的初始化方式

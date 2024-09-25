@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.stringHash.solution;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class LC100350_StringHash {
+public class LC3213_StringHash {
     public int minimumCost(String target, String[] words, int[] costs) {
         int p1 = 13, p2 = 17, n = target.length(), INF = 0x3f3f3f3f;
         long MOD = (long)1e9 + 7;
