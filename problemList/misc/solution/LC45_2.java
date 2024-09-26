@@ -25,5 +25,6 @@ public class LC45_2 {
     public int jump(int[] nums) {
         int n = nums.length, nxtR = 0, curR = 0, cnt = 0;
         // 一开始肯定要在0处建一个桥
+        
     }
 }
