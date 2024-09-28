@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
-朴素Dijkstra的时空复杂度都是O(n * 2), 这题点的数量级为5 * 10 ^ 4, O(n ^ 2)
+堆优化Dijkstra就可以过
  */
 public class LC3112_2 {
     public int[] minimumTime(int n, int[][] edges, int[] disappear) {
@@ -30,9 +30,11 @@ public class LC3112_2 {
             int distx = poll[0], x = poll[1];
             if(distx > dist[x]) continue;
             for(int[] nxt : g[x]){
-                dist[nxt[0]] = Math.min(dist[x] + nxt[1], dist[nxt[0]]);
-                if(dist[nxt[0]] >= disappear[nxt[0]]) dist[nxt[0]] = INF;
-                if(dist[nxt[0]] != INF) minHeap.offer(new int[]{dist[nxt[0]], nxt[0]});
+                if(dist[nxt[0]] > dist[x] + nxt[1]){
+                    dist[nxt[0]] = dist[x] + nxt[1];
+                    if(dist[nxt[0]] >= disappear[nxt[0]]) dist[nxt[0]] = INF;
+                    if(dist[nxt[0]] != INF) minHeap.offer(new int[]{dist[nxt[0]], nxt[0]});
+                }
             }
         }
         for(int i = 0;i < n;i++){

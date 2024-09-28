@@ -40,6 +40,15 @@ public class LC743_2 {
             // 如果从小根堆中取出的disti比实际的dist[i]还大, 那么就没必要使用disti来更新了
             if(disti > dist[i]) continue;
             for(int[] e : g[i]){
+                /**
+                一个小细节, 这里只有当dist[i] + e[1] < dist[e[0]]时, 再将新更新出来的节点添加到小根堆当中去
+                如果直接dist[e[0]] = Math.min(dist[e[0]], dist[i] + dist[i]);
+                然后直接minHeap.offer(new int[]{dist[e[0]], e[0]}); 
+                的话, 会导致不论是否更新到最短的, 都往小根堆中放, 那么此时如果图中存在环路, 那么就导致虽然dist[e[0]]一直保持不变, 
+                但是会一直往小根堆中重复添加节点, 因此会导致死循环
+                不理解的话可以考虑如下示例: 
+                    times = [[1,2,1],[2,1,3]],   n = 2,    k = 2
+                 */
                 if(dist[e[0]] > dist[i] + e[1]){
                     dist[e[0]] = dist[i] + e[1];
                     minHeap.offer(new int[]{dist[e[0]], e[0]});
