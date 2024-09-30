@@ -8,6 +8,10 @@ import java.util.Arrays;
 朴素dijkstra适合用于稠密图
 时间复杂度: O(n * 2), 其中n是顶点数
 空间复杂度: O(n * 2), 其中n是顶点数
+
+准确来说, 朴素dijkstra的时间复杂度是O(n ^ 2 + m), 只不过在稠密图中, n >> m, 因此时间复杂度为O(n ^ 2)
+
+具体时间复杂度的分析可以看 OI Wiki: https://oi-wiki.org/graph/shortest-path/#dijkstra-%E7%AE%97%E6%B3%95
  */
 public class LC743_1 {
     public int networkDelayTime(int[][] times, int n, int k) {
