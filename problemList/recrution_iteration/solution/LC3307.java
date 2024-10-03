@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.recrution_iteration.solution;
 
 /**
 对于示例2: k = 10, operations = [0,1,0,1]
