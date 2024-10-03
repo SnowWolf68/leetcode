@@ -24,15 +24,13 @@ public class LC3307 {
             if(operations[0] == 0) return 'a';
             else return (char)('a' + k);
         }
-        long pow = 1L << i;
-        if(k < pow) return recuise(k, operations, i - 1);
-        else return (char)((((recuise(k - pow, operations, i - 1) - 'a') + operations[i]) % 26) + 'a');
-    }
-    
-    public static void main(String[] args) {
-        int[] operations = new int[]{0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,0,1,0,0,1,1,0,1,0,1,1,0,1,1,1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,1,1,0,0,1,1,1,1,0,0,0,1,0,1,1,0,1,0,0,0,1,0,1,0,1,1,0,0,0,0,1,0,1,1,0,0,1,0,0,1,1,0,1,1,1,1,1,1,0,0,0};
-        long k = 33354182522397L;
-        // System.out.println("test" + (char)(('a' + 1) % 26));
-        System.out.println(new LC3307().kthCharacter(k, operations));
+        /**
+        这里有一个细节: 由于i的范围可以到100, 即2 ^ i可以到2 ^ 100, 而k是long, 最大就是2 ^ 63 - 1
+        因此这里直接让k和(1L << i)进行比较, 1L << i有可能发生溢出
+        因此这里可以特殊判断一下, 如果i >= 63, 那么2 ^ i >= 2 ^ 63, 即2 ^ i超出了long的表示范围, 而又由于k是long类型
+        因此在这种情况下, k 一定小于 2 ^ i
+         */
+        if(i >= 63 || k < (1L << i)) return recuise(k, operations, i - 1);
+        else return (char)((((recuise(k - (1L << i), operations, i - 1) - 'a') + operations[i]) % 26) + 'a');
     }
 }
