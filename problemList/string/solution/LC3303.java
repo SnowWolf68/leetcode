@@ -1,10 +1,7 @@
 package problemList.string.solution;
 
-import java.util.Arrays;
-
 /**
 题目简化: 在s中找一个起始下标最小的子串, 使得这个子串至多修改一个字符之后, 和pattern相等
-
 
 令m = s.length(), n = pattern.length()
 枚举s中长度为n的子串的起始下标, 假设为i, 那么这个子串的结束下标为i + n - 1
@@ -18,6 +15,7 @@ import java.util.Arrays;
 如何求子串的前缀/后缀和pattern的前/后缀的最长匹配长度?
     -- hint1: 拼接: pattern + s
     -- hint2: z-func
+    -- hint3: 求后缀时可以将字符串reverse一下, 继续用z-func
 
 感觉这个方法真的很难想出来
  */
@@ -26,11 +24,9 @@ public class LC3303 {
         int m = s.length(), n = pattern.length();
         String ss = pattern + s, ssr = new StringBuilder(s + pattern).reverse().toString();
         int[] z1 = zfunc(ss), z2 = zfunc(ssr);
-        System.out.println(Arrays.toString(z1));
-        System.out.println(Arrays.toString(z2));
-        for(int i = 0;i < m;i++){
+        // 注意i的范围
+        for(int i = 0;i < m - n + 1;i++){
             int len1 = z1[i + n], len2 = z2[m - 1 - (i + n - 1) + n];
-            System.out.println(len1 + " " + len2);
             if(len1 + len2 + 1 >= n) return i;
         }
         return -1;
@@ -53,13 +49,4 @@ public class LC3303 {
         }
         return z;
     }
-    public static void main(String[] args) {
-        String s = "abcdefg", pattern = "bcdffg";
-        System.out.println(new LC3303().minStartingIndex(s, pattern));
-    }
-    /**
-    pattern = bcdffg
-          s = abcdefg
-    
-     */
 }
