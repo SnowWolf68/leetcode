@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 public class LC1208 {
     public int equalSubstring(String s, String t, int maxCost) {

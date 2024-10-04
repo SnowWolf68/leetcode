@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 /**
 转化: 

@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 public class LC904 {
     public int totalFruit(int[] fruits) {

@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 public class LC1004 {
     public int longestOnes(int[] nums, int k) {

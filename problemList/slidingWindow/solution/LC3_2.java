@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 /**
 滑动窗口的优化策略: 每次检查窗口是否合法时, 不再检查整个窗口, 而是针对 "窗口的变化"

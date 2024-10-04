@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 /**
 滑动窗口本质上是对 "枚举区间右端点" 的优化

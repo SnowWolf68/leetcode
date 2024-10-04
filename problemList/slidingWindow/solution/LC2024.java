@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 /**
 转化为 max(T中最多连续k个F的子数组长度, F中最多连续k个T的子数组长度)

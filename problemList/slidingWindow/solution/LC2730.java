@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 public class LC2730 {
     public int longestSemiRepetitiveSubstring(String s) {

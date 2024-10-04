@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 public class LC1695 {
     public int maximumUniqueSubarray(int[] nums) {

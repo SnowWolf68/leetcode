@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 
 /**
 至少型滑动窗口板子 & 滑动窗口计数板子
