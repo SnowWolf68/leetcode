@@ -20,4 +20,5 @@
 //          LC2024 比较显然的转化 https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/description/
 //          LC1004 https://leetcode.cn/problems/max-consecutive-ones-iii/description/
 //          LC1658 比较显然的转化 https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/
+//          LC1838 这题竟然也能用滑窗, 巧妙至极 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/
 //          
