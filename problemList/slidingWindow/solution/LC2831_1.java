@@ -37,8 +37,14 @@ import java.util.PriorityQueue;
     因此下一次就又会走到i++这里, 窗口右端点 + 1, 此时就会执行懒删除while循环, 保证堆顶元素一定是正确的
 
     综上, 即使在缩小窗口左端点这里, 不加懒删除的while, 其实也是正确的, 但是为了严谨, 还是加上最好
+
+时间复杂度: 大根堆中最多有 2 * n个元素
+    maxHeap.offer(new int[]{cnt.get(nums.get(i)), nums.get(i)});    至多执行n次, 每次执行花费O(logn)时间
+    while(maxHeap.peek()[0] + k < i - left + 1)                     这个while循环, 每次执行都会导致left++, 至多执行n次, 每次执行O(logn)时间
+    while(maxHeap.peek()[0] != cnt.get(maxHeap.peek()[1]))          这个while循环, 每次执行都会从小根堆中poll一个元素, 因此最多执行2 * n次 约等于n次, 每次执行O(logn)时间
+因此总的时间复杂度是O(n * logn)
  */
-public class LC2831 {
+public class LC2831_1 {
     public int longestEqualSubarray(List<Integer> nums, int k) {
         int n = nums.size(), left = 0, ret = 0;
         // <nums[i], cnt>

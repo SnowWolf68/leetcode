@@ -22,4 +22,5 @@
 //          LC1658 比较显然的转化 https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/
 //          LC1838 这题竟然也能用滑窗, 巧妙至极 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/
 //          LC2516 https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/description/
+//          LC2831 O(n * logn)和O(n) 两种写法 https://leetcode.cn/problems/find-the-longest-equal-subarray/description/
 //          
