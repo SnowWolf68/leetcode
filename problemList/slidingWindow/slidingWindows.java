@@ -7,7 +7,7 @@
 //                                (巧妙的优化) LC3298 https://leetcode.cn/problems/count-substrings-that-can-be-rearranged-to-contain-a-string-ii/description/
 
 // 二: 不定长滑动窗口
-//      2.1 求最长/最大
+//      2.1 求最长/最大     --> 窗口越短越合法, 求最长的窗口
 //          LC3 https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 //          LC3090 https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/description/
 //          LC1493 比较显然的转化 https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/description/
