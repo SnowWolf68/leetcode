@@ -24,4 +24,5 @@
 //          LC2516 https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/description/
 //          LC2831 O(n * logn)和O(n) 两种写法 https://leetcode.cn/problems/find-the-longest-equal-subarray/description/
 //          LC2271 好题 难题 对下标进行滑窗 https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/
+//          LC2106 难题 好题 也是对下标数组进行的滑窗 并且这个滑窗也很巧妙, 很难看出来是滑窗 https://leetcode.cn/problems/maximum-fruits-harvested-after-at-most-k-steps/description/
 //          
