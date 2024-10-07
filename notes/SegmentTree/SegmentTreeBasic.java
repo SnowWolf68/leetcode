@@ -1,9 +1,9 @@
 package notes.SegmentTree;
 
-public class SegmentTree {
+public class SegmentTreeBasic {
     private int[] sum;
 
-    SegmentTree(int n) {
+    SegmentTreeBasic(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
     }
