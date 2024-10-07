@@ -26,7 +26,7 @@ import java.util.Arrays;
 因此当遍历到一个新的task时, 首先可以统计distributed[task[0]: task[1]]区间内的1的个数, 得到的就是在当前[task[0], task[1]]
 区间内, 已经安排了的运行时间点数量, 然后比较已经安排的时间点数量, 和task[2], 就能够得到当前是否还需要继续安排运行时间点
  */
-public class LC2589_1_BruteForce {
+public class LC2589_1_BruteForce_Greedy {
     public int findMinimumTime(int[][] tasks) {
         Arrays.sort(tasks, (o1, o2) -> o1[1] - o2[1]);
         int[] distrubuted = new int[2001];

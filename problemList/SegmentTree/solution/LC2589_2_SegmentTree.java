@@ -5,8 +5,12 @@ import java.util.Arrays;
 /**
 在上一个解法中, 我们可以看出来, 其中比较花费时间的操作是: 
 遍历distributed数组在[task[0], task[1]]的区间, 统计1的个数
-这相当于是一个 区间查询操作
-相应的, 在分配时间点时, 也可以用区间更新的操作来实现, 具体实现稍微有点复杂, 需要分多种情况, 具体可以看代码
+这可以看做是一个 区间查询 操作
+但是, 对于distributed数组的更新操作, 由于我们无法在O(1)的时间内确定[task[0], task[1]]范围内有哪些时间点是没有被分配的
+而是需要从后往前依次遍历, 找到未被分配的时间点再更新
+因此不能直接看作是线段树的区间更新操作
+
+
  */
 public class LC2589_2_SegmentTree {
     public int findMinimumTime(int[][] tasks) {
@@ -19,19 +23,10 @@ public class LC2589_2_SegmentTree {
             int from = task[0], to = task[1], duration = task[2];
             int curCnt = segTree.query(1, 1, n, from, to);
             if(curCnt < duration){
-                int diff = duration - curCnt;
-                if(i == 0 || to - tasks[i - 1][1] >= diff){
-                    // 只是从最后面开始向前安排, 可以安排得开
-                    ret += diff;
-                    segTree.add(1, 1, n, to - diff + 1, to, 1);
-                }else{
-                    // 需要跳过之前安排过的这部分, 再从前面继续向前安排
-                    // TODO 下面的代码是有问题的
-                    ret += diff;
-                    segTree.add(1, 1, n, to - diff + 1, to, 1);
-                    int rest = diff - (to - tasks[i - 1][1]);
-                    segTree.add(1, 1, n, tasks[i - 1][1] - curCnt - rest + 1, tasks[i - 1][1] - curCnt, 1);
-                }
+                // 先线段树二分找到要添加运行时间点的区间的左端点left
+                segTree.bisectLeft()
+                // 然后将[left, to]区间内未运行的时间点都添加为运行时间点
+
             }
         }
         return ret;
@@ -114,6 +109,15 @@ public class LC2589_2_SegmentTree {
             if(L <= mid) sum += query(2 * o, l, mid, L, R);
             if(mid < R) sum += query(2 * o + 1, mid + 1, r, L, R);
             return sum;
+        }
+
+        /**
+         * o, l, r: 当前节点及其区间范围, 入口: o, l, r = 1, 1, n
+         * L, R: 要查找的下标的区间范围
+         * return: [L, R]区间内第一个满足sum[i, R] >= val的下标
+         */
+        private int bisectLeftSumGe(int o, int l, int r, int L, int R, int val){
+            
         }
     }
     
