@@ -4,6 +4,7 @@ public class SegmentTreeLazy {
     private int[] sum;
     private int[] todo;
 
+    // 线段树 维护的 下标范围: [1, n]   (不是线段树的下标范围)
     SegmentTreeLazy(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
@@ -25,7 +26,7 @@ public class SegmentTreeLazy {
     }
 
     // o, l, r: 当前节点以及当前区间左右端点    调用入口: o, l, r = 1, 1, n
-    // L, R, add: 要更新的区间范围, 以及要更新的区间整体增加的值
+    // L, R, add: 要更新的区间范围, 以及要更新的区间内 每个元素 要增加的值
     private void add(int o, int l, int r, int L, int R, int add){
         if(L <= l && R >= r){
             // 当前区间[l, r]被要更新的区间[L, R]完全包含在里面

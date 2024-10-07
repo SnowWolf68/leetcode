@@ -3,6 +3,7 @@ package notes.SegmentTree;
 public class SegmentTreeBasic {
     private int[] sum;
 
+    // 线段树 维护的 下标范围: [1, n]   (不是线段树的下标范围)
     SegmentTreeBasic(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
