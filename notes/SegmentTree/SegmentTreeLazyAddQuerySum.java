@@ -1,32 +1,44 @@
 package notes.SegmentTree;
 
-public class SegmentTreeLazy {
+/**
+线段树支持 范围增加 范围查询
+维护累加和
+ */
+public class SegmentTreeLazyAddQuerySum {
     private int[] sum;
     private int[] todo;
 
     // 线段树 维护的 下标范围: [1, n]   (不是线段树的下标范围)
-    SegmentTreeLazy(int n) {
+    SegmentTreeLazyAddQuerySum(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
         this.todo = new int[len];
     }
 
-    // o, l, r: 当前节点以及当前区间的左右端点
-    private void build(int o, int l, int r){
+    /**
+        o, l, r: 当前节点以及当前区间的左右端点, 调用入口: o, l, r = 1, 1, n
+        使用nums在[1, n]区间的元素初始化线段树, 这里的n和构造函数中传入的n是一样的
+        线段树初始化 (建树) 的时间复杂度是O(n), 
+        因为递归会把sum数组的所有元素都访问一遍, 而sum数组中元素的数量级是O(n)级别的
+     */
+    private void build(int o, int l, int r, int[] nums){
         if(l == r){
-            // 递归到叶子结点
-            // TODO 更新...
+            sum[o] = nums[l];
             return;
         }
         // 划分区间, 继续递归左右子区间
         int mid = (l + r) >> 1;
-        build(2 * o, l, mid);
-        build(2 * o + 1, mid + 1, r);
-        // TODO 维护...
+        build(2 * o, l, mid, nums);
+        build(2 * o + 1, mid + 1, r, nums);
+        sum[o] = sum[2 * o] + sum[2 * o + 1];
     }
 
-    // o, l, r: 当前节点以及当前区间左右端点    调用入口: o, l, r = 1, 1, n
-    // L, R, add: 要更新的区间范围, 以及要更新的区间内 每个元素 要增加的值
+    /**
+        o, l, r: 当前节点以及当前区间左右端点    调用入口: o, l, r = 1, 1, n
+        L, R, add: 要更新的区间范围, 以及要更新的区间内 每个元素 要增加的值
+        单次add操作的时间复杂度是O(logn)
+        因为add操作最终可以归结成递归下去两条从根到叶子的路径(当然是最长的情况下), 每条路径长度都是O(logn)级别的
+     */
     private void add(int o, int l, int r, int L, int R, int add){
         if(L <= l && R >= r){
             // 当前区间[l, r]被要更新的区间[L, R]完全包含在里面
@@ -49,20 +61,25 @@ public class SegmentTreeLazy {
         todo[o] += add;
     }
 
+    /**
+        将父节点o上的lazy tag传递给(下发给)其左右子节点
+     */
     private void spread(int o, int l, int r){
         if(todo[o] != 0){
             // 如果当前节点的lazy tag有东西要向下传递
             int mid = (l + r) >> 1;
             do_(2 * o, l, mid, todo[o]);
             do_(2 * o + 1, mid + 1, r, todo[o]);
-            // todo[2 * o] += todo[o];
-            // todo[2 * o + 1] += todo[o];
             todo[o] = 0;
         }
     }
 
-    // o, l, r: 当前节点, 当前区间范围, 调用入口: o, l, r = 1, 1, n
-    // L, R: 要查询的区间范围[L, R]
+    /**
+        o, l, r: 当前节点, 当前区间范围, 调用入口: o, l, r = 1, 1, n
+        L, R: 要查询的区间范围[L, R]
+        单次query操作的时间复杂度也是O(logn)级别的
+        因为query操作也可以归结为两条从根到叶子的路径(最长的情况下), 每条路径长度的数量级是O(logn)级别的
+     */
     private int query(int o, int l, int r, int L, int R){
         if(L <= l && R >= r){
             // 如果当前区间[l, r]完全包含在要查询的区间[L, R]当中
