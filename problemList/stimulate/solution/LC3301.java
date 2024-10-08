@@ -1,32 +1,26 @@
 package problemList.stimulate.solution;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
 
+/**
+模拟题? 思维题? 贪心题? 
+不需要想得那么复杂
+
+首先最大的那个数肯定是不需要变的
+然后对于下一个数而言, 如果下一个数 == 前一个数, 那么下一个数 应该设置为前一个数 - 1
+                   如果下一个数 != 前一个数, 那么下一个数保持不变
+按照这个规律遍历一次原数组即可得出答案
+ */
 public class LC3301 {
-    public long maximumTotalSum(int[] maximumHeight) {
-        long ret = 0;
-        int max = 0;
-        Set<Integer> heightSet = new HashSet<>();
-        Stack<Integer> stack = new Stack<>();
-        Arrays.sort(maximumHeight);
-        for(int x : maximumHeight){
-            if(!heightSet.contains(x)){
-                heightSet.add(x);
-                ret += x;
-                max = Math.max(max, x);
-            }else{
-                stack.push(x);
-            }
-        }
-        while(!stack.isEmpty()){
-            int poll = stack.pop();
-            while(heightSet.contains(max) || max > poll) max--;
-            if(max <= 0) return -1;
-            ret += max;
-            heightSet.add(max);
+    public long maximumTotalSum(int[] height) {
+        Arrays.sort(height);
+        long ret = height[height.length - 1];
+        int prev = height[height.length - 1];
+        for(int i = height.length - 2;i >= 0;i--){
+            int cur = Math.min(height[i], prev - 1);
+            if(cur <= 0) return -1;
+            prev = cur;
+            ret += cur;
         }
         return ret;
     }

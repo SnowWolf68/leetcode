@@ -16,15 +16,15 @@
 
 `str = "abababzabababab"`
 
-![Alt text](image.png)
+![Alt text](img/image.png)
 
 1. `z[0]` 这里指的是`str`这个字符串自身和自身匹配, 因此这里没有计算的意义, 如果一定要计算, 那么可以认为`z[0] = str.length()`
 2. `z[1]` 这里由于没有任何前置条件, 因此只能暴力匹配, 比较`str[1]`与`str[0]`是否匹配, 发现不匹配, 因此`z[1] = 0`
-![Alt text](image-1.png)
+![Alt text](img/image-1.png)
 3. `z[2]` 在之前的计算中(即计算`z[1]`的过程中), 并没有给当前的计算提供额外的信息(具体可能会提供什么样的信息, 在后面都会提到), 因此这里还是暴力匹配, 比较`str[2]`与`str[0]`是否相等, 发现相等, 因此继续比较`str[3]`与`str[1]`, ... 一直比较到 `str[6] != str[4]`, 因此得出`z[2] = 4`
-![Alt text](image-2.png)
+![Alt text](img/image-2.png)
 4. 引入`z-box`: 通过`z[2]`的计算, 我们可以得到这样的信息: str字符串中, [2, 5]区间的子串, 和str的前缀是匹配的, 因此我们将str [2, 5] 的这个区间, 记作 z-box, z-box的作用在之后的计算中会用到
-![Alt text](image-3.png)
+![Alt text](img/image-3.png)
 5. `z[3]`: 暴力比较 `str[3]`和`str[0]`是否相等, 发现`str[3] != str[0]`, 因此`z[3] = 0`
 6. `z[4]`: 4 这个下标落在了 z-box 中, 因此 z-box 可以为`z[4]`的计算提供一些信息: 
    
@@ -37,36 +37,36 @@
     如果你觉得上面的这几段解释比较繁琐, 也可以这样理解`z[4]`的计算过程: 
     
     当前的 z-box 的区间是 `[2, 5]`, 也就意味着 `str[1, 3]`区间和`str[2, 5]`区间的子串是相等的, 因此有`str[4] == str[2], str[5] == str[3]`, 而`z[2]`在之前已经算出来了, `z[2] == 2`, 也就意味着`str[2] == str[0], str[3] == str[1]`, 因此联合上面这两个式子可以得到`str[4] == str[0], str[5] == str[1]`, 因此我们可以知道, `z[4]`至少是2, 再往后匹配的话, z-box 就无法提供更多信息了, 因此需要暴力匹配, 比较`str[6]`和`str[2]`是否相等, 发现`str[6] != str[2]`, 因此最终`z[4] == 2`
-![Alt text](image-4.png)
+![Alt text](img/image-4.png)
 
     计算完`z[4] == 2`之后, 更新 z-box 为`[4, 5]`这个区间
-![Alt text](image-5.png)
+![Alt text](img/image-5.png)
 
 7.  `z[5]`: 5 这个下标也落在了 z-box 当中, 因此可以利用 z-box 中的信息, 通过z-box 中提供的信息可以知道`str[5] == str[1]`, 而`z[1]`之前已经计算出来`z[1] == 0`, 意味着`str[1] != str[0]`, 因此我们得到`str[5] != str[0]`, 因此`z[5] == 0`
-![Alt text](image-6.png)
+![Alt text](img/image-6.png)
 8.  `z[6]`: 6这个下标落在了当前 z-box 的外面, 因此需要暴力匹配, 暴力比较`str[6]`和`str[0]`, 发现`str[6] != str[0]`, 因此`z[6] = 0`
-![Alt text](image-7.png)
+![Alt text](img/image-7.png)
 9. `z[7]`: 7这个下标落在当前 z-box 外面, 暴力匹配得到`z[7] == 6`
-![Alt text](image-8.png)
+![Alt text](img/image-8.png)
 更新 z-box 为`[7, 12]`这个区间
-![Alt text](image-9.png)
+![Alt text](img/image-9.png)
 10.  `z[8]`: 下标8在当前 z-box 当中, 可以利用z-box中的信息, 通过z-box可以知道, `str[8] == str[1]`, 通过`z[1] == 0`可以知道`str[1] != str[0]`, 因此有`str[8] != str[0]`, 因此`z[8] = 0`
 11.  `z[9]`: 依旧是落在z-box区间中, 通过z-box得到`str[9] == str[2], str[10] == str[3], str[11] == str[4], str[12] == str[5]`, 通过`z[2] == 4`可以知道`str[2] == str[0], str[3] == str[1], str[4] == str[2], str[5] == str[3]`, 联合上面两个式子可以得到`str[9] == str[0], str[10] == str[1], str[11] == str[2], str[12] == str[3]`, 再往后面匹配`str[13]`与`str[4]`时, 当前z-box就无法提供更多信息了, 就需要暴力匹配, 暴力匹配`str[13] == str[4]`, 继续暴力匹配`str[14] == str[5]`, 继续往后就没有字符了, 因此得到`z[9] == 6`
-![Alt text](image-10.png)
+![Alt text](img/image-10.png)
 更新当前z-box为`[9, 14]`这个区间
-![Alt text](image-11.png)
+![Alt text](img/image-11.png)
 12.  `z[10]`: 落在z-box里面, 因此有`str[10] == str[1]`, 通过`z[1] == 0`得到`str[1] != str[0]`, 因此`str[10] != str[0]`, 故`z[10] = 0`
 13.  `z[11]`: 落在z-box里面, 因此有`str[11] == str[2], str[12] == str[3], str[13] == str[4], str[14] == str[5]`, 通过`z[2] == 4`得到`str[2] == str[0], str[3] == str[1], str[4] == str[2], str[5] == str[3]`, 联合上面两个式子得到`str[11] == str[0], str[12] == str[1], str[13] == str[2], str[14] == str[3]`, 因此得到`z[11] = 4`
-![Alt text](image-12.png)
+![Alt text](img/image-12.png)
 更新z-box为`[11, 14]`这个范围
 14.  `z[12]`: 落在z-box里面, 因此有`str[12] == str[1]`, 通过`z[1] == 0`得到`str[1] != str[0]`, 因此`str[12] != str[0]`, 因此`z[12] = 0`
-![Alt text](image-12.png)
+![Alt text](img/image-12.png)
 15.  `z[13]`: 落在z-box当中, 因此有`str[13] == str[2], str[14] == str[3]`, 通过`z[2] == 4`得到`str[2] == str[0], str[3] == str[1], ... str[5] == str[3]`, 联立上面两个式子得到`str[13] == str[0], str[14] == str[1]`, 因此`z[13] = 2`
-![Alt text](image-13.png)
+![Alt text](img/image-13.png)
 同理更新 z-box 为 `[13, 14]`这个区间
-![Alt text](image-14.png)
+![Alt text](img/image-14.png)
 16.  `z[14]`: 14这个下标落在 z-box 当中, 因此有`str[14] == str[1]`, 而`z[1] == 0`说明`str[1] != str[0]`, 因此得到`str[14] != str[0]`, 因此`z[14] = 0`
-![Alt text](image-15.png)
+![Alt text](img/image-15.png)
 
 这样我们就得到了`str`对应的`z`数组
 
@@ -81,36 +81,36 @@
 
 `str = aabcaabxaaaz`
 
-![Alt text](image-17.png)
+![Alt text](img/image-17.png)
 
 1. `z[0]`: 没有意义
 2. `z[1]`: 暴力匹配, `str[1] == str[0], str[2] != str[1]`, 因此`z[1] = 1`, 并且更新当前z-box区间为`[1]`
-![Alt text](image-18.png)
+![Alt text](img/image-18.png)
 3. `z[2]`: 2这个下标不在当前z-box当中, 继续暴力匹配, `str[2] != str[0]`, 因此`z[2] = 0`
-![Alt text](image-19.png)
+![Alt text](img/image-19.png)
 4. `z[3]`: 依旧不在z-box当中, 因此继续暴力匹配, `str[3] != str[0]`, 因此`z[3] = 0`
-![Alt text](image-20.png)
+![Alt text](img/image-20.png)
 5. `z[4]`: 4不在z-box当中, 因此暴力匹配, `str[4] == str[0], str[5] == str[1], str[6] == str[2], str[7] != str[3]`, 因此`z[4] == 3`, 并且更新当前z-box区间为`[4, 6]`
-![Alt text](image-21.png)
+![Alt text](img/image-21.png)
 6. `z[5]`: 5这个下标在当前z-box当中, 因此有`str[5] == str[1], str[6] == str[2]`, 并且前面算出来了`z[1] == 1`, 因此有`str[1] == str[0], str[2] != str[1]`, 联合上面两个式子有`str[5] == str[0], str[6] != str[1]`, 因此`z[5] = 1`
-![Alt text](image-22.png)
+![Alt text](img/image-22.png)
 7. `z[6]`: 6这个下标也在当前z-box当中, 因此有`str[6] == str[2]`, 而`z[2] == 0`, 因此有`str[2] != str[0]`, 联合上面两个式子, 有`str[6] != str[0]`, 因此`z[6] = 0`
-![Alt text](image-23.png)
+![Alt text](img/image-23.png)
 8. `z[7]`: 7这个下标在z-box外面, 因此暴力匹配, `str[7] != str[0]`, 因此`z[7] = 0`
-![Alt text](image-24.png)
+![Alt text](img/image-24.png)
 9. `z[8]`: 8这个下标也不在z-box里面, 因此继续暴力匹配, `str[8] == str[0], str[9] == str[1], str[10] != str[2]`, 因此`z[8] = 2`
-![Alt text](image-25.png)
+![Alt text](img/image-25.png)
 并且更新当前z-box区间为`[8, 9]`
 10. `z[9]`: 9这个下标在当前z-box当中, 因此有`str[9] == str[1]`, 而`z[1] == 1`, 意味着`str[1] == str[0]`, 联合上面两个式子, 有`str[9] == str[0]`, 因此我们知道`z[9]`至少是1, 因为继续往后匹配时, 就超出了z-box的范围, z-box无法继续提供信息, 因此需要暴力匹配, `str[10] == str[1], str[11] != str[2]`, 因此最终`z[9] = 2`, 并且更新当前z-box区间为`[9, 10]`
-![Alt text](image-26.png)
+![Alt text](img/image-26.png)
 11. `z[10]`: 10这个下标在当前z-box当中, 因此有`str[10] == str[1]`, 而`z[1] == 1`, 因此有`str[1] == str[0]`, 联合上面两个式子有`str[10] == str[0]`, 因此得到`z[10]`至少为1, 继续向后暴力匹配, `str[11] != str[1]`, 因此最终`z[10] = 1`, 更新z-box区间为`[10]`
-![Alt text](image-27.png)
+![Alt text](img/image-27.png)
 12. `z[11]`: 11这个下标不在当前z-box当中, 因此进行暴力匹配, `str[11] != str[0]`, 因此`z[0] = 0`
-![Alt text](image-28.png)
+![Alt text](img/image-28.png)
 
 因此最终z函数的结果为
 
-![Alt text](image-29.png)
+![Alt text](img/image-29.png)
 
 
 **总结**
@@ -132,7 +132,7 @@
 
     对于这一点, 可以总结一下: 如果`i`落在当前z-box当中, 那么只需要从`i + min(z[i - zLeft], zRight - i + 1)`这个下标开始继续向后暴力匹配即可
    
-![Alt text](image-16.png)
+![Alt text](img/image-16.png)
 
 4. 每次计算完`z[i]`之后, 如果`z[i] > 0`, 那么更新当前的z-box, 更新为`[i, i + z[i] - 1]`
 

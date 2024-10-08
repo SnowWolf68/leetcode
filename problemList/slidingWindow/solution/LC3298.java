@@ -1,4 +1,4 @@
-package problemList.slidingWIndows.solution;
+package problemList.slidingWindow.solution;
 /**
 子串可重排 -- 本质是滑动窗口
 
