@@ -303,7 +303,9 @@ i = 100  i << 2 = 400  2 << n的二进制长度 = 256
 什么是线段树上二分?
     见灵神仓库: [地址](https://github.com/EndlessCheng/codeforces-go/blob/master/copypasta/segment_tree.go)
 
-    关键是要理解线段树上的递归过程, 理解了递归过程, 二分很好理解
+关键是要理解线段树上的递归过程, 理解了递归过程, 二分很好理解
+
+线段树上二分的分析可以见 `SegmentTreeBinarySearch.java` 这个文件
 
 
 > 以下内容摘自[左神ppt](https://github.com/algorithmzuo/algorithm-journey/)
