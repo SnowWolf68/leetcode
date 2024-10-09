@@ -1,25 +1,25 @@
 package notes.SegmentTree;
 
 /**
-线段树支持 范围增加 范围查询
+线段树支持 范围重置 范围查询
 维护累加和
  */
-public class SegmentTreeLazyAddQuerySum {
+public class SegmentTreeLazyResetQuerySum {
     private int[] sum;
     private int[] todo;
+    private boolean[] valid;    // valid[i] 用来表示 todo[i]是否有效
 
     // 线段树 维护的 下标范围: [1, n]   (不是线段树的下标范围)
-    SegmentTreeLazyAddQuerySum(int n) {
+    SegmentTreeLazyResetQuerySum(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
         this.todo = new int[len];
+        this.valid = new boolean[len];
     }
 
     /**
         o, l, r: 当前节点以及当前区间的左右端点, 调用入口: o, l, r = 1, 1, n
         使用nums在[1, n]区间的元素初始化线段树, 这里的n和构造函数中传入的n是一样的
-        线段树初始化 (建树) 的时间复杂度是O(n), 
-        因为递归会把sum数组的所有元素都访问一遍, 而sum数组中元素的数量级是O(n)级别的
      */
     public void build(int o, int l, int r, int[] nums){
         if(l == r){
@@ -44,23 +44,21 @@ public class SegmentTreeLazyAddQuerySum {
 
     /**
         o, l, r: 当前节点以及当前区间左右端点    调用入口: o, l, r = 1, 1, n
-        L, R, add: 要更新的区间范围, 以及要更新的区间内 每个元素 要增加的值
-        单次add操作的时间复杂度是O(logn)
-        因为add操作最终可以归结成递归下去两条从根到叶子的路径(当然是最长的情况下), 每条路径长度都是O(logn)级别的
+        L, R, resetVal: 要重置的区间范围, 以及区间要重置的值
      */
-    public void add(int o, int l, int r, int L, int R, int add){
+    public void rangeReset(int o, int l, int r, int L, int R, int resetVal){
         if(L <= l && R >= r){
             // 当前区间[l, r]被要更新的区间[L, R]完全包含在里面
             // 此时只需要更新当前区间的lazy tag即可, 不需要继续向下递归更新
-            do_(o, l, r, add);
+            do_(o, l, r, resetVal);
             return;
         }
         // 当前区间[l, r]不完全被[L, R]包含在里面, 此时需要将当前节点的lazy tag传递给左右子树
         spread(o, l, r);
         // 继续递归更新左右子区间
         int mid = (l + r) >> 1;
-        if(L <= mid) add(2 * o, l, mid, L, R, add);
-        if(mid < R) add(2 * o + 1, mid + 1, r, L, R, add);
+        if(L <= mid) rangeReset(2 * o, l, mid, L, R, resetVal);
+        if(mid < R) rangeReset(2 * o + 1, mid + 1, r, L, R, resetVal);
         // 最后使用左右子区间更新当前区间的元素和
         up(o);
     }
@@ -68,21 +66,22 @@ public class SegmentTreeLazyAddQuerySum {
     /**
         接受父节点传下来的lazy tag, 更新当前节点的sum[o]以及当前节点的lazy tag
      */
-    private void do_(int o, int l, int r, int add){
-        sum[o] += add * (r - l + 1);
-        todo[o] += add;
+    private void do_(int o, int l, int r, int resetVal){
+        sum[o] = resetVal * (r - l + 1);
+        todo[o] = resetVal;
+        valid[o] = true;    // 标记todo[o]有效
     }
 
     /**
         将父节点o上的lazy tag传递给(下发给)其左右子节点
      */
     private void spread(int o, int l, int r){
-        if(todo[o] != 0){
+        if(valid[o]){   // valid[o] == true 表示 todo[o] 有效
             // 如果当前节点的lazy tag有东西要向下传递
             int mid = (l + r) >> 1;
             do_(2 * o, l, mid, todo[o]);
             do_(2 * o + 1, mid + 1, r, todo[o]);
-            todo[o] = 0;
+            valid[o] = false;   // 标记todo[o]无效
         }
     }
 

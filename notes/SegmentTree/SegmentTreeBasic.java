@@ -11,7 +11,7 @@ public class SegmentTreeBasic {
 
     // 调用方式: add(1, 1, n, idx, val)
     // 给数组idx下标的元素增加val
-    private void add(int o, int l, int r, int idx, int val) {
+    public void add(int o, int l, int r, int idx, int val) {
         if (l == r) {
             // 如果递归到了叶子节点, 那么直接修改
             sum[idx] += val;
@@ -29,7 +29,7 @@ public class SegmentTreeBasic {
 
     // 调用方式: query(1, 1, n, L, R)
     // 返回[L, R]区间的元素和
-    private int query(int o, int l, int r, int L, int R) {
+    public int query(int o, int l, int r, int L, int R) {
         if (L <= l && R >= r) {
             // 当前节点所在区间[l, r]包含在要查询的区间[L, R]当中, 直接返回
             return sum[o];
