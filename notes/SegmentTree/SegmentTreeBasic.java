@@ -1,5 +1,8 @@
 package notes.SegmentTree;
 
+/**
+基本线段树: 支持单点修改 区间查询 维护累加和
+ */
 public class SegmentTreeBasic {
     private int[] sum;
 
@@ -7,6 +10,25 @@ public class SegmentTreeBasic {
     SegmentTreeBasic(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new int[len];
+    }
+
+    /**
+        o, l, r: 当前节点以及当前区间的左右端点, 调用入口: o, l, r = 1, 1, n
+        使用nums在[1, n]区间的元素初始化线段树, 这里的n和构造函数中传入的n是一样的
+     */
+    public void build(int o, int l, int r, int[] nums){
+        if(l == r){
+            sum[o] = nums[l];
+            return;
+        }
+        int mid = (l + r) >> 1;
+        build(o * 2, l, mid, nums);
+        build(o * 2 + 1, mid + 1, r, nums);
+        up(o);
+    }
+
+    private void up(int o){
+        sum[o] = sum[2 * o] + sum[2 * o + 1];
     }
 
     // 调用方式: add(1, 1, n, idx, val)
@@ -24,7 +46,7 @@ public class SegmentTreeBasic {
         else
             add(o * 1 + 1, mid + 1, r, idx, val);
         // 最后在回溯的过程中更新当前节点
-        sum[o] = sum[2 * o] + sum[2 * o + 1];
+        up(o);
     }
 
     // 调用方式: query(1, 1, n, L, R)
