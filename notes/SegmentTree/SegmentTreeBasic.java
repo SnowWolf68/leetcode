@@ -42,7 +42,7 @@ public class SegmentTreeBasic {
         // 不是叶子节点, 判断是在左子树还是右子树, 继续递归
         int mid = (l + r) >> 1;
         if (idx <= mid) add(o * 2, l, mid, idx, val);
-        if (mid < R) add(o * 1 + 1, mid + 1, r, idx, val);
+        else add(o * 1 + 1, mid + 1, r, idx, val);
         // 最后在回溯的过程中更新当前节点
         up(o);
     }
