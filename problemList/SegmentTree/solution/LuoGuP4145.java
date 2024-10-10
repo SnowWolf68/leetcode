@@ -7,13 +7,10 @@ import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 
 /**
-线段树上的特别修改
-    线段树要能够满足 区间每个数开平方 区间查询累加和 操作  这是一个涉及到特别修改的线段树, 但是可以拿 SegmentTreeBasic 基本线段树的板子稍加修改得到
+本题是一个经典的 线段树 特别修改的题目, 因此我把这题的详解放到了线段树的笔记中
+请移步 notes/SegmentTree/SegmentTree.md 中查看
 
-特别修改: 
-    线段树上的修改操作, 如果想要做到单次O(logn)级别的时间复杂度, 必须要满足 "一段范围上的修改操作, 必须要能够在O(1)的时间内, 把这段区间上维护的信息加工出来"
-    本题中的修改操作是对单个元素开平方, 显然不符合上面的要求
-    
+这里我就重点说一下coding如何实现
  */
 public class LuoGuP4145 {
     public static void main(String[] args) throws Exception {
@@ -30,6 +27,19 @@ public class LuoGuP4145 {
         SegmentTree segTree = new SegmentTree(n);
         segTree.build(1, 1, n, nums);
 
+        in.nextToken(); int m = (int)in.nval;
+        for(int i = 0;i < m;i++){
+            in.nextToken(); int k = (int)in.nval;
+            in.nextToken(); int a = (int)in.nval;
+            in.nextToken(); int b = (int)in.nval;
+            int l = Math.min(a, b), r = Math.max(a, b);
+            if(k == 0){
+                segTree.sqrt(1, 1, n, l, r);
+            }else{
+                out.println(segTree.querySum(1, 1, n, l, r));
+            }
+        }
+
 
         out.flush();
 		out.close();
@@ -44,11 +54,13 @@ public class LuoGuP4145 {
  */
 class SegmentTree {
     private long[] sum;
+    private long[] max;
 
     // 线段树 维护的 下标范围: [1, n]   (不是线段树的下标范围)
     SegmentTree(int n) {
         int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
         this.sum = new long[len];
+        this.max = new long[len];
     }
 
     /**
@@ -58,6 +70,7 @@ class SegmentTree {
     public void build(int o, int l, int r, long[] nums){
         if(l == r){
             sum[o] = nums[l];
+            max[o] = nums[l];
             return;
         }
         int mid = (l + r) >> 1;
@@ -68,6 +81,7 @@ class SegmentTree {
 
     private void up(int o){
         sum[o] = sum[2 * o] + sum[2 * o + 1];
+        max[o] = Math.max(max[2 * o], max[2 * o + 1]);
     }
 
     /**
@@ -75,12 +89,27 @@ class SegmentTree {
         调用入口: o, l, r = 1, 1, n
      */
     public void sqrt(int o, int l, int r, int L, int R){
-
+        // 剪枝
+        if(queryMax(o, l, r, L, R) == 1) return;
+        // 否则递归
+        // 如果走到叶子结点
+        if(l == r){
+            sum[o] = (int)Math.sqrt(sum[o]);
+            max[o] = sum[o];
+            return;
+        }
+        // 递归左右节点
+        int mid = (l + r) >> 1;
+        if(L <= mid) sqrt(o * 2, l, mid, L, R);
+        if(mid < R) sqrt(o * 2 + 1, mid + 1, r, L, R);
+        up(o);
     }
 
-    // 调用方式: query(1, 1, n, L, R)
-    // 返回[L, R]区间的元素和
-    public long query(int o, int l, int r, int L, int R) {
+    /**
+        调用方式: querySum(1, 1, n, L, R)
+        返回[L, R]区间的元素和
+     */
+    public long querySum(int o, int l, int r, int L, int R) {
         if (L <= l && R >= r) {
             // 当前节点所在区间[l, r]包含在要查询的区间[L, R]当中, 直接返回
             return sum[o];
@@ -88,10 +117,23 @@ class SegmentTree {
         // 递归查询
         long sum = 0;
         int mid = (l + r) >> 1;
-        if (L <= mid)
-            sum += query(2 * o, l, mid, L, R);
-        else
-            sum += query(2 * o + 1, mid + 1, r, L, R);
+        if (L <= mid) sum += querySum(2 * o, l, mid, L, R);
+        if (mid < R) sum += querySum(2 * o + 1, mid + 1, r, L, R);
         return sum;
+    }
+
+    /**
+        调用方式: queryMax(1, 1, n, L, R)
+        返回[L, R]区间的最大值
+     */
+    public long queryMax(int o, int l, int r, int L, int R){
+        if(L <= l && R >= r){
+            return max[o];
+        }
+        int mid = (l + r) >> 1;
+        long max = Long.MIN_VALUE;
+        if(L <= mid) max = Math.max(max, queryMax(2 * o, l, mid, L, R));
+        if(mid < R) max = Math.max(max, queryMax(2 * o + 1, mid + 1, r, L, R));
+        return max;
     }
 }

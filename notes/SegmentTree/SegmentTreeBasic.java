@@ -41,10 +41,8 @@ public class SegmentTreeBasic {
         }
         // 不是叶子节点, 判断是在左子树还是右子树, 继续递归
         int mid = (l + r) >> 1;
-        if (idx <= mid)
-            add(o * 2, l, mid, idx, val);
-        else
-            add(o * 1 + 1, mid + 1, r, idx, val);
+        if (idx <= mid) add(o * 2, l, mid, idx, val);
+        if (mid < R) add(o * 1 + 1, mid + 1, r, idx, val);
         // 最后在回溯的过程中更新当前节点
         up(o);
     }
@@ -59,10 +57,8 @@ public class SegmentTreeBasic {
         // 递归查询
         int sum = 0;
         int mid = (l + r) >> 1;
-        if (L <= mid)
-            sum += query(2 * o, l, mid, L, R);
-        else
-            sum += query(2 * o + 1, mid + 1, r, L, R);
+        if (L <= mid) sum += query(2 * o, l, mid, L, R);
+        if (mid < R) sum += query(2 * o + 1, mid + 1, r, L, R);
         return sum;
     }
 }
