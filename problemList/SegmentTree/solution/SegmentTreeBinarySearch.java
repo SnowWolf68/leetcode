@@ -1,4 +1,4 @@
-package notes.SegmentTree;
+package problemList.SegmentTree.solution;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -54,22 +54,19 @@ import java.io.StreamTokenizer;
             伪代码
             int findKthZero(int from, int k){
                 int l = from, r = n;
-                while(l <= r){
+                while(l < r){
                     int mid = (l + r) >> 1;
-                    int leftZeroCount = (mid - l + 1) - segTree.query(1, 1, n, l, mid);
-                    if(leftZeroCount == k) return mid;
-                    else if(leftZeroCount < k) r = mid - 1;
+                    int leftZeroCount = (mid - from + 1) - segTree.query(1, 1, n, from, mid);
+                    if(leftZeroCount >= k) r = mid;
                     else l = mid + 1;
                 }
-                return -1;      // 按道理来说一定会在二分的过程中返回, 不会走到这里
+                return l;
             }
             
     操作 2: 
             首先查询一下[left, right]区间上1的数量, 也就是[left, right]区间的元素和, 这就是该区间上花的数量
             然后调用segTree.rangeReset(1, 1, n, left, right, 0)将这段区间上全部置0即可
 
-下面的代码我没使用hdu的平台测试, 因为注册的账号要管理员审核
-不过可以写一个对拍和左神的代码对拍一下, 但是我现在暂时懒得写(bushi
  */
 public class SegmentTreeBinarySearch {
     public static void main(String[] args) throws Exception {
@@ -79,23 +76,21 @@ public class SegmentTreeBinarySearch {
         
         in.nextToken();
         int t = (int)in.nval;
+        // System.out.println("t = " + t);
         for(int i = 0;i < t;i++){
             in.nextToken(); int n = (int)in.nval;
             in.nextToken(); int m = (int)in.nval;
-            int[] nums = new int[n + 1];
-            for(int j = 1;j <= n;j++){
-                in.nextToken();
-                int num = (int)in.nval;
-                nums[i] = num;
-            }
+            // int len = 2 << (32 - Integer.numberOfLeadingZeros(n));
+            // System.out.println("n = " + n + " m = " + m + " len = " + len);
             SegmentTreeLazyResetQuerySum segTree = new SegmentTreeLazyResetQuerySum(n);
-            segTree.build(1, 1, n, nums);
             for(int j = 0;j < m;j++){
                 in.nextToken(); int op = (int)in.nval;
+                // System.out.print("op = " + op);
                 if(op == 1){
                     // 操作一
-                    in.nextToken(); int from = (int)in.nval;
+                    in.nextToken(); int from = (int)in.nval + 1;
                     in.nextToken(); int flowers = (int)in.nval;
+                    // System.out.println(" from = " + from + " flowers = " + flowers);
                     int freeCount = (n - from + 1) - segTree.query(1, 1, n, from, n);
                     if(freeCount == 0){
                         out.println("Can not put any one.");
@@ -103,17 +98,19 @@ public class SegmentTreeBinarySearch {
                     }
                     int count = Math.min(freeCount, flowers);
                     int startIdx = findKthZero(segTree, n, from, 1), endIdx = findKthZero(segTree, n, from, count);
+                    out.println((startIdx - 1) + " " +  (endIdx - 1));
                     segTree.rangeReset(1, 1, n, startIdx, endIdx, 1);
                 }else{
                     // 操作二
-                    in.nextToken(); int left = (int)in.nval;
-                    in.nextToken(); int right = (int)in.nval;
+                    in.nextToken(); int left = (int)in.nval + 1;
+                    in.nextToken(); int right = (int)in.nval + 1;
+                    // System.out.println(" left = " + left + " right = " + right);
                     int flowerCount = segTree.query(1, 1, n, left, right);
                     out.println(flowerCount);
                     segTree.rangeReset(1, 1, n, left, right, 0);
                 }
-                out.println();
             }
+            out.println();
         }
 
         out.flush();
@@ -123,17 +120,18 @@ public class SegmentTreeBinarySearch {
 
     /**
         return: segTree线段树上[from, n]上第k个0的下标
+        不是查询某个点的二分, 而是查询区间端点的二分
+        具体来说, 查询的是左区间的右端点
      */
     private static int findKthZero(SegmentTreeLazyResetQuerySum segTree, int n, int from, int k){
         int l = from, r = n;
-        while(l <= r){
+        while(l < r){
             int mid = (l + r) >> 1;
-            int leftZeroCount = (mid - l + 1) - segTree.query(1, 1, n, l, mid);
-            if(leftZeroCount == k) return mid;
-            else if(leftZeroCount < k) r = mid - 1;
+            int leftZeroCount = (mid - from + 1) - segTree.query(1, 1, n, from, mid);
+            if(leftZeroCount >= k) r = mid;
             else l = mid + 1;
         }
-        return -1;      // 按道理来说一定会在二分的过程中返回, 不会走到这里
+        return l;
     }
 }
 
