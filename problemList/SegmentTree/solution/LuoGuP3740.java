@@ -47,6 +47,8 @@ coding部分:
     线段树的板子就随便找一个能够rangeReset的板子就行, 反正都还得改
 
     离散化这里我同样使用两种方式, 就当是练手了
+
+需要注意的是, 本题的数据中, 存在 海报的边界超过了墙的边界 的情况, 因此最后的查询的时候, 我们应该以墙的边界为准, 而不是以最右边的海报的边界为准
  */
 public class LuoGuP3740 {
     public static void main(String[] args) throws Exception {
@@ -65,12 +67,14 @@ public class LuoGuP3740 {
         }
 
         // discretization1(postRange);
-        n = discretization2(postRange);
+        int size = discretization2(postRange, n);
 
-        SegmentTree segTree = new SegmentTree(n);
-        int[] nums = new int[n + 1];
+        System.out.println(getIdx2(n) + " " + size);
+
+        SegmentTree segTree = new SegmentTree(size);
+        int[] nums = new int[size + 1];
         Arrays.fill(nums, -1);
-        segTree.build(1, 1, n, nums);
+        segTree.build(1, 1, size, nums);
 
         int postIdx = 1;
         for(int[] range : postRange){
@@ -78,7 +82,6 @@ public class LuoGuP3740 {
             segTree.rangeReset(1, 1, n, getIdx2(range[0]), getIdx2(range[1]), postIdx++);
         }
 
-        // out.println(segTree.query(1, 1, getIdx1(n)));
         out.println(segTree.query(1, 1, getIdx2(n)));
 
         out.flush();
@@ -93,12 +96,13 @@ public class LuoGuP3740 {
     // <离散化前, 离散化后>
     private static Map<Integer, Integer> hashMap = new HashMap<>();
 
-    private static void discretization1(int[][] postRange){
+    private static int discretization1(int[][] postRange, int wallLength){
         Set<Integer> set = new HashSet<>();
         for(int[] range : postRange){
             set.add(range[0]);
             set.add(range[1]);
         }
+        set.add(wallLength);
         list.addAll(set);
         Collections.sort(list);
         for(int i = 0;i < list.size();i++){
@@ -108,18 +112,21 @@ public class LuoGuP3740 {
         for(int i = 0;i < list.size();i++){
             hashMap.put(list.get(i), i + 1);
         }
+        return list.size();
     }
 
     private static int getIdx1(int idx){
         return hashMap.get(idx);
     }
 
-    private static int discretization2(int[][] postRange){
+    private static int discretization2(int[][] postRange, int wallLength){
         Set<Integer> set = new HashSet<>();
         for(int[] range : postRange){
             set.add(range[0]);
             set.add(range[1]);
         }
+        set.add(wallLength);
+        // set.add(1);
         list.addAll(set);
         Collections.sort(list);
         for(int i = 0;i < list.size();i++){
