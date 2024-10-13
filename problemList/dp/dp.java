@@ -193,3 +193,7 @@
 //          简单题: LC2305 https://leetcode.cn/problems/fair-distribution-of-cookies/description/    最基本的 枚举子集的子集 的状压DP
 //                 LC1986 https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/     也是简单题, 但是注意理解 这题的状态定义, 和 上一题的空间优化版本的状态定义的区别    为什么上一题必须要枚举i? 好好想想
 //                 
+
+
+// unsorted 
+//      LC1884 https://leetcode.cn/problems/egg-drop-with-2-eggs-and-n-floors/description/?envType=daily-question&envId=2024-10-13
