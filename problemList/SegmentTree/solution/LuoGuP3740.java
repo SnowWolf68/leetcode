@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -57,6 +58,9 @@ public class LuoGuP3740 {
         in.nextToken(); int m = (int)in.nval;
 
         SegmentTree segTree = new SegmentTree(n);
+        int[] nums = new int[n + 1];
+        Arrays.fill(nums, -1);
+        segTree.build(1, 1, n, nums);
 
         int[][] postRange = new int[m][2];
 
@@ -66,14 +70,17 @@ public class LuoGuP3740 {
             postRange[i] = new int[]{l, r};
         }
 
-        discretization1(postRange);
+        // discretization1(postRange);
+        discretization2(postRange, n);
 
         int postIdx = 1;
         for(int[] range : postRange){
-            segTree.rangeReset(1, 1, n, getIdx1(range[0]), getIdx1(range[1]), postIdx++);
+            // segTree.rangeReset(1, 1, n, getIdx1(range[0]), getIdx1(range[1]), postIdx++);
+            segTree.rangeReset(1, 1, n, getIdx2(range[0]), getIdx2(range[1]), postIdx++);
         }
 
-        out.println(segTree.query(1, 1, n));
+        // out.println(segTree.query(1, 1, getIdx1(n)));
+        out.println(segTree.query(1, 1, getIdx2(n)));
 
         out.flush();
 		out.close();
@@ -108,7 +115,7 @@ public class LuoGuP3740 {
         return hashMap.get(idx);
     }
 
-    private static void discretization2(int[][] postRange){
+    private static void discretization2(int[][] postRange, int wallLength){
         Set<Integer> set = new HashSet<>();
         for(int[] range : postRange){
             set.add(range[0]);
@@ -116,6 +123,10 @@ public class LuoGuP3740 {
         }
         list.addAll(set);
         Collections.sort(list);
+        if(list.get(list.size() - 1) - wallLength > 1){
+            list.add(list.get(list.size() - 1) + 1);
+            list.add(wallLength);
+        }
         for(int i = 0;i < list.size();i++){
             if(i != list.size() - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
         }
@@ -126,7 +137,7 @@ public class LuoGuP3740 {
         int l = 0, r = list.size() - 1;
         while(l <= r){
             int mid = (l + r) >> 1;
-            if(list.get(mid) == idx) return mid;
+            if(list.get(mid) == idx) return mid + 1;
             else if(list.get(mid) > idx) r = mid - 1;
             else l = mid + 1;
         }
@@ -158,7 +169,7 @@ class SegmentTree {
      */
     public void build(int o, int l, int r, int[] nums){
         if(l == r){
-            nums[o] = nums[l];
+            postId[o] = nums[l];
             return;
         }
         // 划分区间, 继续递归左右子区间
@@ -228,7 +239,8 @@ class SegmentTree {
      */
     public int query(int o, int l, int r){
         if(l == r || postId[o] != -1){     // 走到叶子结点, 或者当前区间上只有一种海报, 此时可以直接返回
-            if(!hashSet.contains(postId[o])){
+            // 这里需要再额外判断一次是否postId[o] == -1, 因为如果第一个if是从l == r进来的, 那么走到这里时, 有可能postId[o] == -1, 即有可能此处没有海报
+            if(!hashSet.contains(postId[o]) && postId[o] != -1){
                 hashSet.add(postId[o]);
                 return 1;
             }else{
