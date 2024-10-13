@@ -57,13 +57,7 @@ public class LuoGuP3740 {
         in.nextToken(); int n = (int)in.nval;
         in.nextToken(); int m = (int)in.nval;
 
-        SegmentTree segTree = new SegmentTree(n);
-        int[] nums = new int[n + 1];
-        Arrays.fill(nums, -1);
-        segTree.build(1, 1, n, nums);
-
         int[][] postRange = new int[m][2];
-
         for(int i = 0;i < m;i++){
             in.nextToken(); int l = (int)in.nval;
             in.nextToken(); int r = (int)in.nval;
@@ -71,7 +65,12 @@ public class LuoGuP3740 {
         }
 
         // discretization1(postRange);
-        discretization2(postRange, n);
+        n = discretization2(postRange);
+
+        SegmentTree segTree = new SegmentTree(n);
+        int[] nums = new int[n + 1];
+        Arrays.fill(nums, -1);
+        segTree.build(1, 1, n, nums);
 
         int postIdx = 1;
         for(int[] range : postRange){
@@ -115,7 +114,7 @@ public class LuoGuP3740 {
         return hashMap.get(idx);
     }
 
-    private static void discretization2(int[][] postRange, int wallLength){
+    private static int discretization2(int[][] postRange){
         Set<Integer> set = new HashSet<>();
         for(int[] range : postRange){
             set.add(range[0]);
@@ -123,14 +122,11 @@ public class LuoGuP3740 {
         }
         list.addAll(set);
         Collections.sort(list);
-        if(list.get(list.size() - 1) - wallLength > 1){
-            list.add(list.get(list.size() - 1) + 1);
-            list.add(wallLength);
-        }
         for(int i = 0;i < list.size();i++){
             if(i != list.size() - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
         }
         Collections.sort(list);
+        return list.size();
     }
 
     private static int getIdx2(int idx){
