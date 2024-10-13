@@ -1,6 +1,8 @@
 package notes.FastRead;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -27,6 +29,18 @@ public class FastReadAndWrite {
         out.flush();
 		out.close();
 		br.close();
+
+        /* 重定位到文件
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("in.txt")));
+		StreamTokenizer in = new StreamTokenizer(br);
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream("out.txt")));
+        
+        
+
+        out.flush();
+		out.close();
+		br.close();
+        */
     }
  
     /**
