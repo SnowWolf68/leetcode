@@ -66,20 +66,26 @@ public class LuoGuP3740 {
             postRange[i] = new int[]{l, r};
         }
 
+        // 由于我们进行了离散化, 因此需要得到离散化后的总的下标数量, 这里使用size表示
+
         // int size = discretization1(postRange, n);
         int size = discretization2(postRange, n);
 
         SegmentTree segTree = new SegmentTree(size);
         int[] nums = new int[size + 1];
         Arrays.fill(nums, -1);
+        // 添加了离散化操作后, 线段树调用的入口, o, l, r = 1, 1, size
         segTree.build(1, 1, size, nums);
 
         int postIdx = 1;
         for(int[] range : postRange){
+            // 添加了离散化操作后, 线段树调用的入口, o, l, r = 1, 1, size
             // segTree.rangeReset(1, 1, size, getIdx1(range[0]), getIdx1(range[1]), postIdx++);
             segTree.rangeReset(1, 1, size, getIdx2(range[0]), getIdx2(range[1]), postIdx++);
         }
 
+        // 添加了离散化操作后, 线段树调用的入口, o, l, r = 1, 1, size
+        // 并且查询的时候, 要以墙的边界为准, 而不是最右边的海报的边界为准
         // out.println(segTree.query(1, 1, size, 1, getIdx1(n)));
         out.println(segTree.query(1, 1, size, 1, getIdx2(n)));
 
