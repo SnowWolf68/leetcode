@@ -66,10 +66,8 @@ public class LuoGuP3740 {
             postRange[i] = new int[]{l, r};
         }
 
-        // discretization1(postRange);
+        // int size = discretization1(postRange, n);
         int size = discretization2(postRange, n);
-
-        System.out.println(getIdx2(n) + " " + size);
 
         SegmentTree segTree = new SegmentTree(size);
         int[] nums = new int[size + 1];
@@ -78,11 +76,12 @@ public class LuoGuP3740 {
 
         int postIdx = 1;
         for(int[] range : postRange){
-            // segTree.rangeReset(1, 1, n, getIdx1(range[0]), getIdx1(range[1]), postIdx++);
-            segTree.rangeReset(1, 1, n, getIdx2(range[0]), getIdx2(range[1]), postIdx++);
+            // segTree.rangeReset(1, 1, size, getIdx1(range[0]), getIdx1(range[1]), postIdx++);
+            segTree.rangeReset(1, 1, size, getIdx2(range[0]), getIdx2(range[1]), postIdx++);
         }
 
-        out.println(segTree.query(1, 1, getIdx2(n)));
+        // out.println(segTree.query(1, 1, size, 1, getIdx1(n)));
+        out.println(segTree.query(1, 1, size, 1, getIdx2(n)));
 
         out.flush();
 		out.close();
@@ -105,8 +104,9 @@ public class LuoGuP3740 {
         set.add(wallLength);
         list.addAll(set);
         Collections.sort(list);
-        for(int i = 0;i < list.size();i++){
-            if(i != list.size() - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
+        int size = list.size();
+        for(int i = 0;i < size;i++){
+            if(i != size - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
         }
         Collections.sort(list);
         for(int i = 0;i < list.size();i++){
@@ -126,11 +126,11 @@ public class LuoGuP3740 {
             set.add(range[1]);
         }
         set.add(wallLength);
-        // set.add(1);
         list.addAll(set);
         Collections.sort(list);
-        for(int i = 0;i < list.size();i++){
-            if(i != list.size() - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
+        int size = list.size();
+        for(int i = 0;i < size;i++){
+            if(i != size - 1 && list.get(i + 1) - list.get(i) > 1) list.add(list.get(i) + 1);
         }
         Collections.sort(list);
         return list.size();
@@ -239,9 +239,10 @@ class SegmentTree {
         查询操作只需要执行一次, 并且是查询所有叶节点上的不同海报编号的数量
         查询操作的复杂度是O(n)级别的
         调用入口: o, l, r = 1, 1, n
+        需要注意的是: 这里查询的范围并不是整棵线段树, 因为有可能海报的区间会超过墙的区间, 因此查询的范围应该是墙的区间
      */
-    public int query(int o, int l, int r){
-        if(l == r || postId[o] != -1){     // 走到叶子结点, 或者当前区间上只有一种海报, 此时可以直接返回
+    public int query(int o, int l, int r, int L, int R){
+        if(l == r || (postId[o] != -1 && L <= l && r <= R)){     // 走到叶子结点, 或者当前区间上只有一种海报, 此时可以直接返回
             // 这里需要再额外判断一次是否postId[o] == -1, 因为如果第一个if是从l == r进来的, 那么走到这里时, 有可能postId[o] == -1, 即有可能此处没有海报
             if(!hashSet.contains(postId[o]) && postId[o] != -1){
                 hashSet.add(postId[o]);
@@ -250,8 +251,12 @@ class SegmentTree {
                 return 0;
             }
         }
+        spread(o, l, r);
         // 需要递归查询左右子区间
         int mid = (l + r) >> 1;
-        return query(2 * o, l, mid) + query(2 * o + 1, mid + 1, r);
+        int ret = 0;
+        if(L <= mid) ret += query(o * 2, l, mid, L, R);
+        if(mid < R) ret += query(2 * o + 1, mid + 1, r, L, R);
+        return ret; 
     }
 }
