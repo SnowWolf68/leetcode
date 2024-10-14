@@ -118,7 +118,7 @@ import java.util.Stack;
             此时才更新ret
         
  */
-public class LC3171 {
+public class LC3171_1 {
     public int minimumDifference(int[] nums, int k) {
         Stack<Integer> stack = new Stack<>();
         int rightOr = 0, n = nums.length, ret = Integer.MAX_VALUE, left = 0;
