@@ -196,4 +196,6 @@
 
 
 // unsorted 
-//      LC1884 https://leetcode.cn/problems/egg-drop-with-2-eggs-and-n-floors/description/?envType=daily-question&envId=2024-10-13
+//      扔鸡蛋问题: 重复子问题不大好想
+//      两个鸡蛋  LC1884 https://leetcode.cn/problems/egg-drop-with-2-eggs-and-n-floors/description/?envType=daily-question&envId=2024-10-13
+//      多个鸡蛋  LC887 https://leetcode.cn/problems/super-egg-drop/?envType=daily-question&envId=2024-10-14
