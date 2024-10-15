@@ -23,7 +23,14 @@
 //          LC1838 这题竟然也能用滑窗, 巧妙至极 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/
 //          LC2516 https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/description/
 //          LC2831 O(n * logn)和O(n) 两种写法 https://leetcode.cn/problems/find-the-longest-equal-subarray/description/
+//  
 //          LC2271 好题 难题 对下标进行滑窗 https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/
 //          LC2106 难题 好题 也是对下标数组进行的滑窗 并且这个滑窗也很巧妙, 很难看出来是滑窗 https://leetcode.cn/problems/maximum-fruits-harvested-after-at-most-k-steps/description/
+//
 //      2.2 求最短/最小     --> 窗口越长越合法, 求最短的窗口
+//          基础题  LC209 https://leetcode.cn/problems/minimum-size-subarray-sum/description/
+//                 
 //          
+
+
+//      越长越合法: CF1208B https://codeforces.com/contest/1208/problem/B
