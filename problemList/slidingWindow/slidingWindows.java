@@ -26,6 +26,8 @@
 //  
 //          LC2271 好题 难题 对下标进行滑窗 https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/
 //          LC2106 难题 好题 也是对下标数组进行的滑窗 并且这个滑窗也很巧妙, 很难看出来是滑窗 https://leetcode.cn/problems/maximum-fruits-harvested-after-at-most-k-steps/description/
+//          LC2555 难题 https://leetcode.cn/problems/maximize-win-from-two-segments/description/
+//          LC2271, LC2106, LC2555 其实都很像, 可以放在一起看
 //
 //      2.2 求最短/最小     --> 窗口越长越合法, 求最短的窗口
 //          基础题  LC209 https://leetcode.cn/problems/minimum-size-subarray-sum/description/
