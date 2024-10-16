@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.slidingWindow.solution;
 
 /**
 朴素想法: 划分型DP, 但是肯定T

@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.slidingWindow.solution;
 
 /**
 参考灵神题解: https://leetcode.cn/problems/maximize-win-from-two-segments/solutions/2093246/tong-xiang-shuang-zhi-zhen-ji-lu-di-yi-t-5hlh/
