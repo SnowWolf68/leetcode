@@ -34,9 +34,10 @@
 //      2.2 求最短/最小     --> 窗口越长越合法, 求最短的窗口
 //          基础题  LC209 https://leetcode.cn/problems/minimum-size-subarray-sum/description/
 //                 LC2904 https://leetcode.cn/problems/shortest-and-lexicographically-smallest-beautiful-string/description/
-//                 LC1234 https://leetcode.cn/problems/replace-the-substring-for-balanced-string/description/
+//          进阶    LC1234 https://leetcode.cn/problems/replace-the-substring-for-balanced-string/description/
 //                 LC2875 https://leetcode.cn/problems/minimum-size-subarray-in-infinite-array/description/
-//                 
+//                 LC1574 https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/     如何判断剩下的数组元素是非递减? 我的方法是维护逆序对
+//                  
 //          
 
 
