@@ -33,6 +33,9 @@
 //
 //      2.2 求最短/最小     --> 窗口越长越合法, 求最短的窗口
 //          基础题  LC209 https://leetcode.cn/problems/minimum-size-subarray-sum/description/
+//                 LC2904 https://leetcode.cn/problems/shortest-and-lexicographically-smallest-beautiful-string/description/
+//                 LC1234 https://leetcode.cn/problems/replace-the-substring-for-balanced-string/description/
+//                 LC2875 https://leetcode.cn/problems/minimum-size-subarray-in-infinite-array/description/
 //                 
 //          
 
