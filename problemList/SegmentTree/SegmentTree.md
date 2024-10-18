@@ -7,3 +7,6 @@
     特别修改
         LuoGuP4145 https://www.luogu.com.cn/problem/P4145
         CF438D https://www.luogu.com.cn/problem/CF438D
+
+    线段树维护更多类型的信息
+        
