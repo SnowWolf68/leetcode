@@ -199,3 +199,8 @@
 //      扔鸡蛋问题: 重复子问题不大好想
 //      两个鸡蛋  LC1884 https://leetcode.cn/problems/egg-drop-with-2-eggs-and-n-floors/description/?envType=daily-question&envId=2024-10-13
 //      多个鸡蛋  LC887 https://leetcode.cn/problems/super-egg-drop/?envType=daily-question&envId=2024-10-14
+//      
+//      逆序对问题: 
+//          基础版: LC629 https://leetcode.cn/problems/k-inverse-pairs-array/description/       这题的状态表示不好想, 状态转移也不好想, 为什么是枚举逆序对数量, 而不是枚举最后一个填的元素? 关键还是要能够分析出 重复子问题, 从重复子问题出发考虑状态定义以及状态转移
+//          加强版: LC3193 https://leetcode.cn/problems/count-the-number-of-inversions/description/     上面那题的加强版
+//
