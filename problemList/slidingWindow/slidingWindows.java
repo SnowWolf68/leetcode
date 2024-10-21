@@ -42,3 +42,6 @@
 
 
 //      越长越合法: CF1208B https://codeforces.com/contest/1208/problem/B
+//
+//      滑动窗口计数: LC3325 https://leetcode.cn/problems/count-substrings-with-k-frequency-characters-i/description/   比较简单的滑动窗口计数题, ret += left 
+//      
