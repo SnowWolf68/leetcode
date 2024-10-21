@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.Manacher.solution;
 
 import java.util.Arrays;
 
