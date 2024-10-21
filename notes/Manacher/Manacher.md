@@ -213,9 +213,12 @@ private int[] Manacher(String s){
 
 1. `t.length() = 2 * n + 1`: 这一点很显然, 可以举一个例子或者分析一下插入过程就能看出来
 
-2. 下标的对应关系: 
+2. 下标的对应关系:  
    1. `s[i]`对应在`t`中的下标应该是`t[i * 2 + 1]`
    2. `t[i]`对应在`s`中的下标应该是`s[i / 2]`
+3. `t`中的回文半径和`s`中的回文半径之间的关系: 
+    
+    假设`hl[i]`代表的是`t[i]`的回文半径(这里假设`t[i]`代表的是字母, 而不是我们插入的分隔符`#`), 那么首先`t[i]`对应在`s[]`中的下标为`s[i / 2]`, 这里假设`hl2[i]`代表的是`s[i]`的回文半径, 因此`t[i]`对应在`s`中的`s[i / 2]`的回文半径为`hl2[i / 2] == hl[i] / 2`
 
 在经过上面的转化之后, `Manacher`算法的总体流程如下: 
 
@@ -231,6 +234,51 @@ private int[] Manacher(String s){
 
     2. 如果`r2 - l2 + 1 <= hl[mid] * 2 - 1`, 说明`t`在`[l2, r2]`区间的子串是回文, 即`s`在`[l, r]`区间的子串是回文
    
+因此我们可以写出下面的`Manacher`算法的代码
 
+```java
+public class Manacher {
+    public String s, t;
+    public int[] hl;    // t串的回文半径
+    public int[] hl2;   // s串的回文半径
+    Manacher(String _s){
+        this.s = _s;
+        StringBuilder sb = new StringBuilder();
+        sb.append('#');
+        for(char c : s.toCharArray()){
+            sb.append(c);
+            sb.append('#');
+        }
+        t = sb.toString();
+        int n = t.length();
+        hl = new int[n];
+        Arrays.fill(hl, 1);
+        int mRight = -1, mMid = -1;
+        for(int i = 0;i < n;i++){
+            if(i < mRight){
+                hl[i] = Math.min(hl[2 * mMid - i], mRight - i + 1);
+            }
+            while(i - hl[i] >= 0 && i + hl[i] < n && t.charAt(i - hl[i]) == t.charAt(i + hl[i])){
+                hl[i]++;
+                mRight = i + hl[i] - 1;
+                mMid = i;
+            }
+        }
+    }
+
+    public boolean check(int l, int r){
+        int l2 = l * 2 + 1, r2 = r * 2 + 1, mid = (l2 + r2) >> 1;
+        return r2 - l2 + 1 <= hl[mid] * 2 - 1;
+    }
+
+    // 使用t串的回文半径数组hl[] 计算s串的回文半径数组hl2[]
+    public void getHL2(){
+        hl2 = new int[s.length()];
+        for(int i = 0;i < s.length();i++){
+            hl2[i] = hl[i * 2 + 1] / 2;
+        }
+    }
+}
+```
 
     
