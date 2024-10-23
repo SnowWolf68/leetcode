@@ -1,21 +1,46 @@
-package notes.Trie;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.StreamTokenizer;
+package notes.Trie.solution;
 
 /**
-静态数组实现的 Trie
-    tree数组的结构
-    对于tree[i][]来说: 
-        如果tree[i][j] == 0, 意味着tree[i]这个节点中没有j这个孩子
-        反之, tree[i][j]就是tree[i]的下标为j的孩子在tree中的下标, 即tree[i]的下标为j的孩子为tree[tree][i][j]
-    
-牛客测试链接: https://www.nowcoder.com/practice/7f8a8553ddbf4eaab749ec988726702b
+牛客链接: https://www.nowcoder.com/practice/c552d3b4dfda49ccb883a6371d9a6932
  */
-public class TrieStaticArray {
+public class NowCoder_Trie_1 {
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param b int整型二维数组 
+     * @param a int整型二维数组 
+     * @return int整型一维数组
+     */
+    public int[] countConsistentKeys (int[][] b, int[][] a) {
+        // write code here
+        /**
+        对于-5的情况, 将 '-' 单独作为一条路, 这样就不需要考虑负数的情况, 父节点的子节点最多有 10 + 1 + 1 = 12种 (10个数字 + 一个 '-' 符号 + 一个 '#' 符号)
+         */
+        Trie trie = new Trie(100000 * 12, 12);
+        for(int[] arr : a){
+            StringBuilder sb = new StringBuilder();
+            for(int i = 1;i < arr.length;i++){
+                int diff = arr[i] - arr[i - 1];
+                sb.append(diff + '#');
+            }
+            trie.insert(sb.toString());
+        }
+        int[] ret = new int[b.length];
+        for(int j = 0;j < b.length;j++){
+            StringBuilder sb = new StringBuilder();
+            int[] arr = b[j];
+            for(int i = 1;i < arr.length;i++){
+                int diff = arr[i] - arr[i - 1];
+                sb.append(diff + '#');
+            }
+            ret[j] = trie.prefixCnt(sb.toString());
+        }
+        return ret;
+    }
+}
+
+class Trie {
     private int[][] tree;
     private int cnt;    // 下一个要用的tree中的节点下标
     private int[] pass;
@@ -28,7 +53,7 @@ public class TrieStaticArray {
      * @param n: 静态数组tree的大小
      * @param m: 每一个节点的孩子数量
      */
-    TrieStaticArray(int n, int m){
+    Trie(int n, int m){
         tree = new int[n][m];
         cnt = 1;    // 这里我们规定: tree中的下标从1开始用
         pass = new int[n];
@@ -37,11 +62,17 @@ public class TrieStaticArray {
 
     /**
      * 计算字符c对应的子节点位于tree中第二个维度中的下标
+     * 
+     *  在这题的情况中, 由于可能出现负数, 因此对于-6这种的数, 在Trie中存的时候, 会存成 '-' 和 '6' 两个字符
+     *  因此需要处理当c == '-'时, 应该映射到哪一个下标
+     * 
      * @param c: 要计算的字符
      * @return 字符c对应tree中第二个维度中的下标
      */
     private int getIdx(char c){
-        return c - 'a';
+        if(c == '-') return 10;
+        else if(c == '#') return 11;
+        else return c - '0';
     }
 
     public void insert(String s){
@@ -99,35 +130,5 @@ public class TrieStaticArray {
             node = tree[node][idx];
         }
         end[node]--;
-    }
-
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StreamTokenizer in = new StreamTokenizer(br);
-		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
-        
-        TrieStaticArray trie = new TrieStaticArray(20 * 100000, 26);
-
-        in.nextToken(); int m = (int)in.nval;
-        for(int i = 0;i < m;i++){
-            String[] split = br.readLine().split(" ");
-            int op = Integer.valueOf(split[0]);
-            String s = split[1];
-            if(op == 1){
-                trie.insert(s);
-            }else if(op == 2){
-                trie.delete(s);
-            }else if(op == 3){
-                int cnt = trie.search(s);
-                if(cnt > 0) out.println("YES");
-                else out.println("NO");
-            }else{
-                out.println(trie.prefixCnt(s));
-            }
-        }
-
-        out.flush();
-		out.close();
-		br.close();
     }
 }
