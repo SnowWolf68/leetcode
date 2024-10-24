@@ -207,5 +207,9 @@
 //          LC1866 https://leetcode.cn/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/description/   重复子问题以及状态表示有点难想, 要想找重复子问题, 也需要使用类似上一题中的思想, 将[2, 3, ..., i] 区间的问题 转化成 [1, 2, ..., i - 1] 区间的问题
 
 // 树形DP
+//  1. 数的直径
+//      LC543 https://leetcode.cn/problems/diameter-of-binary-tree/description/
+//      LC124 https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/    稍难, 要考虑左/右子节点出发的路径不选的情况
+//
 //      LC1373 https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/description/     单论树形DP, 并不难, 难的是计算当前节点返回的ret[]的逻辑
 //      
