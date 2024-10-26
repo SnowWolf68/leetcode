@@ -3,6 +3,9 @@ package problemList.DFS.solution;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+这题的解析我单独放在了 DFS/notes/DFS时间戳.md 中
+ */
 public class LC2322 {
     private int cnt = 0;    // 全局时间戳
     private int[] xr;       // 以某个节点为根的子树的异或值
