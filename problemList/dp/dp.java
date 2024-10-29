@@ -212,6 +212,11 @@
 //          加强版: LC3193 https://leetcode.cn/problems/count-the-number-of-inversions/description/     上面那题的加强版
 //    其他的版本, 这题太有意思了: LC903 https://leetcode.cn/problems/valid-permutations-for-di-sequence/    如何将不是子问题的问题, 转化成原问题的子问题, 用到了类似 离散化 的思想, 或者说 平移区间 的思想? 这题的思想很好, 第一次见, 很有意思, 很巧妙
 //          LC1866 https://leetcode.cn/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/description/   重复子问题以及状态表示有点难想, 要想找重复子问题, 也需要使用类似上一题中的思想, 将[2, 3, ..., i] 区间的问题 转化成 [1, 2, ..., i - 1] 区间的问题
+//
+//
+//
+//
+//      正难则反 + 前缀和优化DP  LC3333 https://leetcode.cn/problems/find-the-original-typed-string-ii/description/
 
 // 树形DP
 //  1. 数的直径
