@@ -48,3 +48,57 @@ public static int pow(int base, int exp, int mod){
 
 #### 3. 矩阵乘法
 
+单纯的矩阵乘法代码实现很简单, 这里直接给出实现
+
+```java
+public int[][] martixMul(int[][] a, int[][] b){
+    // a: m * p  b: q * n
+    int m = a.length, p = a[0].length, q = b.length, n = b[0].length;
+    if(p != q) return null;     // 无法相乘
+    int[][] ret = new int[m][n];
+    for(int i = 0;i < m;i++){
+        for(int j = 0;j < n;j++){
+            for(int k = 0;k < p;k++){
+                ret[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    retunr ret;
+}
+```
+
+### 矩阵快速幂
+
+接下来终于讲到了最重要的知识点: 矩阵快速幂
+
+> 对于一个矩阵来说, 如果想要求这个矩阵的`x`次幂, 根据矩阵乘法的条件, 显然这个矩阵只能是**方阵**
+
+矩阵快速幂的原理: 
+
+在前面我们提到了乘法的快速幂的实现, 通过乘法快速幂计算的原理我们可以发现, 如果想要求一个东西的`x`次幂, 我们可以将指数`x`拆成二进制表示, 接下来我们只需要针对指数的二进制表示中的每一个二进制位, 从小到大计算底数`base`的每个幂次, 如果指数对应二进制位为`1`, 那么累加当前这个幂次到结果`ans`中, 否则不累加, 继续计算下一个幂次
+
+如上所说的乘法快速幂思想同样可以应用到矩阵快速幂中
+
+和乘法快速幂不同的是, 在乘法快速幂中, 我们需要初始化最终答案`ans = 1`, 但是在矩阵中, 应该怎么初始化?
+
+很显然, 在矩阵中, 和乘法中的`1`有类似性质 (`任何数 * 1 == 这个数本身`) 的矩阵显然就是 **单位阵**
+
+因此我们只需要初始化`ans`为单位阵, 按照和乘法快速幂类似的计算方式计算即可
+
+```java
+public int[][] MatrixQuickPow(int[][] mat, int pow){
+    if(mat.length != mat[0].length) return null;    // 不是方阵, 无法求幂
+    int n = mat.length;
+    int[][] ans = new int[n][n];
+    for(int i = 0;i < n;i++) ans[i][i] = 1;     // 单位阵
+    int[][] x = mat;
+    while(pow != 0){
+        if((pow & 1) == 1){
+            ans = martixMul(ans, x);
+        }
+        pow >>= 1;
+        x = martixMul(x, x);
+    }
+    return ans;
+}
+```

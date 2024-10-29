@@ -107,6 +107,11 @@
 //      难题: TODO: 时间复杂度我分析的好像有问题 LC1187 https://leetcode.cn/problems/make-array-strictly-increasing/description/  两种方法: 1) dp角度出发  2) LIS角度出发
 //           LC1713 https://leetcode.cn/problems/minimum-operations-to-make-a-subsequence/description/  LCS -> LIS 前提是LCS的两个数组中有一个数组中不包含重复元素
 //      思维扩展: LC368 https://leetcode.cn/problems/largest-divisible-subset/description/  最大整除子集的寻找也能使用类似LIS的方法来解决, 注意这里还要求你输出具体方案
+// 5. 状态机DP
+//          LC3335 https://leetcode.cn/problems/total-characters-in-string-after-transformations-i/description/     状态表示不好想
+//      
+//      矩阵快速幂优化DP LC3337 https://leetcode.cn/problems/total-characters-in-string-after-transformations-ii/description/
+//
 // 6. 划分型DP
 //  6.1 判定能否划分
 //          简单题:  LC2369 https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/description/
