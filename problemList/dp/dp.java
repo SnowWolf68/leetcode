@@ -50,6 +50,7 @@
 //      LC1937 https://leetcode.cn/problems/maximum-number-of-points-with-cost/description/  不大好想的优化: 拆项 + 预处理前后缀最大值, 好好考虑怎么得到的这个优化
 // 3. 背包
 //  3.1 0-1背包
+//      LC871 https://leetcode.cn/problems/minimum-number-of-refueling-stops/description/
 //      LC2915 https://leetcode.cn/problems/length-of-the-longest-subsequence-that-sums-to-target/description/  
 //      LCSF02 https://leetcode.cn/contest/sf-tech/problems/cINqyA/ 
 //      LC416 https://leetcode.cn/problems/partition-equal-subset-sum/description/  
@@ -109,7 +110,8 @@
 //      思维扩展: LC368 https://leetcode.cn/problems/largest-divisible-subset/description/  最大整除子集的寻找也能使用类似LIS的方法来解决, 注意这里还要求你输出具体方案
 // 5. 状态机DP
 //          LC3335 https://leetcode.cn/problems/total-characters-in-string-after-transformations-i/description/     状态表示不好想
-//      
+//          LC3259 https://leetcode.cn/problems/maximum-energy-boost-from-two-drinks/description/
+//          
 //      矩阵快速幂优化DP LC3337 https://leetcode.cn/problems/total-characters-in-string-after-transformations-ii/description/
 //
 // 6. 划分型DP
@@ -218,6 +220,8 @@
 //
 //
 //      正难则反 + 前缀和优化DP  LC3333 https://leetcode.cn/problems/find-the-original-typed-string-ii/description/
+//
+//      线段树上DP 第一次见, 思路很巧妙 将线段树的build和up与dp的状态转移结合  LC3165 https://leetcode.cn/problems/maximum-sum-of-subsequence-with-non-adjacent-elements/description/
 
 // 树形DP
 //  1. 数的直径
