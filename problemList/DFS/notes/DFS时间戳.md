@@ -151,3 +151,55 @@
 这题我一开始把DFS时间戳想的比较复杂, 实际上这题的DFS时间戳是非常显然的, DFS时间戳实际上保存的就是按照DFS顺序访问整棵树的顺序, 这里的 "顺序" , 包括了进入每一棵子树的顺序, 以及离开每一棵子树的顺序, 因此我们要想找`dfsStr`中某一棵子树的`subStr`的起始和结束下标, 只需要到DFS时间戳记录的`in[]`和`out[]`数组中找对应的位置即可, 假设当前这棵子树的根节点是`i`, 那么`dfsStr`的`[in[i], out[i]]`区间对应的就是这棵子树的`subStr`
 
 以上这道题就分析完了
+
+**注意事项:**:
+
+需要注意的是, 在使用dfs时间戳记录dfs顺序的时候, 我们应当**在 遍历到 当前节点时, 将全局时间戳`cnt++`**, 这样使用`in[]`和`out[]`数组记录下来的顺序, 才是在最终整个的遍历序列中某一棵子树的遍历序列的起始和结束位置
+
+> 上面这句话我认为是dfs时间戳的核心, 理解了这句话, 就真的会用dfs时间戳来记录dfs顺序了
+
+具体来说, 如果dfs顺序是先序遍历, 那么时间戳的更新应该如下
+
+```java
+private int cnt = 0;
+private int[] in;
+private int[] out;
+public void dfs(int i, int pa, List<Integer>[] g){
+    in[i] = cnt++;
+    processCurNode(i);
+    for(int nxt : g[i]){
+        if(nxt != pa){
+            dfs(nxt, i, g);
+        }
+    }
+    out[i] = cnt;
+}
+
+public void processCurNode(int i){
+    // 处理当前这个节点
+}
+```
+
+如果dfs顺序是后序遍历, 那么时间戳的更新应该如下
+
+```java
+private int cnt = 0;
+private int[] in;
+private int[] out;
+public void dfs(int i, int pa, List<Integer>[] g){
+    in[i] = cnt;
+    for(int nxt : g[i]){
+        if(nxt != pa){
+            dfs(nxt, i, g);
+        }
+    }
+    processCurNode(i);
+    out[i] = cnt++;
+}
+
+public void processCurNode(int i){
+    // 处理当前这个节点
+}
+```
+
+通过这两个例子, 可以更好的理解上面我总结的那句话

@@ -14,16 +14,31 @@ public class LC3327 {
     public boolean[] findAnswer(int[] parent, String s) {
         // 邻接表存树
         int n = parent.length;
+        in = new int[n]; out = new int[n];
         List<Integer>[] g = new List[n];
         for(int i = 0;i < n;i++) g[i] = new ArrayList<>();
         for(int i = 0;i < n;i++){
-            g[parent[i]].add(i);
+            if(parent[i] != -1) g[parent[i]].add(i);
         }
-        dfs(0, -1);
+        dfs(0, -1, s, g);
+        boolean[] ret = new boolean[n];
+        String str = sb.toString();
+        Manacher manacher = new Manacher(str);
+        for(int i = 0;i < n;i++){
+            ret[i] = manacher.check(in[i], out[i]);
+        }
+        return ret;
     }
 
-    private void dfs(int i, int pa){
-        
+    private void dfs(int i, int pa, String s, List<Integer>[] g){
+        in[i] = cnt;
+        for(int nxt : g[i]){
+            if(nxt != pa){
+                dfs(nxt, i, s, g);
+            }
+        }
+        sb.append(s.charAt(i));
+        out[i] = cnt++;
     }
 }
 
