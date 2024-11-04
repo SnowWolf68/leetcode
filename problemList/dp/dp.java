@@ -161,6 +161,7 @@
 //                  LC2140 https://leetcode.cn/problems/solving-questions-with-brainpower/description/  填表法 & 刷表法
 //                  LC983 https://leetcode.cn/problems/minimum-cost-for-tickets/description/  TODO: 我写的复杂度是O(n * logn), 是否有更快的写法? 比如O(n)?
 //                  LC2901 https://leetcode.cn/problems/longest-unequal-adjacent-groups-subsequence-ii/description/  构造输出具体方案
+//                  LC3144 https://leetcode.cn/problems/minimum-substring-partition-of-equal-character-frequency/description/       感觉其实就是一个简单的划分型DP
 //          难题:    LC2896 https://leetcode.cn/problems/apply-operations-to-make-two-strings-equal/description/  "均摊法"很妙, 能够将第一种操作的代价分散到某一个下标, 从而不需要确定j的位置, 妙
 //                  LC2167 https://leetcode.cn/problems/minimum-time-to-remove-all-cars-containing-illegal-goods/description/  前后缀分解典型题目
 //                  LC2188 https://leetcode.cn/problems/minimum-time-to-finish-the-race/description/  难点1: 如何计算maxLaps上限, 难点2: 如何解决cur, sum的溢出问题, 难点3: 如何正确初始化, 使得初始化能够保证后续的填表是正确的
