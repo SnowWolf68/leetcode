@@ -204,6 +204,8 @@
 //                 LC1986 https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/     也是简单题, 但是注意理解 这题的状态定义, 和 上一题的空间优化版本的状态定义的区别    为什么上一题必须要枚举i? 好好想想
 //         
 //
+//  其他类型的状压DP: 
+//          LC638 https://leetcode.cn/problems/shopping-offers/description/     看起来并不是很难, 但是我写的状态压缩跑的很慢, 我也不知道为什么
 //
 // 10. 数位DP
 //      灵神数位DP模版 v1.0  LC2376 https://leetcode.cn/problems/count-special-integers/description/

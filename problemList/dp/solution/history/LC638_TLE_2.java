@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.dp.solution.history;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +40,7 @@ dp[i][state]: 对于needs[i]来说, 此时有多种选择:
 初始化: 这里i - 1有可能越界, 因此可以添加一行辅助节点, 第一行此时意味着没有任何需求需要满足, 因此第一行全都初始化为0
 return dp[n - 1][needs对应的mask];
  */
-public class LC638 {
+public class LC638_TLE_2 {
     public int shoppingOffers(List<Integer> price, List<List<Integer>> special, List<Integer> needs) {
         int mask = 0, n = needs.size();
         for(int i = 0;i < needs.size();i++){
@@ -101,7 +101,7 @@ public class LC638 {
         special.add(Arrays.asList(4,0,0,4,3,4,30));
         List<Integer> needs = Arrays.asList(6,3,1,4,5,1);
         long start = System.currentTimeMillis();
-        System.out.println(new LC638().shoppingOffers(price, special, needs));
+        System.out.println(new LC638_TLE_2().shoppingOffers(price, special, needs));
         long end = System.currentTimeMillis();
         System.out.println("time = " + (end - start));
         // System.out.println(new LC638().getStateNum(0b00000000000000000000000011101111, 0));

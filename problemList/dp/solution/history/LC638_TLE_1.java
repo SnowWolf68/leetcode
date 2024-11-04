@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.dp.solution.history;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ dfs(i, needs) 表示满足needs[0, i]区间的购买需求的最少花费
         最后由于这里会对needs进行修改, 因此在每次dfs之后都要恢复现场
 return dfs(n - 1, needs);
  */
-public class LC638_TLE {
+public class LC638_TLE_1 {
     private List<Integer> price;
     private List<List<Integer>> special;
     public int shoppingOffers(List<Integer> _price, List<List<Integer>> _special, List<Integer> needs) {
