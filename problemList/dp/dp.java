@@ -232,6 +232,10 @@
 //      正难则反 + 前缀和优化DP  LC3333 https://leetcode.cn/problems/find-the-original-typed-string-ii/description/
 //
 //      线段树上DP 第一次见, 思路很巧妙 将线段树的build和up与dp的状态转移结合  LC3165 https://leetcode.cn/problems/maximum-sum-of-subsequence-with-non-adjacent-elements/description/
+//
+//
+//      比较奇怪的dp
+//          LC3202 https://leetcode.cn/problems/find-the-maximum-length-of-valid-subsequence-ii/description/    这题dp表两个维度的遍历顺序比较奇怪, 很容易写错
 
 // 树形DP
 //  1. 数的直径
