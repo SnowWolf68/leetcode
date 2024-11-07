@@ -210,8 +210,11 @@
 //
 // 10. 数位DP
 //      灵神数位DP模版 v1.0  LC2376 https://leetcode.cn/problems/count-special-integers/description/
-//      灵神数位DP模版 v2.0  
-//
+//      灵神数位DP模版 v2.0  (v1.0和v2.0都可以做, 但是v2.0更好) LC2999 https://leetcode.cn/problems/count-the-number-of-powerful-integers/description/
+//          LC2719 https://leetcode.cn/problems/count-of-integers/description/      v2.0版本, 搞懂了上面那个模版, 这题很简单
+//          LC788 https://leetcode.cn/problems/rotated-digits/description/      v1.0版本
+//          LC902 https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/description/     v1.0版本, 很简单
+//          
 //
 
 
