@@ -214,6 +214,8 @@
 //          LC2719 https://leetcode.cn/problems/count-of-integers/description/      v2.0版本, 搞懂了上面那个模版, 这题很简单
 //          LC788 https://leetcode.cn/problems/rotated-digits/description/      v1.0版本
 //          LC902 https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/description/     v1.0版本, 很简单
+//          LC233 https://leetcode.cn/problems/number-of-digit-one/description/     理解cnt含义, memo[][]第二个维度应该开多大
+//          LC600 https://leetcode.cn/problems/non-negative-integers-without-consecutive-ones/description/      简单题
 //          
 //
 
