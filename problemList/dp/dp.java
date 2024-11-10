@@ -172,6 +172,7 @@
 //                  LC873 https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/description/  和上面几题类似
 //                  LC446 https://leetcode.cn/problems/arithmetic-slices-ii-subsequence/description/  
 //                  LC1048 https://leetcode.cn/problems/longest-string-chain/description/  两种状态转移的写法, 感觉第二种写法更优雅, 但是第一种写法更易懂
+//                  LC3351 https://leetcode.cn/problems/sum-of-good-subsequences/description/   虽然是hard, 虽然自己没想出来, 但是看完题解之后感觉这题其实并不难, 没想到基于值域dp的思路
 //          难题:   TODO: LC3098
 //  7.3 矩阵快速幂优化: TODO
 //  7.4 多维: 
