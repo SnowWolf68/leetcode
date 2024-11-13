@@ -45,3 +45,4 @@
 //
 //      滑动窗口计数: LC3325 https://leetcode.cn/problems/count-substrings-with-k-frequency-characters-i/description/   比较简单的滑动窗口计数题, ret += left 
 //      
+//      越短越合法 滑动窗口计数  LC3258 https://leetcode.cn/problems/count-substrings-that-satisfy-k-constraint-i/description/
