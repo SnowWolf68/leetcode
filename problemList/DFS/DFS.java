@@ -5,4 +5,6 @@
 //      LC3327 https://leetcode.cn/problems/check-if-dfs-strings-are-palindromes/description/
 //
 //  常规dfs
-//      计算子树大小:  LC3331 https://leetcode.cn/problems/find-subtree-sizes-after-changes/description/       从上到下的dfs, 看起来很简单, 但是要想弄清楚还是要好好想想   两种写法: 两次dfs & 一次dfs      这里还有一点小细节, 涉及到编译器优化, 具体写在代码中了
+//      计算子树大小:  
+//              LC3249 https://leetcode.cn/problems/count-the-number-of-good-nodes/description/?envType=daily-question&envId=2024-11-14
+//              LC3331 https://leetcode.cn/problems/find-subtree-sizes-after-changes/description/       从上到下的dfs, 看起来很简单, 但是要想弄清楚还是要好好想想   两种写法: 两次dfs & 一次dfs      这里还有一点小细节, 涉及到编译器优化, 具体写在代码中了
