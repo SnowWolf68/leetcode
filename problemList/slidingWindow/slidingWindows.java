@@ -39,7 +39,10 @@
 //                 LC1574 https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/     如何判断剩下的数组元素是非递减? 我的方法是维护逆序对
 //                  
 //          
-
+// 五: 三指针
+//      
+//
+//
 
 //      越长越合法: CF1208B https://codeforces.com/contest/1208/problem/B
 //
