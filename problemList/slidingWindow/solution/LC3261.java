@@ -50,7 +50,7 @@ package problemList.slidingWindow.solution;
 时间复杂度: 这里对于每一个查询, 计算L花费O(logn)的时间, 计算[L + 1, r]区间的子串数量经过前缀和优化之后可以做到O(1), 再加上滑窗的时间复杂度 O(n)
 因此总的时间复杂度是: O(n + m * logn), 其中m = queries.length
  */
-public class LC3261_1 {
+public class LC3261 {
     public long[] countKConstraintSubstrings(String s, int k, int[][] queries) {
         int n = s.length(), m = queries.length, le = 0;
         int[] left = new int[n], cnt = new int[2];

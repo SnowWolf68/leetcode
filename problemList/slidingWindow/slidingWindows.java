@@ -47,5 +47,5 @@
 //      
 //      越短越合法 滑动窗口计数  LC3258 https://leetcode.cn/problems/count-substrings-that-satisfy-k-constraint-i/description/
 //
-//      滑动窗口的巧妙应用: LC3261 https://leetcode.cn/problems/count-substrings-that-satisfy-k-constraint-ii/description/      注: 本题除了可以使用 滑窗 + 二分 + 前缀和 的做法之外, 还有 三指针 的做法
+//      滑动窗口的巧妙应用: LC3261 https://leetcode.cn/problems/count-substrings-that-satisfy-k-constraint-ii/description/
 //
