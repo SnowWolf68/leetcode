@@ -40,7 +40,10 @@
 //                  
 //          
 // 五: 三指针
-//      
+//      基础题:
+//          LC2367 https://leetcode.cn/problems/number-of-arithmetic-triplets/
+//          LC825 https://leetcode.cn/problems/friends-of-appropriate-ages/description/     其实我感觉这题出的不是很好, 但是解法中统计cnt的思想还是比较重要的
+//          LC2563 https://leetcode.cn/problems/count-the-number-of-fair-pairs/description/     三指针的好题, 一定要吃透, 学三指针就先看这题!!!
 //
 //
 
