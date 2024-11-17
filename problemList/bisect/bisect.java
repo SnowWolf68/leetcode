@@ -6,3 +6,7 @@
 
 // unsorted
 //      LC2187 每日一题 https://leetcode.cn/problems/minimum-time-to-complete-trips/description/?envType=daily-question&envId=2024-10-05
+//
+//  最小化最大值: 
+//      难题: 
+//          LC3357 https://leetcode.cn/problems/minimize-the-maximum-adjacent-element-difference/description/
