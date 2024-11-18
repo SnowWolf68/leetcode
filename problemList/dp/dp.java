@@ -67,6 +67,7 @@
 //      LCP47 https://leetcode.cn/problems/oPs9Bm/description/  看起来很复杂, 但是其实就是一个很简单的求方案数的 "恰好装满" 类型的0-1背包
 //
 //      难题: Bitset优化0-1背包DP 附Java手写Bitset板子 LC3181 https://leetcode.cn/problems/maximum-total-reward-using-operations-ii/description/?envType=problem-list-v2&envId=z2BnCgtB
+//          前后缀分解 + 二维0-1背包: LC3287 https://leetcode.cn/problems/find-the-maximum-sequence-value-of-array/description/     这题的刷表法也很有意思      TODO: 继续优化
 //  3.2 完全背包
 //      LC322 https://leetcode.cn/problems/coin-change/description/ 
 //      LC518 https://leetcode.cn/problems/coin-change-ii/description/ 
