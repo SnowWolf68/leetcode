@@ -5,7 +5,7 @@ package problemList.UnionFind.solution;
 
 ps: 这部分代码写的很不优雅, 但是我看题解区有比较简洁的写法, TODO: 学习一下题解区更优雅的解法
  */
-public class LC1562 {
+public class LC1562_1 {
     public class UnionFind {
         public int[] pa;
         public int[] size;

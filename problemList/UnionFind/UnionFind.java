@@ -5,6 +5,10 @@
 //      
 //
 //   区间并查集: 
-//      LC1562 https://leetcode.cn/problems/find-latest-group-of-size-m/    但是我写的很复杂, 题解区有更优雅的代码, TODO: 学习一下更优雅的解法
 //      LC3244 https://leetcode.cn/problems/shortest-distance-after-road-addition-queries-ii/description/   也有不用并查集的做法
+//      
+//  数组上的并查集: 
+//      LC1562 https://leetcode.cn/problems/find-latest-group-of-size-m/description/            这题和LC2382类似, 可以一起做
+//      LC1488 https://leetcode.cn/problems/avoid-flood-in-the-city/description/    两种做法: 有序表二分/并查集
+//      LC2382 https://leetcode.cn/problems/maximum-segment-sum-after-removals/description/     这题和LC1562类似, 可以一起做
 //      
