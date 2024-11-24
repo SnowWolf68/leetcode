@@ -1,7 +1,5 @@
 package problemList.unsorted;
 
-import java.util.Arrays;
-
 // https://leetcode.cn/contest/biweekly-contest-144/problems/shift-distance-between-two-strings/
 
 /**
@@ -21,10 +19,10 @@ dp[i]: 首先判断s[i]和t[i]是否相同
 初始化: 这里i - 1有可能越界, 因此添加辅助节点 dp[0] , 并且初始化dp[0] = 0
 return dp[n - 1];
  */
-public class LC100441 {
+public class LC3361 {
     public long shiftDistance(String s, String t, int[] nextCost, int[] prevCost) {
         int n = s.length(), m = nextCost.length;
-        int[] dp = new int[n + 1], nxtSum = new int[m + 1], prevSum = new int[m + 1];
+        long[] dp = new long[n + 1], nxtSum = new long[m + 1], prevSum = new long[m + 1];
         for(int i = 1;i <= m;i++){
             nxtSum[i] = nxtSum[i - 1] + nextCost[i - 1];
             prevSum[i] = prevSum[i - 1] + prevCost[i - 1];
@@ -32,30 +30,15 @@ public class LC100441 {
         for(int i = 1;i <= n;i++){
             if(s.charAt(i - 1) == t.charAt(i - 1)) dp[i] = dp[i - 1];
             else{
-                int curCost = Integer.MAX_VALUE;
+                long curCost = Long.MAX_VALUE;
                 if(t.charAt(i - 1) > s.charAt(i - 1)){
                     curCost = Math.min(nxtSum[t.charAt(i - 1) - 'a'] - nxtSum[s.charAt(i - 1) - 'a'], (prevSum[m] - (prevSum[t.charAt(i - 1) - 'a' + 1] - prevSum[s.charAt(i - 1) - 'a' + 1])));
                 }else{
-                    // System.out.println(m);
-                    // System.out.println((nxtSum[m] - (nxtSum[s.charAt(i - 1) - 'a'] - nxtSum[t.charAt(i - 1) - 'a'])));
-                    // System.out.println((prevSum[s.charAt(i - 1) - 'a' + 1] - prevSum[t.charAt(i - 1) - 'a' + 1]));
                     curCost = Math.min(curCost, Math.min(nxtSum[m] - (nxtSum[s.charAt(i - 1) - 'a'] - nxtSum[t.charAt(i - 1) - 'a']), prevSum[s.charAt(i - 1) - 'a' + 1] - prevSum[t.charAt(i - 1) - 'a' + 1]));
                 }
-                // if(i == 1){
-                //     System.out.println((prevSum[n] - (prevSum[t.charAt(i - 1) - 'a' + 1] - prevSum[s.charAt(i - 1) - 'a' + 1])));
-                // }
                 dp[i] = dp[i - 1] + curCost;
-                // System.out.println("i = " + i + " curCost = " + curCost);
             }
         }
-        // System.out.println(Arrays.toString(dp));
         return dp[n];
-    }
-
-    public static void main(String[] args) {
-        String s = "leet", t = "code";
-        int[] nextCost = new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-        int[] prevCost = new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-        System.out.println(new LC100441().shiftDistance(s, t, nextCost, prevCost));
     }
 }
