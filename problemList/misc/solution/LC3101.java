@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.misc.solution;
 
 /**
 枚举交替子数组的右端点

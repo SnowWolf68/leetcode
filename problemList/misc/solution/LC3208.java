@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.misc.solution;
 
 /**
 环形数组的处理方式: 将原数组复制一份, 拼在原数组的后面
