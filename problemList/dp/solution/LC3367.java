@@ -85,13 +85,15 @@ public class LC3367 {
         for(int[] nxtArr : g[i]){
             int nxt = nxtArr[0], weight = nxtArr[1];
             if(nxt != pa){
-                nc.add(dfs(nxt, i)[0] + weight);
-                c.add(dfs(nxt, i)[1]);
+                nc.add(dfs(nxt, i)[0]);
+                c.add(dfs(nxt, i)[1] + weight);
             }
         }
-        ret[0] = choose(c, nc, k);
-        ret[1] = choose(c, nc, k - 1);
-        System.out.println("i = " + i + " nc = " + ret[0] + " c = " + ret[0]);
+        // ret[0] = choose(c, nc, k);
+        // ret[1] = choose(c, nc, k - 1);
+        ret[0] = choose1(c, nc, k);
+        ret[1] = choose1(c, nc, k - 1);
+        // System.out.println("i = " + i + " nc = " + ret[0] + " c = " + ret[0]);
         return ret;
     }
 
@@ -99,14 +101,31 @@ public class LC3367 {
     private int choose(List<Integer> c, List<Integer> nc, int k){
         // [从c[i]到nc[i]的增量, i]
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
-        for(int i = 0;i < c.size();i++) maxHeap.offer(nc.get(i) - c.get(i));
-        int chooseCnt = c.size() - k, ret = 0;
-        for(int x : c) ret += x;
-        if(chooseCnt > 0){
+        for(int i = 0;i < c.size();i++) maxHeap.offer(c.get(i) - nc.get(i));
+        int chooseCnt = Math.min(k, c.size()), ret = 0;
+        for(int x : nc) ret += x;
+        while(chooseCnt > 0){
+            if(maxHeap.peek() <= 0) break;
             ret += maxHeap.poll();
             chooseCnt--;
         }
-        System.out.println("c = " + c.toString() + " nc = " + nc.toString() + " k = " + k + " ret = " + ret);
+        // System.out.println("c = " + c.toString() + " nc = " + nc.toString() + " k = " + k + " ret = " + ret);
+        return ret;
+    }
+
+    // 贪心选择
+    private int choose1(List<Integer> c, List<Integer> nc, int k){
+        // [从c[i]到nc[i]的增量, i]
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        for(int i = 0;i < c.size();i++) maxHeap.offer(nc.get(i) - c.get(i));
+        int chooseCnt = c.size() - k, ret = 0;
+        for(int x : c) ret += x;
+        while(chooseCnt > 0){
+            ret += maxHeap.poll();
+            chooseCnt--;
+        }
+        // 可以多撤销几个
+        while(!maxHeap.isEmpty() && maxHeap.peek() >= 0) ret += maxHeap.poll();
         return ret;
     }
 
