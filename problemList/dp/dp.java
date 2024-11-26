@@ -245,9 +245,13 @@
 //          LC3202 https://leetcode.cn/problems/find-the-maximum-length-of-valid-subsequence-ii/description/    这题dp表两个维度的遍历顺序比较奇怪, 很容易写错
 
 // 树形DP
-//  1. 数的直径
+//  1. 树的直径
 //      LC543 https://leetcode.cn/problems/diameter-of-binary-tree/description/
 //      LC124 https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/    稍难, 要考虑左/右子节点出发的路径不选的情况
 //
 //      LC1373 https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/description/     单论树形DP, 并不难, 难的是计算当前节点返回的ret[]的逻辑
-//      
+//
+//  2. 树上打家劫舍
+//      好题, 难题: 树上打家劫舍和贪心的结合: LC3367 https://leetcode.cn/problems/maximize-sum-of-weights-after-edge-removals/description/ 
+//
+//
