@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.dp.solution;
 
 /**
 dp[i][j][p] 表示考虑 nums[0, i] 区间的下标, 操作1执行 j 次, 操作2执行 p 次, 此时所有元素的最小可能和

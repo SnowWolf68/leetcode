@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.dp.solution;
 
 // https://leetcode.cn/contest/biweekly-contest-144/problems/shift-distance-between-two-strings/
 
