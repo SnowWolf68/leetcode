@@ -256,7 +256,10 @@
 //      好题, 难题: 树上打家劫舍和贪心的结合: LC3367 https://leetcode.cn/problems/maximize-sum-of-weights-after-edge-removals/description/ 
 //
 //
-//
+//  4. 换根dp
+//      模版题: LC834 https://leetcode.cn/problems/sum-of-distances-in-tree/description/
+//              LC2581 https://leetcode.cn/problems/count-number-of-possible-root-nodes/description/
+//              
 
 // unsorted: 
 //      LC3361 https://leetcode.cn/problems/shift-distance-between-two-strings/description/
