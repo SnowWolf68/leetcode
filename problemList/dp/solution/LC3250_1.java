@@ -20,8 +20,27 @@ dp[i][j][k]:
             dp[i][p][]
 
  */
-public class LC3250 {
+public class LC3250_1 {
     public int countOfPairs(int[] nums) {
-        
+        int max = 0, n = nums.length, MOD = (int)1e9 + 7;
+        for(int x : nums) max = Math.max(max, x);
+        int[][][] dp = new int[n][max + 1][max + 1];
+        for(int i = 0;i <= nums[0];i++){
+            dp[0][i][nums[0] - i] = 1;
+        }
+        for(int i = 1;i < n;i++){
+            for(int j = 0;j <= nums[i];j++){
+                for(int prev = 0;prev <= Math.min(j, nums[i - 1]);prev++){
+                    if(nums[i] - j <= nums[i - 1] - prev) dp[i][j][nums[i] - j] = (dp[i][j][nums[i] - j] + dp[i - 1][prev][nums[i - 1] - prev]) % MOD;
+                }
+            }
+        }
+        int ret = 0;
+        for(int j = 0;j <= max;j++){
+            for(int k = 0;k <= max;k++){
+                ret = (ret + dp[n - 1][j][k]) % MOD;
+            }
+        }
+        return ret;
     }
 }

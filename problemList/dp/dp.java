@@ -221,6 +221,9 @@
 //          LC600 https://leetcode.cn/problems/non-negative-integers-without-consecutive-ones/description/      简单题
 //          
 //
+// 数据结构优化dp
+//      前缀和优化dp
+//          比较简单的一个前缀和优化dp: LC3250 & LC3251 https://leetcode.cn/problems/find-the-count-of-monotonic-pairs-i/, https://leetcode.cn/problems/find-the-count-of-monotonic-pairs-ii/description/
 
 
 // unsorted 
