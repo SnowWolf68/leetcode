@@ -262,8 +262,9 @@
 //  4. 换根dp
 //      模版题: LC834 https://leetcode.cn/problems/sum-of-distances-in-tree/description/
 //              LC2581 https://leetcode.cn/problems/count-number-of-possible-root-nodes/description/
+//              LC2858 https://leetcode.cn/problems/minimum-edge-reversals-so-every-node-is-reachable/description/
 //              LC310 https://leetcode.cn/problems/minimum-height-trees/description/
-//              
+//              LC3241 https://leetcode.cn/problems/time-taken-to-mark-all-nodes/description/   上一题(LC310)的加强版
 //              
 
 // unsorted: 
