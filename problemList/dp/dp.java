@@ -272,3 +272,8 @@
 // unsorted: 
 //      LC3361 https://leetcode.cn/problems/shift-distance-between-two-strings/description/
 //      LC3366 https://leetcode.cn/problems/minimum-array-sum/description/
+
+//  专题: 前后缀分解
+//      LC926  https://leetcode.cn/problems/flip-string-to-monotone-increasing/description/     可以看作是 前后缀分解 的板子题
+//      LC2712 https://leetcode.cn/problems/minimum-cost-to-make-all-characters-equal/description/  1791
+//      
