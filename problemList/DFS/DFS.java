@@ -8,3 +8,7 @@
 //      计算子树大小:  
 //              LC3249 https://leetcode.cn/problems/count-the-number-of-good-nodes/description/?envType=daily-question&envId=2024-11-14
 //              LC3331 https://leetcode.cn/problems/find-subtree-sizes-after-changes/description/       从上到下的dfs, 看起来很简单, 但是要想弄清楚还是要好好想想   两种写法: 两次dfs & 一次dfs      这里还有一点小细节, 涉及到编译器优化, 具体写在代码中了
+//
+//  unsorted
+//      LC100475 https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/
+//      LC100485 https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii/
