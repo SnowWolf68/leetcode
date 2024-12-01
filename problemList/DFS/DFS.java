@@ -11,4 +11,4 @@
 //
 //  unsorted
 //      LC100475 https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/
-//      LC100485 https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii/
+//      LC3373 https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii/
