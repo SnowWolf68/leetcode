@@ -275,6 +275,10 @@
 //      LC3366 https://leetcode.cn/problems/minimum-array-sum/description/
 
 //  专题: 前后缀分解
+//      LC2420 https://leetcode.cn/problems/find-all-good-indices/description/  1695    和下一题(LC2100)几乎一样
+//      LC2100 https://leetcode.cn/problems/find-good-days-to-rob-the-bank/description/     1702
 //      LC926  https://leetcode.cn/problems/flip-string-to-monotone-increasing/description/     可以看作是 前后缀分解 的板子题
+//      LC334 https://leetcode.cn/problems/increasing-triplet-subsequence/description/      枚举中间元素j, 看成前后缀分解
 //      LC2712 https://leetcode.cn/problems/minimum-cost-to-make-all-characters-equal/description/  1791
+//      LC1653 https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/  1797
 //      
