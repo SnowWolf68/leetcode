@@ -14,3 +14,6 @@
 //      终极版(带环, 带修改, 多次查询): LC3245 https://leetcode.cn/problems/alternating-groups-iii/description/
 //
 //  两数之和的变形: LC100444 https://leetcode.cn/problems/identify-the-largest-outlier-in-an-array/description/
+//
+//  排列型回溯
+//      LC52 https://leetcode.cn/problems/n-queens-ii/description/
