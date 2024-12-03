@@ -1,4 +1,4 @@
-package solution;
+package problemList.dp.solution;
 
 import java.util.HashMap;
 import java.util.Map;

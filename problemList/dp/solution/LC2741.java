@@ -1,4 +1,4 @@
-package solution;
+package problemList.dp.solution;
 
 /**
 也是这个类型的板子题
