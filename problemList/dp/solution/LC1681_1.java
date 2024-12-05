@@ -3,7 +3,13 @@ package problemList.dp.solution;
 import java.util.Arrays;
 
 /**
-使用相邻相关的状压dp来解决
+相邻相关 状压dp
+这题的一种自然的想法是使用枚举子集的子集做, 即我在LC1681.java中写的方法, 但是这种方法的时间复杂度是O(3 ^ n) 证明见灵神题解: https://leetcode.cn/problems/parallel-courses-ii/solutions/2310878/zi-ji-zhuang-ya-dpcong-ji-yi-hua-sou-suo-oxwd/
+还有一种时间复杂度更低一点的写法, 即这里的 相邻相关型 状压dp
+
+如何转换成 相邻相关 的问题?
+
+
 dp[state][i] 表示当前选择的元素集合为state, 并且当前选择的元素的下标为i时, 此时的最小不兼容性
 dp[state][i]: 
     1. 如果bitCount(state) % k == 1, 说明此时这个元素是某一组的第一个元素, 那么此时没有 不重复 的约束, 因此: 
@@ -17,16 +23,16 @@ dp[state][i]:
 return min(dp[mask][i])
  */
 public class LC1681_1 {
-    // TODO: 还有问题
     public int minimumIncompatibility(int[] nums, int k) {
-        int n = nums.length, mask = 1 << n, INF = 0x3f3f3f3f;
+        int n = nums.length, mask = 1 << n, INF = 0x3f3f3f3f, g = n / k;
+        if(g == 1) return 0;    // 如果每组大小只有1, 那么组内的最大值和最小值一定相等, 返回0
         Arrays.sort(nums);
         int[][] dp = new int[mask][n];
         for(int state = 1;state < mask;state++){
             for(int i = 0;i < n;i++){
                 if(((state >> i) & 1) == 0) continue;
                 dp[state][i] = INF;
-                if(Integer.bitCount(state) % k == 1){
+                if(Integer.bitCount(state) % g == 1){
                     int preState = state ^ (1 << i);
                     if(preState == 0){
                         dp[state][i] = 0;
@@ -44,21 +50,8 @@ public class LC1681_1 {
                 }
             }
         }
-        // System.out.println("------------------------------");
-        // for(int state = 0;state < mask;state++){
-        //     for(int i = 0;i < n;i++){
-        //         System.out.print(dp[state][i] + " ");
-        //     }
-        //     System.out.println();
-        // }
         int ret = INF;
         for(int i = 0;i < n;i++) ret = Math.min(ret, dp[mask - 1][i]);
-        return ret;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{6,3,8,1,3,1,2,2};
-        int k = 4;
-        System.out.println(new LC1681_1().minimumIncompatibility(nums, k));
+        return ret == INF ? -1 : ret;
     }
 }
