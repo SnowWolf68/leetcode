@@ -15,6 +15,8 @@ dp[state]: 枚举最后一个子集, 这个子集要求 1) 大小为 nums.length
 return dp[mask - 1] == INF ? -1 : dp[mask - 1]
 
 需要注意的是, 每次枚举state的子集cur的时候都需要计算cur这个子集的不兼容性, 因此可以将所有符合要求的cur的不兼容性预处理出来(不符合要求的cur的不兼容性可以初始化为INF)
+
+这题我之前写的题解也很有意思, 可以看看: https://leetcode.cn/problems/minimum-incompatibility/solutions/2624838/java-zhuang-ya-dp-duo-chong-xie-fa-liang-crwg/
  */
 public class LC1681 {
     public int minimumIncompatibility(int[] nums, int k) {

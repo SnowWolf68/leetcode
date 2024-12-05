@@ -199,7 +199,7 @@
 //  9.2 排列型②相邻相关
 //          简单题: LC996 https://leetcode.cn/problems/number-of-squareful-arrays/description/      关键在于如何去重
 //                 LC2741 https://leetcode.cn/problems/special-permutations/description/    也算是板子题, 这题使用dfs好像会快很多, 因为dp会计算到一些不可能的情况, 而dfs对于这些不可能的情况可以通过剪枝剪掉
-//       稍微难一点: LC1681 https://leetcode.cn/problems/minimum-incompatibility/description/   枚举子集
+//       稍微难一点: LC1681 https://leetcode.cn/problems/minimum-incompatibility/description/   枚举子集    这题我之前写的题解也很有意思, 可以看看: https://leetcode.cn/problems/minimum-incompatibility/solutions/2624838/java-zhuang-ya-dp-duo-chong-xie-fa-liang-crwg/
 //           难题: LC3149 https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/description/    难点在于构造具体方案, 我分别写了 "正序" 以及 "倒序" 的两种状压DP写法
 //  9.3 旅行商问题(TSP) 本质上就是 排列型②
 //          有点难: LC943 https://leetcode.cn/problems/find-the-shortest-superstring/description/    1) 如何计算commLen?   2) 如何构造最后的具体方案? 
