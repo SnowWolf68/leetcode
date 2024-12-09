@@ -1,7 +1,6 @@
 package problemList.dp.solution;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,12 +21,19 @@ import java.util.List;
     在这种状态定义下, 最后构造字典序最小的排列时, 就可以让state从0开始构造, 此时意味着 "剩下n个元素", 那么通过dp表, 我们就可以知道 "剩下n - 1" 个元素时, 此时所有可能的排列的分数是多少, 
     那么此时构造的顺序就是 "从前往后" , 这样显然就可以保证 构造出来的字典序是最小的
 
+这里还有另一种角度来理解这里的两种递推顺序: 
+    对于state从小到大的递推顺序来说, 其实我们是按照 perm[0] 到 perm[n - 1] 这样的顺序考虑的
+    那么对于state从大到小的递推顺序来说, 这就是按照 perm[n - 1] 到 perm[0] 这样的顺序考虑的
+也可以从这个角度来更好的理解一下上面说的 dp顺序 与 构造方案顺序 之间的关系
+
 dp[state][i] 表示当前选择的元素集合为state, 并且最后选择的元素的下标是i, 此时从剩下的元素(state中对应位是0)中选, 此时的最低分数
 dp[state][i]: 枚举下一个要选的元素, 假设为nxt, 那么有: 
     dp[state][i] = min(dp[state | (1 << nxt)][nxt] + abs(i - nums[nxt]));
 初始化: 这里由于递推方向是 state 从大到小递推, 因此我们初始化的位置应该是 剩余0个元素 的情况
     因此我们可以初始化 dp[mask - 1][i] = Math.abs(i - nums[0]);
-return dp[1][0];
+        -- 实际上这里我们就是要初始化选择perm[n - 1]为元素i时的情况
+            相比之下, 如果按照state从小到大的顺序递推的话, 这里的初始化就是要初始化 选择perm[0]为元素i时的情况
+return dp[1][0];    // 因为在字典序最小的情况下, 一定有: perm[0] = 0
  */
 public class LC3149_3 {
     public int[] findPermutation(int[] nums) {
@@ -45,12 +51,6 @@ public class LC3149_3 {
                 }
             }
         }
-        for(int state = 0;state < mask;state++){
-            for(int i = 0;i < n;i++){
-                System.out.print(dp[state][i] + " ");
-            }
-            System.out.println();
-        }
         int state = 1, idx = 0;
         List<Integer> list = new ArrayList<>();
         list.add(idx);
@@ -58,18 +58,13 @@ public class LC3149_3 {
             for(int i = 0;i < n;i++){
                 if(((state >> i) & 1) == 1) continue;
                 if(dp[state][idx] == dp[state | (1 << i)][i] + Math.abs(idx - nums[i])){
-                    System.out.println("state = " + state);
                     list.add(i);
                     state = state | (1 << i);
                     idx = i;
+                    break;  // 找到从左到右第一个nxt就break, 保证字典序最小
                 }
             }
         }
         return list.stream().mapToInt(Integer::intValue).toArray();
-    }
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{2,3,0,1};
-        System.out.println(Arrays.toString(new LC3149_3().findPermutation(nums)));
     }
 }
