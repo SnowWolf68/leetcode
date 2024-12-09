@@ -195,6 +195,7 @@
 //                 LC2850 https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description/ 关键在于转化, 转化完之后就和上面那题一样   TODO: 研究一下这题的 最小费用最大流 做法
 //                 LC1947 https://leetcode.cn/problems/maximum-compatibility-score-sum/description/  和前几题差不多 简单题
 //                 LC1799 https://leetcode.cn/problems/maximize-score-after-n-operations/description/  稍微抽象一点的状压DP, 但是好好想想其实也还是 排列 问题
+//                 LC3376 https://leetcode.cn/problems/minimum-time-to-break-locks-i/description/   数据范围较小, 全排列型回溯也可以解决
 //          难题:   LC2172 https://leetcode.cn/problems/maximum-and-sum-of-array/description/   题意转化很关键, 考虑清楚如何抽象出来 "排列" , 好好考虑两种优化思路
 //  9.2 排列型②相邻相关
 //          简单题: LC996 https://leetcode.cn/problems/number-of-squareful-arrays/description/      关键在于如何去重
