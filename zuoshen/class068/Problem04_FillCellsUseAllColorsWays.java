@@ -14,6 +14,8 @@ import java.util.Arrays;
 对数器验证
 
 好题, 琢磨琢磨
+
+TODO: 还没想明白正确的状态转移
  */
 public class Problem04_FillCellsUseAllColorsWays {
     /**
