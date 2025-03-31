@@ -1,5 +1,10 @@
 package zuoshen.class067;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
 题目6
 矩阵中的最长递增路径
@@ -85,5 +90,32 @@ public class Problem06_LongestIncreasingPathInAMatrix {
      * 递推的状态依赖: mat[i][j]大的位置一定依赖与mat[i][j]小的位置
      * 因此递推顺序: 从mat[i][j]小的位置, 推到mat[i][j]大的位置
      */
-    
+    public int longestIncreasingPath(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] dp = new int[m][n];
+        List<int[]> list = new ArrayList<>();
+        for(int i = 0;i < m;i++){
+            for(int j = 0;j < n;j++){
+                if(((i - 1 < 0) || (i - 1 >= 0 && matrix[i - 1][j] <= matrix[i][j]))
+                && ((j - 1 < 0) || (j - 1 >= 0 && matrix[i][j - 1] <= matrix[i][j]))
+                && ((i + 1 >= m) || (i + 1 < m && matrix[i + 1][j] <= matrix[i][j]))
+                && ((j + 1 >= n) || (j + 1 < n && matrix[i][j + 1] <= matrix[i][j]))){
+                    // mat[i][j] 比四周的大
+                    dp[i][j] = 1;
+                }else list.add(new int[]{i, j});
+            }
+        }
+        
+        Collections.sort(list, (a, b) -> matrix[b[0]][b[1]] - matrix[a[0]][a[1]]);
+        int ret = 1;
+        for(int[] pos : list){
+            int i = pos[0], j = pos[1];
+            if(i - 1 >= 0 && matrix[i - 1][j] > matrix[i][j]) dp[i][j] = Math.max(dp[i][j], dp[i - 1][j] + 1);
+            if(j - 1 >= 0 && matrix[i][j - 1] > matrix[i][j]) dp[i][j] = Math.max(dp[i][j], dp[i][j - 1] + 1);
+            if(i + 1 < m && matrix[i + 1][j] > matrix[i][j]) dp[i][j] = Math.max(dp[i][j], dp[i + 1][j] + 1);
+            if(j + 1 < n && matrix[i][j + 1] > matrix[i][j]) dp[i][j] = Math.max(dp[i][j], dp[i][j + 1] + 1);
+            ret = Math.max(ret, dp[i][j]);
+        }
+        return ret;
+    }
 }
