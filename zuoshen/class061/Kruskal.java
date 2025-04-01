@@ -5,6 +5,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+题目1
+实现Kruskal算法
+返回最小生成树的最小权值和
+测试链接 : https://www.luogu.com.cn/problem/P3366
+
+注: 下面的代码在luogu上提交会MLE, 不过算法整体是没问题的
+注: 在luogu上, 节点的编号是从1开始的
+ */
 public class Kruskal {
     class UnionFind{
         private int[] pa;
@@ -64,8 +73,10 @@ public class Kruskal {
         }
         List<int[]> ret = new Kruskal().kruskal(n, edges);
         if(ret == null) System.out.println("orz");
-        int sum = 0;
-        for(int[] e : ret) sum += e[2];
-        System.out.println(sum);
+        else{
+            int sum = 0;
+            for(int[] e : ret) sum += e[2];
+            System.out.println(sum);   
+        }
     }
 }
