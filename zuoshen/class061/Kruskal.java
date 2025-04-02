@@ -13,6 +13,8 @@ import java.util.Scanner;
 
 注: 下面的代码在luogu上提交会MLE, 不过算法整体是没问题的
 注: 在luogu上, 节点的编号是从1开始的
+
+时间复杂度: 并查集建立: O(n), 对边排序: O(m * logm), 选边: O(m) --> 总复杂度: O(n + m * logm)
  */
 public class Kruskal {
     class UnionFind{
