@@ -20,7 +20,6 @@ public class PrimOptimize {
             n = _n;
             list = new ArrayList<>();
             for(int i = 0;i < n;i++) list.add(new int[]{-1, -1, 0x3f3f3f3f});
-            // System.out.println("init size = " + list.size());
             revIndex = new int[n];
             Arrays.fill(revIndex, -1);
             usedSize = 0;
@@ -86,11 +85,9 @@ public class PrimOptimize {
         public void updateOrInsert(int[] edge) {
             if (revIndex[edge[1]] == -1) {
                 list.set(usedSize++, edge);
-                // System.out.println("insert: " + Arrays.toString(edge) + " usedSize = " + usedSize);
                 revIndex[edge[1]] = usedSize - 1;
                 shiftUp(usedSize - 1);
             } else {
-                // System.out.println("aaa" + Arrays.toString(edge));
                 int idx = revIndex[edge[1]];
                 if (edge[2] < list.get(idx)[2]) {
                     list.set(idx, edge);
@@ -139,29 +136,14 @@ public class PrimOptimize {
         vis[0] = true;
         for(int i = 0;i < n;i++){
             if(g[0][i] != INF){
-                // System.out.println("aaa");
                 minHeap.updateOrInsert(new int[]{0, i, g[0][i]});
             }
         }
         int cnt = 1;
         List<int[]> ret = new ArrayList<>();
-        // System.out.println(minHeap.isEmpty());
-
-        // for(int i = 0;i < minHeap.usedSize;i++){
-        //     System.out.println("minHeap: " + Arrays.toString(minHeap.list.get(i)));
-        // }
-
         while(!minHeap.isEmpty()){
-            // try {
-            //     Thread.sleep(1000);
-            // } catch (InterruptedException e1) {
-            //     // TODO Auto-generated catch block
-            //     e1.printStackTrace();
-            // }
             int[] poll = minHeap.poll();
-
-            // System.out.println(Arrays.toString(poll));
-
+            if(vis[poll[1]]) continue;
             ret.add(poll);
             cnt++;
             vis[poll[1]] = true;
@@ -171,7 +153,6 @@ public class PrimOptimize {
                 }
             }
         }
-        // System.out.println(cnt);
         if(cnt != n) return null;
         return ret;
     }
@@ -215,11 +196,3 @@ public class PrimOptimize {
         }
     }
 }
-/**
-4 5
-0 1 2
-0 2 2
-0 3 3
-1 2 4
-2 3 3
- */
