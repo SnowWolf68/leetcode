@@ -9,4 +9,4 @@
 //                             LC2642 https://leetcode.cn/problems/design-graph-with-shortest-path-calculator/description/   纯板子题
 //                             LC1514 https://leetcode.cn/problems/path-with-maximum-probability/description/    注意double类型的比较要用 Double.compare(), 直接减再转int太慢
 //                             LC1631 https://leetcode.cn/problems/path-with-minimum-effort/description/    网格图 -> 图 的经典应用
-//                              
+//                             LC1786 https://leetcode.cn/problems/number-of-restricted-paths-from-first-to-last-node/description/
