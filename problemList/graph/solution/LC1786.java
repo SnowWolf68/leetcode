@@ -11,10 +11,12 @@ import java.util.Queue;
 /**
 先dijksra处理得到 distanceToLastNode(i)
 然后dp
+dp的顺序需要好好考虑
+自己拿一个示例来模拟一下, 就可以发现这种顺序dp的正确性
  */
 public class LC1786 {
     public int countRestrictedPaths(int n, int[][] edges) {
-        int INF = 0x3f3f3f3f, MOD = (int)1e9 + 7;
+        int INF = Integer.MAX_VALUE, MOD = (int)1e9 + 7;    // 这题太有意思了, 甚至有一组卡INF = 0x3f3f3f3f的数据
         List<int[]>[] g = new List[n];
         for(int i = 0;i < n;i++) g[i] = new ArrayList<>();
         for(int[] e : edges){
@@ -42,23 +44,19 @@ public class LC1786 {
         // dp
         // dp[i]: 从i到n的首先路径数量
         // dp[i] += dp[nxt], nxt为i的邻接点
-        // dp顺序: 从n - 1节点开始, 按照bfs顺序进行dp, 刷表法
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(n - 1);
+        // dp顺序: 按照distanceToLastNode(i) 从小到大进行dp !!!
+        List<int[]> list = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            list.add(new int[]{i, dist[i]});
+        }
+        Collections.sort(list, (a, b) -> a[1] - b[1]);
         int[] dp = new int[n];
         dp[n - 1] = 1;
-        boolean[] vis = new boolean[n];
-        while (!queue.isEmpty()) {
-            int poll = queue.poll();
-            vis[poll] = true;
-            for(int[] nxt : g[poll]){
-                if(dist[nxt[0]] > dist[poll]) {
-                    if(!vis[nxt[0]]) queue.offer(nxt[0]);
-                    dp[nxt[0]] = (dp[nxt[0]] + dp[poll]) % MOD;
-                }
+        for(int i = 1;i < n;i++){   // 跳过n - 1这个节点, dist[n - 1] = 0
+            for(int[] nxt : g[list.get(i)[0]]){
+                if(dist[nxt[0]] < dist[list.get(i)[0]]) dp[list.get(i)[0]] = (dp[list.get(i)[0]] + dp[nxt[0]]) % MOD;
             }
         }
-        System.out.println(Arrays.toString(dp));
         return dp[0];
     }
 }
