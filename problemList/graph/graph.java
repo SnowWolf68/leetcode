@@ -9,6 +9,8 @@
 //                             LC2642 https://leetcode.cn/problems/design-graph-with-shortest-path-calculator/description/   纯板子题
 //                             LC1514 https://leetcode.cn/problems/path-with-maximum-probability/description/    注意double类型的比较要用 Double.compare(), 直接减再转int太慢
 //                             LC1631 https://leetcode.cn/problems/path-with-minimum-effort/description/    网格图 -> 图 的经典应用
+//         Dijkstra + 其他应用: 
 //                             LC1786 https://leetcode.cn/problems/number-of-restricted-paths-from-first-to-last-node/description/      是个好题, dijksra + dp, 这里dp的顺序需要好好想清楚, 并且这题还有卡INF = 0x3f3f3f3f的数据
 //                             LC3123 https://leetcode.cn/problems/find-edges-in-shortest-paths/description/  注意bfs要加vis, 否则时间复杂度能到O(n ^ 2), 同一个节点重复入队没有意义
-//                             
+//                             LC1976 https://leetcode.cn/problems/number-of-ways-to-arrive-at-destination/   和上面那题一起看, 考虑这题为什么不能用bfs序进行dp?    这题要用到拓扑序, 可以用正序也可以用逆序
+//      
