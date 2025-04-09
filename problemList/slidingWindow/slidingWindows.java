@@ -8,6 +8,22 @@
 
 // 二: 不定长滑动窗口
 //      2.1 求最长/最大     --> 窗口越短越合法, 求最长的窗口
+//          模版: 基础部分的题目, 基本上都可以用这个模版解决
+//          public int slidingWindow(int[] arr){
+//              int n = arr.length;
+//          
+//              int left = 0, maxLen = 0;
+//              for(int i = 0;i < n;i++){
+//               
+//                  while() {
+//                   
+//                      left++;
+//                  }
+//                  maxLen = Math.max(maxLen, i - left + 1);
+//              }
+//              return maxLen;
+//          }
+//          注: 之前写的一些代码在某些地方可能写的比较复杂, 后面看的时候可以考虑更优的写法
 //      基础:
 //          LC3 https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 //          LC3090 https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/description/
@@ -17,12 +33,12 @@
 //          LC904 https://leetcode.cn/problems/fruit-into-baskets/description/
 //          LC1695 https://leetcode.cn/problems/maximum-erasure-value/description/
 //          LC2958 https://leetcode.cn/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
-//          LC2024
+//          LC2024 https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/description/    1)比较显然的转化 2)或者不转化, 直接做也行   感觉转化还是太麻烦了, 直接做更好, 主要还是看第二种做法(直接做)
+//          LC1004 https://leetcode.cn/problems/max-consecutive-ones-iii/description/
+//      略难: 
+//          LC1658 https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/
 //      进阶: 
 //          LC2779 对数组排序, 将子序列转化成子数组很关键, 滑窗也和最原始的滑窗有些差别 https://leetcode.cn/problems/maximum-beauty-of-an-array-after-applying-operation/description/
-//          LC2024 比较显然的转化 https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/description/
-//          LC1004 https://leetcode.cn/problems/max-consecutive-ones-iii/description/
-//          LC1658 比较显然的转化 https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/
 //          LC1838 这题竟然也能用滑窗, 巧妙至极 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/
 //          LC2516 https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/description/
 //          LC2831 O(n * logn)和O(n) 两种写法 https://leetcode.cn/problems/find-the-longest-equal-subarray/description/

@@ -3,7 +3,7 @@ package problemList.slidingWindow.solution;
 /**
 转化为 max(T中最多连续k个F的子数组长度, F中最多连续k个T的子数组长度)
  */
-public class LC2024 {
+public class LC2024_1 {
     public int maxConsecutiveAnswers(String answerKey, int k) {
         return Math.max(sliding('T', answerKey, k), sliding('F', answerKey, k));
     }
