@@ -15,3 +15,8 @@
 //                             LC3123 https://leetcode.cn/problems/find-edges-in-shortest-paths/description/  注意bfs要加vis, 否则时间复杂度能到O(n ^ 2), 同一个节点重复入队没有意义
 //                             LC1976 https://leetcode.cn/problems/number-of-ways-to-arrive-at-destination/   和上面那题一起看, 考虑这题为什么不能用bfs序进行dp?    这题要用到拓扑序, 可以用正序也可以用逆序
 //      
+//          特殊图上的Dijkstra:  LC2662 https://leetcode.cn/problems/minimum-cost-of-a-path-with-special-roads/description/
+//                              
+//                              
+//        分层图最短路:          LCP35 https://leetcode.cn/problems/DFPeFJ/description/  有一个挺有意思的剪枝
+//                             
