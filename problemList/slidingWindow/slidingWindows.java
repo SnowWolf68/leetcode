@@ -8,6 +8,7 @@
 
 // 二: 不定长滑动窗口
 //      2.1 求最长/最大     --> 窗口越短越合法, 求最长的窗口
+//      基础:
 //          LC3 https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 //          LC3090 https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/description/
 //          LC1493 比较显然的转化 https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/description/
@@ -16,6 +17,8 @@
 //          LC904 https://leetcode.cn/problems/fruit-into-baskets/description/
 //          LC1695 https://leetcode.cn/problems/maximum-erasure-value/description/
 //          LC2958 https://leetcode.cn/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
+//          LC2024
+//      进阶: 
 //          LC2779 对数组排序, 将子序列转化成子数组很关键, 滑窗也和最原始的滑窗有些差别 https://leetcode.cn/problems/maximum-beauty-of-an-array-after-applying-operation/description/
 //          LC2024 比较显然的转化 https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/description/
 //          LC1004 https://leetcode.cn/problems/max-consecutive-ones-iii/description/

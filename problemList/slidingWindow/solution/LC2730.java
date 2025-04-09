@@ -6,7 +6,9 @@ public class LC2730 {
         for(int i = 0;i < n;i++){
             if(i - left + 1 >= 2 && s.charAt(i) == s.charAt(i - 1)) cnt++;
             while(cnt > 1){
-                if(left + 1 < n && s.charAt(left) == s.charAt(left + 1)) cnt--;
+                // if(left + 1 < n && s.charAt(left) == s.charAt(left + 1)) cnt--;
+                // 其实这里没必要判断 left + 1 < n, 因为在越界之前, cnt一定会减到1或1以下, while的条件不满足, 不会走到这里
+                if(s.charAt(left) == s.charAt(left + 1)) cnt--;
                 left++;
             }
             ret = Math.max(ret, i - left + 1);
