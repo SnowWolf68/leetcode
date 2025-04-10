@@ -16,6 +16,7 @@
 //                             LC1976 https://leetcode.cn/problems/number-of-ways-to-arrive-at-destination/   和上面那题一起看, 考虑这题为什么不能用bfs序进行dp?    这题要用到拓扑序, 可以用正序也可以用逆序
 //      
 //          特殊图上的Dijkstra:  LC2662 https://leetcode.cn/problems/minimum-cost-of-a-path-with-special-roads/description/
+//                             LC3377 https://leetcode.cn/problems/digit-operations-to-make-two-integers-equal/description/     也算是抽象图上的dijkstra, 不过实现起来有点复杂  还要想清楚这题为什么不能dp
 //                              
 //                              
 //        分层图最短路:          LCP35 https://leetcode.cn/problems/DFPeFJ/description/  有一个挺有意思的剪枝
