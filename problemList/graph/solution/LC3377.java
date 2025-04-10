@@ -13,8 +13,15 @@ import java.util.Set;
  * 为什么不能dp? (参见灵神题解下的评论: https://leetcode.cn/problems/digit-operations-to-make-two-integers-equal/solutions/3013737/dijkstra-zui-duan-lu-pythonjavacgo-by-en-ofby/)
  * 灵神原话: "可以从 x 变成 y，再从 y 变成 x，有环，没法 DP。"
  * 
- * 解释: 因为不能变成质数, 因此可能需要 "绕远" 来绕过质数, 因此可能存在环形依赖, 这样不能保证计算dp[i]时, 其依赖的位置都已经被正确计算过, 因此不能dp
- * 所谓绕远, 比如示例1
+ * 也可以参考题解区的另外一位大佬的解释: https://github.com/azl397985856/leetcode/blob/master/problems/3377.digit-operations-to-make-two-integers-equal.md
+ * 
+ * 这里我再简单解释一下: 假设定义dp[i]表示从n到i的最小代价, 那么假设其中有dp[i1], dp[i2]这两个状态, 其中i2 = i1 + 1
+ * 那么显然从dp[i1]可以转化到dp[i2], 从dp[i2]也可以转化为dp[i1], 即这里会出现循环依赖问题
+ * 循环依赖会给dp带来什么问题? 如果有循环依赖的话, 那么在我们计算dp[i1]的时候, 其所依赖的dp[i2]这个位置的dp值还没有计算出来 (因为dp[i2]依赖于dp[i1])
+ * 因此没办法正确计算dp[i1], 类似的, 计算dp[i2]时同理
+ * 综上, 由于环的出现, 导致本题无法使用dp计算最短路
+ * 但是由于本题的权值都是正的 (每次变化的权值可以看作是变化后或变化前的数字的值) , 因此可以使用dijkstra来计算最短路
+ * 
  */
 public class LC3377 {
     public int minOperations(int n, int m) {
