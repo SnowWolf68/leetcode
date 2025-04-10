@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 这题竟然也能用滑窗, 巧妙至极
  */
-public class LC1838 {
+public class LC1838_1 {
     public int maxFrequency(int[] nums, int k) {
         Arrays.sort(nums);
         int n = nums.length, left = 0, ret = 0;

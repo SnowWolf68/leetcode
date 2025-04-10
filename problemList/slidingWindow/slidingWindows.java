@@ -39,7 +39,17 @@
 //          LC1658 https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/
 //      进阶: 
 //          LC2779 对数组排序, 将子序列转化成子数组很关键, 滑窗也和最原始的滑窗有些差别 https://leetcode.cn/problems/maximum-beauty-of-an-array-after-applying-operation/description/
-//          LC1838 这题竟然也能用滑窗, 巧妙至极 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/
+//          LC1838 https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/     最大频数也可以通过排序转化为子数组问题, 进而滑窗
+
+
+
+
+
+
+
+
+
+
 //          LC2516 https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/description/
 //          LC2831 O(n * logn)和O(n) 两种写法 https://leetcode.cn/problems/find-the-longest-equal-subarray/description/
 //  
