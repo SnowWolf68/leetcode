@@ -6,6 +6,8 @@ import java.util.List;
 /**
  * 改进: 可以强制规定: 如果curStrength到达了还未开锁的锁的能量的最小值, 那么强制开这把锁
  * 因此curStrength的上限可以被减小到 max(strength)
+ * 
+ * 其实这种思路一定会爆空间, 因为strength[i]能到1e6, 因此无法记忆化strength[i]这个参数
  */
 public class LC3376_MLE_2 {
     private int INF = 0x3f3f3f3f, maxStrength = 0;
