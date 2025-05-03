@@ -5,6 +5,8 @@ import java.util.PriorityQueue;
 
 /**
 注意这是有向图
+
+对于堆优化的dijkstra, 最好的存图方式是邻接表, 如果用邻接矩阵虽然可以, 但是时间复杂度要大于O(e * loge)
  */
 public class LC743_1 {
     public int networkDelayTime(int[][] times, int n, int k) {

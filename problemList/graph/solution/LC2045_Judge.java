@@ -170,7 +170,7 @@ public class LC2045_Judge {
 
     public static void main(String[] args) {
         LC2045_Judge judge = new LC2045_Judge();
-        int cases = 1000;
+        int cases = 6000;
         for (int t = 1; t <= cases; t++) {
             int n = rnd.nextInt(30) + 50; // 节点2~7, 适合暴力
             int[][] edges = randomEdges(n, n + rnd.nextInt(n));

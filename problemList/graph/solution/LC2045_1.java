@@ -20,6 +20,8 @@ import java.util.PriorityQueue;
  * 当n较大时(接近1e4), 边数不会超过2 * 1e4, 边数和点数差不多是同一个数量级, 因此是稀疏图
  * 
  * 更新dist, second的时候需要注意: 这里说的次短路是 严格次短路 , 因此更新second的时候需要加一个条件: curTime + w != dist[i]
+ * 
+ * 这种写法是不好的写法, 好的写法见 LC2045_2
  */
 public class LC2045_1 {
     public int secondMinimum(int n, int[][] edges, int time, int change) {
@@ -35,7 +37,7 @@ public class LC2045_1 {
         dist[0] = 0;
         int[] second = new int[n];
         Arrays.fill(second, INF);
-        second[0] = 0;
+        second[0] = 0;  // 这里的错误初始化导致后面需要对特殊情况进行单独处理 (需要多进行两次dijkstra)
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
         minHeap.offer(new int[]{0, 0});
         while (!minHeap.isEmpty()) {

@@ -3,13 +3,18 @@ package problemList.graph.solution;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.PriorityQueue;
 
 /*
- * 尝试朴素dijkstra是否能实现求严格次短路
- * 可以, 但是对于本题会T, 其中写法需要注意
+ * 对LC2045_3_TLE中的代码加以整理
+ * 
+ * 时间复杂度: O(n ^ 2 + e), 其中找min的过程是O(n ^ 2), 松弛的过程最多执行O(e)次
+ * 由于这个是稀疏图, e 和 n 的数量级大致相等, 因此最终的时间复杂度为 O(n ^ 2)
+ * 
+ * 为什么松弛的次数是O(e)级别? 因为每次松弛都是要用某一条边进行松弛, 并且在求最大/次大的过程中, 一条边至多用于一次松弛 (单独求最大/次大的过程中)
+ * 因此总的松弛的数量级为O(e)
+ * 
  */
-public class LC2045_3_TLE {
+public class LC2045_4_TLE {
     public int secondMinimum(int n, int[][] edges, int time, int change) {
         List<Integer>[] g = new List[n];
         int INF = 0x3f3f3f3f;
@@ -26,30 +31,9 @@ public class LC2045_3_TLE {
         Arrays.fill(second, INF);
         boolean[] done1 = new boolean[n];
         boolean[] done2 = new boolean[n];
-        // second[0] = 0;
         for (int i = 0; i < 2 * n - 1; i++) {
             int firstMin = INF, secondMin = INF, firstT = -1, secondT = -1;
 
-            // 这种更新方式无法保证secondMin是严格大于firstMin的全局最小
-
-            // for (int j = 0; j < n; j++) {
-            //     if (dist[j] < firstMin && !done1[j]) {
-            //         firstMin = dist[j];
-            //         firstT = j;
-            //     } else if (dist[j] != firstMin && dist[j] < secondMin && !done1[j]) {
-            //         secondMin = dist[j];
-            //         secondT = j;
-            //     }
-            // }
-            // System.out.println("before: firstMin = " + firstMin + " firstT = " + firstT + " secondMin = " + secondMin + " secondT = " + secondT);
-            // for (int j = 0; j < n; j++) {
-            //     if (second[j] < secondMin && !done2[j] && second[j] < firstMin) {
-            //         secondMin = second[j];
-            //         secondT = j;
-            //     }
-            // }
-
-            // 这才是正确的更新方式
             for (int j = 0; j < n; j++) {
                 if (dist[j] < firstMin && !done1[j]) {
                     firstMin = dist[j];
@@ -63,10 +47,6 @@ public class LC2045_3_TLE {
                     secondT = j;
                 }
             }
-
-            // System.out.println(Arrays.toString(dist));
-            // System.out.println(Arrays.toString(second));
-            // System.out.println("after: firstMin = " + firstMin + " firstT = " + firstT + " secondMin = " + secondMin + " secondT = " + secondT);
 
             if (firstT != -1) done1[firstT] = true;
             if (secondT != -1) done2[secondT] = true;
@@ -88,8 +68,6 @@ public class LC2045_3_TLE {
                 }
             }
         }
-        // System.out.println(Arrays.toString(dist));
-        // System.out.println(Arrays.toString(second));
         return second[n - 1];
     }
 

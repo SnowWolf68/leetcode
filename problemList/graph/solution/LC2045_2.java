@@ -10,6 +10,8 @@ import java.util.PriorityQueue;
  * 只要设置second[0] = INF, 这样当更新到n - 1的最短路时, 如果n - 1的次短路还没有更新
  * 那么由于这里我们允许重复入堆, 那么n - 1的最短路也会入堆, 又会从n - 1的最短路dijkstra到0, 然后再从0dijkstra到n - 1
  * 这样算出来的次短路就符合示例2的要求
+ * 
+ * 时间复杂度: 
  */
 public class LC2045_2 {
     public int secondMinimum(int n, int[][] edges, int time, int change) {
@@ -25,7 +27,7 @@ public class LC2045_2 {
         dist[0] = 0;
         int[] second = new int[n];
         Arrays.fill(second, INF);
-        // second[0] = 0;
+        // second[0] = 0;   // 严格次短, 不能初始化second[0] = 0, second[0]的次短距离要从后面的计算才能知道
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
         minHeap.offer(new int[]{0, 0});
         while (!minHeap.isEmpty()) {
