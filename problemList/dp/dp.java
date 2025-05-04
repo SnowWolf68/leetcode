@@ -283,3 +283,8 @@
 //      LC2712 https://leetcode.cn/problems/minimum-cost-to-make-all-characters-equal/description/  1791
 //      LC1653 https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/  1797
 //      
+
+
+//  挺难: 
+//      LC3504 https://leetcode.cn/problems/longest-palindrome-after-substring-concatenation-ii/description/    最长公共子串(子串动态规划) + 中心拓展法
+//      

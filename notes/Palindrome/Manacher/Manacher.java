@@ -1,4 +1,4 @@
-package notes.Manacher;
+package notes.Palindrome.Manacher;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package problemList.Manacher.solution;
+package problemList.Palindrome.Manacher.solution;
 
 import java.util.Arrays;
 
