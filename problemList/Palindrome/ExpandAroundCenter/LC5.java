@@ -1,4 +1,4 @@
-package problemList.Palindrome.ExbandAroundCenter;
+package problemList.Palindrome.ExpandAroundCenter;
 
 /**
  * 中心拓展法 O(n ^ 2)
