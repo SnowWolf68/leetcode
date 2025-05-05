@@ -7,7 +7,7 @@ Manacher正确写法, 和LC5_WA的区别之处为代码中的①, ②, ③处
 
 为什么中心拓展法只需要考虑n - 1个偶回文中心, 而Manacher必须要考虑n + 1个偶回文中心 (Manacher必须额外考虑首尾的两处偶回文中心)
 中心拓展法中, 我们考虑的n - 1个偶回文中心只是单纯的考虑这个位置, 而并没有像Manacher中这样在偶回文中心插入字符
-然而, 对于Manacher来说, 如果我们少插入了首尾的两个#, 那么 TODO
+然而, 对于Manacher来说, 如果我们少插入了首尾的两个#, 那么
  */
 public class LC5 {
     private int[] calcHL(String s){

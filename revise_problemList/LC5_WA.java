@@ -3,7 +3,7 @@ package revise_problemList;
 import java.util.Arrays;
 
 /*
-错误的Manacher写法: 只添加了n - 1个#, 应该添加n + 1个 (首尾各添加一个)
+错误的Manacher写法: 只考虑了n - 1个偶回文中心, 即只添加了n - 1个#, 应该添加n + 1个 (首尾各添加一个)
 
 WA样例: s = "a"
  */
