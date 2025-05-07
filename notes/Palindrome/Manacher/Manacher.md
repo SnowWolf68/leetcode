@@ -393,3 +393,86 @@ why?
 
 ### 能不能用更为简单的映射关系来写Manacher算法?
 
+首先对插入`#`后的`t`串通过Manacher算法计算出`t`对应的`hl[]`数组, 即对于`t`的每一个下标`i`的回文半径
+
+当从`t`串映射到`s`串时, 只需要关注两点: 
+
+1. `t[i]`映射到`s`后的**回文中心**下标
+2. `t[i]`对应的`hl[i]`映射到`s`后的**回文半径**
+
+而这两者在上一部分都有了答案: 
+
+> + 回文中心: 
+>   + 奇回文中心: 假设`t`中的奇回文中心为`i`, 那么在`s`中对应的回文中心为`i / 2`
+>   + 偶回文中心: 假设`t`中的偶回文中心为`i`, 那么在`s`中对应的左侧字符下标为`i / 2 - 1`
+> + 回文半径: 假设`t`中对应某个回文中心(包括奇, 偶)的回文半径为`l`, 那么在`s`中对应回文中心的回文半径为`l / 2`
+
+因此实际上并不需要完整计算出`s`串对应的`hl2[]`数组, 当需要求`s`串某个位置对应的回文半径时, 只需要利用上面两条映射规则, 即可求出`s`串对应某一下标的回文半径
+
+例如用这种方法重新写一下 [LC5](https://leetcode.cn/problems/longest-palindromic-substring/description/)
+
+> 上面那种写法是通过判断**`t`串的回文半径**来得到`s`串对应区间是否回文的信息, 这种写法**避免了讨论`s`串中的奇回文/偶回文**的情况, 这里这种写法是直接通过判断**`s`串的回文半径**, 因此需要**讨论奇回文/偶回文**的情况, 具体讨论方法就和**中心拓展法中的方法类似**
+
+```java
+public class LC5 {
+    private int[] calcHL(String s){
+        StringBuilder sb = new StringBuilder();
+        sb.append('#');
+        for(char c : s.toCharArray()){
+            sb.append(c);
+            sb.append('#');
+        }
+        String ss = sb.toString();
+        int n = ss.length();
+        int mMid = -1, mRight = -1;
+        int[] hl = new int[n];
+        for(int i = 0;i < n;i++){
+            int curHL = 0;
+            if(i < mRight){
+                curHL = Math.min(2 * mMid - i >= 0 ? hl[2 * mMid - i] : 0, mRight - i + 1);
+            }
+            while(i + curHL < n && i - curHL >= 0 && ss.charAt(i + curHL) == ss.charAt(i - curHL)){
+                curHL++;
+            }
+            if(i + curHL - 1 > mRight){
+                mRight = i + curHL - 1;
+                mMid = i;
+            }
+            hl[i] = curHL;
+        }
+        return hl;
+    }
+
+    public String longestPalindrome(String s) {
+        int n = s.length();
+        int[] hl = calcHL(s);
+        String ret = "";
+        // 这里不能只枚举s中的下标, 那样会漏掉偶回文中心
+        for(int i = 0;i < 2 * n + 1;i++){
+            if(i % 2 == 1){
+                // 奇回文中心, idx: 奇回文中心在s中的下标, curLen: s中的回文半径
+                int curLen = hl[i] / 2, idx = i / 2;
+                if(2 * curLen - 1 > ret.length()){
+                    ret = s.substring(idx - curLen + 1, idx + curLen);
+                }
+            }else{
+                // 偶回文中心, leftIdx: 偶回文中心左边的字符在s中的下标, curLen: s中的回文半径
+                int curLen = hl[i] / 2, leftIdx = i / 2 - 1;
+                if(2 * curLen > ret.length()){
+                    ret = s.substring(leftIdx - curLen + 1, leftIdx + 1 + curLen);
+                }
+            }
+        }
+        return ret;
+    }
+
+    public static void main(String[] args) {
+        // String s = "cbbd";      // bb
+        // String s = "babad";        // aba or bab
+        // String s = "a";             // a
+        String s = "aacabdkacaa";       // aca
+        System.out.println(new LC5().longestPalindrome(s));
+    }
+}
+```
+
