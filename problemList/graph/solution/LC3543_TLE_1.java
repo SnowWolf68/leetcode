@@ -1,4 +1,4 @@
-package problemList.unsorted;
+package problemList.graph.solution;
 
 import java.util.ArrayList;
 import java.util.List;
