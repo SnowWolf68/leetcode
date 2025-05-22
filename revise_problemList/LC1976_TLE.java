@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+超时原因: 按照最短路使用bfs建图的时候没加vis数组, bfs可能会死循环
+ */
 public class LC1976_TLE {
     public int countPaths(int n, int[][] roads) {
         int INF = 0x3f3f3f3f;
