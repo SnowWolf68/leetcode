@@ -7,7 +7,7 @@ import java.util.List;
 暴力dfs
 
 时间复杂度:  O(n * (d ^ k))   其中d为某个节点的最大出度
-    
+可能会出现指数级别的复杂度, 肯定会超时
  */
 public class LC3543_TLE_1 {
     private int ret = -1;
