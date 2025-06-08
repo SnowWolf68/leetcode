@@ -24,10 +24,8 @@ import java.util.Set;
         导致状态污染：不同边数 j 的状态互相覆盖
 
 但是这样还是T了
-
-超时原因: 忘记改w这层循环的循环条件了, 原来for(int w = 0;w < t;w++)这种循环条件并不会优化循环次数
  */
-public class LC3543_2 {
+public class LC3543_TLE_4 {
     public int maxWeight(int n, int[][] edges, int k, int t) {
         List<int[]>[] g = new List[n];
         for(int i = 0;i < n;i++) g[i] = new ArrayList<>();
@@ -54,13 +52,8 @@ public class LC3543_2 {
             for(int[] nxtArr : g[poll]){
                 int nxt = nxtArr[0], weight = nxtArr[1];
                 for(int j = 1;j <= k;j++){
-                    // for(int w = 0;w < t;w++){
-                    //     if(w - weight >= 0 && dp[poll][j - 1].contains(w - weight)) dp[nxt][j].add(w);
-                    // }
-                    for(int w : dp[poll][j - 1]){
-                        if(w + weight < t){
-                            dp[nxt][j].add(w + weight);
-                        }
+                    for(int w = 0;w < t;w++){
+                        if(w - weight >= 0 && dp[poll][j - 1].contains(w - weight)) dp[nxt][j].add(w);
                     }
                 }
                 if(--in[nxt] == 0) queue.offer(nxt);
