@@ -21,4 +21,7 @@
 //                              
 //        分层图最短路:          LCP35 https://leetcode.cn/problems/DFPeFJ/description/  有一个挺有意思的剪枝
 //                     
-//        图上拓扑序DP: TODO:   LC3543 https://leetcode.cn/problems/maximum-weighted-k-edge-path/description/     时间复杂度怎么分析?   
+//        图上拓扑序DP:         LC2050 https://leetcode.cn/problems/parallel-courses-iii/description/   板子题
+//                            LC1857 https://leetcode.cn/problems/largest-color-value-in-a-directed-graph/description/     是个好题, 这种dp的状态定义方式虽然很简单, 但是我也没想到, 再好好品味一下     路径相关的问题是不是就要往拓扑序dp上考虑??
+//                  TODO:     LC3543 https://leetcode.cn/problems/maximum-weighted-k-edge-path/description/     时间复杂度怎么分析?   
+//                  
