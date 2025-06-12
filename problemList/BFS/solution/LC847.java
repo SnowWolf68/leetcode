@@ -1,4 +1,4 @@
-package solution;
+package problemList.BFS.solution;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,6 +7,11 @@ import java.util.Queue;
 状态压缩 + bfs
 之前超时的原因: 标记vis的时机不对, 之前是出队的时候才标记vis, 但是这样就会导致一些重复状态也会被遍历到
 因此正确的做法是在入队时就进行标记
+
+时间复杂度: 
+    拓展后的分层图有 n * 2 ^ n 个节点 (原本的图一共有n个点, 每个点对应的state都有2 ^ n种状态)
+    拓展后的分层图最多有 n ^ 2 * 2 ^ n 条边 (拓展后的分层图中每一个点最多连n条边)
+    而BFS的时间复杂度为O(V + E), 因此最终的BFS的复杂度为O(n ^ 2 * 2 ^ n)
  */
 public class LC847 {
     public int shortestPathLength(int[][] graph) {

@@ -1,4 +1,4 @@
-package solution;
+package problemList.BFS.solution;
 
 import java.util.LinkedList;
 import java.util.Queue;

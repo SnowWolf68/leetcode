@@ -12,7 +12,7 @@ import java.util.Queue;
  * hint: 分层图bfs
  * 
  */
-public class LC864 {
+public class LC864_1 {
     private int[] dx = new int[]{1, 0, -1, 0};
     private int[] dy = new int[]{0, 1, 0, -1};
     public int shortestPathAllKeys(String[] grid) {
