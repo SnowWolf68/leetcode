@@ -1,4 +1,4 @@
-package revise_problemList;
+package solution;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,12 +6,12 @@ import java.util.Queue;
 /**
 状态压缩 + bfs
  */
-public class LC847 {
+public class LC847_TLE {
     public int shortestPathLength(int[][] graph) {
         int n = graph.length, mask = 1 << n;
         Queue<int[]> queue = new LinkedList<>();
         for(int i = 0;i < n;i++){
-            queue.offer(new int[]{i, 0, 0});
+            queue.offer(new int[]{i, 1 << i, 0});    // i, state, step
         }
         boolean[][] vis = new boolean[n][mask];
         while (!queue.isEmpty()) {
