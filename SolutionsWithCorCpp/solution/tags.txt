@@ -1,0 +1,8 @@
+tag: 滑动窗口 - 越短越合法, 求最长
+    滑窗: 
+        1. 依次枚举左端点, 扩展右端点; 右端点不回退
+            -- 左端点不动, 右端点扩展到极限时, 固定右端点, 继续右移左端点时, 得到的结果一定比之前的小
+
+    problems: 
+        LC2760(easy)  https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/description/
+
