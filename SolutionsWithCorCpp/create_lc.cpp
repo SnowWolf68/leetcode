@@ -30,7 +30,8 @@ int main() {
     
     // 目标文件夹路径 problem_list_0x3f -> sliding_window -> solution
     // Windows 下虽然是用 \, 但 C++ fstream 通常也支持 /
-    string targetDir = "problem_list_0x3f/sliding_window/solution/";
+    // string targetDir = "problem_list_0x3f/sliding_window/solution/";
+    string targetDir = "lc_hot100/solution/";
 
     // 2. 检查模板是否存在
     if (!fileExists(templatePath)) {
