@@ -8,10 +8,9 @@ using namespace std;
 bool judgeSquareSum(int c) {
 	int i = 0, j = sqrt(c);
 	while (i <= j) {
-		int cur = i * i + j * j;
-		if (cur == c) {
+		if (c - i * i == j * j) {   // 通过移项避免溢出
 			return true;
-		} else if (cur < c) {
+		} else if (i * i < c - j * j) { // 同上
 			i++;
 		} else {
 			j--;
