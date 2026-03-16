@@ -40,7 +40,9 @@ vector<vector<int>> threeSum(vector<int> &nums) {
 					i++;
 				while (i < j && nums[j - 1] == nums[j])
 					j--;
+                // 此时从while循环中跳出来时, i, j分别停在最后一个重复的元素上
                 i++;
+                j--;
 			}
 		}
 	}

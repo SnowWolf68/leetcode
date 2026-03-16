@@ -27,6 +27,7 @@ vector<vector<int>> fourSum(vector<int> &nums, int target) {
 					while (i < j && nums[j - 1] == nums[j])
 						j--;
 					i++;
+                    j--;
 				}
 			}
 		}
