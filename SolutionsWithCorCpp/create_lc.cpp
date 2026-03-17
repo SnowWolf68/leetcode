@@ -32,6 +32,7 @@ int main() {
     // Windows 下虽然是用 \, 但 C++ fstream 通常也支持 /
     // string targetDir = "problem_list_0x3f/sliding_window/solution/";
     string targetDir = "problem_list_0x3f/to_pointer/solution/";
+    // string targetDir = "problem_list_0x3f/monotonic_stack/solution/";
     // string targetDir = "lc_hot100/solution/";
 
     // 2. 检查模板是否存在
